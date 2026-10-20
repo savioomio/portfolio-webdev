@@ -1,5 +1,5 @@
 {
-  "name": "meu-portfolio-3d",
+  "name": "portfolio-webdev",
   "private": true,
   "version": "0.0.1",
   "type": "module",
@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.4",
@@ -46,6 +47,7 @@
     "tailwindcss": "^3.4.17",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.39.1",
-    "vite": "^5.4.11"
+    "vite": "^5.4.11",
+    "wrangler": "^4.151.3"
   }
 }

@@ -1,0 +1,375 @@
+/* ============================================
+   DESIGN SYSTEM - PORTFÓLIO SÁVIO PESSÔA
+   Identidade: #61DAFB (Cyan Tecnológico)
+   Tipografia: Space Grotesk (headings) + Inter (body)
+   Estilo: Futurista • Minimalista • High-Tech
+   ============================================ */
+
+/* ============================================
+   FONTES LOCAIS (WOFF2) - PERFORMANCE OTIMIZADA
+   Space Grotesk + Inter hospedadas localmente
+   ============================================ */
+
+/* Space Grotesk - Light 300 */
+@font-face {
+  font-display: swap;
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 300;
+  src: url("/fonts/space-grotesk/space-grotesk-v22-latin-300.woff2")
+    format("woff2");
+}
+
+/* Space Grotesk - Regular 400 */
+@font-face {
+  font-display: swap;
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/space-grotesk/space-grotesk-v22-latin-regular.woff2")
+    format("woff2");
+}
+
+/* Space Grotesk - Medium 500 */
+@font-face {
+  font-display: swap;
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/fonts/space-grotesk/space-grotesk-v22-latin-500.woff2")
+    format("woff2");
+}
+
+/* Space Grotesk - SemiBold 600 */
+@font-face {
+  font-display: swap;
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 600;
+  src: url("/fonts/space-grotesk/space-grotesk-v22-latin-600.woff2")
+    format("woff2");
+}
+
+/* Space Grotesk - Bold 700 */
+@font-face {
+  font-display: swap;
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/space-grotesk/space-grotesk-v22-latin-700.woff2")
+    format("woff2");
+}
+
+/* Inter - Light 300 */
+@font-face {
+  font-display: swap;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300;
+  src: url("/fonts/inter/inter-v20-latin-300.woff2") format("woff2");
+}
+
+/* Inter - Regular 400 */
+@font-face {
+  font-display: swap;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/inter/inter-v20-latin-regular.woff2") format("woff2");
+}
+
+/* Inter - Medium 500 */
+@font-face {
+  font-display: swap;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/fonts/inter/inter-v20-latin-500.woff2") format("woff2");
+}
+
+/* Inter - SemiBold 600 */
+@font-face {
+  font-display: swap;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  src: url("/fonts/inter/inter-v20-latin-600.woff2") format("woff2");
+}
+
+/* Inter - Bold 700 */
+@font-face {
+  font-display: swap;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/inter/inter-v20-latin-700.woff2") format("woff2");
+}
+
+/* Love Buble - Custom Font */
+@font-face {
+  font-display: swap;
+  font-family: "Love Buble";
+  src: url("/fonts/LoveBubleRegular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   VARIÁVEIS CSS DO DESIGN SYSTEM
+   ============================================ */
+:root {
+  /* Tipografia */
+  --font-heading: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+
+  /* Cores - Accent (Sync via Tailwind Config) */
+  --accent: theme("colors.accent.DEFAULT");
+  --accent-hover: theme("colors.accent.hover");
+  --accent-soft: theme("colors.accent.soft");
+  --accent-glow: theme("colors.accent.glow");
+
+  /* Cores - Glass Morphism */
+  --glass-primary: theme("colors.glass.primary");
+  --glass-secondary: theme("colors.glass.secondary");
+  --glass-border: theme("colors.glass.border");
+
+  /* Cores - Texto */
+  --text-primary: theme("colors.text.primary");
+  --text-secondary: theme("colors.text.secondary");
+  --text-disabled: theme("colors.text.disabled");
+
+  /* Base */
+  --bg-base: #000000;
+
+  /* Configurações de renderização */
+  font-family: var(--font-body);
+  line-height: 1.6;
+  font-weight: 400;
+  color: var(--text-primary);
+  background-color: var(--bg-base);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* ============================================
+   TIPOGRAFIA
+   ============================================ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+p,
+span,
+div,
+a,
+button,
+input,
+textarea {
+  font-family: var(--font-body);
+}
+
+/* ============================================
+   LINKS E BOTÕES
+   ============================================ */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+/* Link com underline animado */
+a.link-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+a.link-underline:hover::after {
+  width: 100%;
+}
+
+/* ============================================
+   SCROLLBAR CUSTOMIZADA (ACCENT)
+   ============================================ */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(10, 15, 25, 0.8);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 10px;
+  border: 2px solid rgba(10, 15, 25, 0.8);
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-hover);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) rgba(10, 15, 25, 0.8);
+}
+
+/* ============================================
+   SELEÇÃO DE TEXTO
+   ============================================ */
+::selection {
+  background: var(--accent-soft);
+  color: white;
+}
+
+::-moz-selection {
+  background: var(--accent-soft);
+  color: white;
+}
+
+/* ============================================
+   UTILIDADES TAILWIND CUSTOMIZADAS
+   ============================================ */
+@layer components {
+  /* Container Base - Largura máxima e centralizado */
+  .container-base {
+    @apply max-w-7xl mx-auto px-6 lg:px-12 xl:px-20;
+    /* max-width: 1280px */
+  }
+
+  /* Container Médio - Para conteúdo mais focado */
+  .container-medium {
+    @apply max-w-4xl mx-auto px-6 lg:px-12;
+    /* max-width: 896px */
+  }
+
+  /* Section Padding - Espaçamento vertical padrão */
+  .section-padding {
+    @apply py-16 lg:py-20 xl:py-24;
+  }
+
+  /* Glass Card */
+  .glass-card {
+    @apply backdrop-blur-md border border-glass rounded-2xl;
+    background: var(--glass-secondary);
+  }
+
+  /* Glass Header */
+  .glass-header {
+    @apply backdrop-blur-lg border-b border-glass;
+    background: var(--glass-primary);
+  }
+
+  /* Button Primary com glow */
+  .btn-primary {
+    @apply px-6 py-3 rounded-full font-semibold transition-all duration-300;
+    background: var(--accent);
+    color: #000;
+    box-shadow: 0 0 20px var(--accent-glow);
+  }
+
+  .btn-primary:hover {
+    background: var(--accent);
+    box-shadow:
+      0 0 40px var(--accent-glow),
+      0 0 60px rgba(97, 218, 251, 0.3);
+    transform: translateY(-2px) scale(1.02);
+    filter: brightness(1.1);
+    color: #000;
+  }
+
+  /* Heading com spacing correto */
+  .heading-section {
+    @apply font-heading text-3xl lg:text-4xl font-bold mb-8;
+    color: var(--text-primary);
+  }
+  /* Glow effect para texto */
+  .text-glow {
+    text-shadow:
+      0 0 10px rgba(72, 201, 234, 0.5),
+      0 0 20px rgba(72, 201, 234, 0.3);
+  }
+
+  .font-love-buble {
+    font-family: "Love Buble", cursive;
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  /* Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+}

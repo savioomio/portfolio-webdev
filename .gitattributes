@@ -1,0 +1,6 @@
+# Garante line endings LF (Unix) para scripts executados no servidor Termux.
+# CRLF quebraria o shebang e a execucao no Android/Linux.
+*.sh text eol=lf
+deploy/*.cjs text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf

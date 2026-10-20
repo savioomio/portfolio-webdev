@@ -1,0 +1,18 @@
+{
+  // Site estatico servido pelo Workers Static Assets (a "nova" cara do Pages).
+  "name": "savioomiodev",
+  "compatibility_date": "2026-09-16",
+  // Mantem a URL .workers.dev viva como fallback enquanto o dominio proprio
+  // nao esta anexado (o apex ainda aponta para o tunnel antigo).
+  "workers_dev": true,
+  "assets": {
+    "directory": "./dist",
+    // Rotas do react-router: qualquer path desconhecido devolve o index.html
+    // com status 200, senao dar F5 em /links resultaria em 404.
+    "not_found_handling": "single-page-application"
+  },
+  "routes": [
+    { "pattern": "savioomiodev.com.br", "custom_domain": true },
+    { "pattern": "www.savioomiodev.com.br", "custom_domain": true }
+  ]
+}

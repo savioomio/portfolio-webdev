@@ -1,0 +1,40 @@
+name: CI - Build
+
+# O deploy de producao e feito pelo Cloudflare Pages, que faz o proprio build
+# a cada push na main. Este workflow apenas VALIDA que o projeto compila.
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build de validacao
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar o repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm install --legacy-peer-deps
+
+      - name: Build
+        run: npm run build
+
+      - name: Conferir que o dist foi gerado
+        run: test -f dist/index.html && echo "Build OK"
+
+      - name: Conferir que _redirects e _headers foram copiados
+        run: test -f dist/_redirects && test -f dist/_headers && echo "Config do Pages OK"

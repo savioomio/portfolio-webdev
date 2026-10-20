@@ -1,0 +1,21 @@
+# https://www.robotstxt.org/robotstxt.html
+
+# Permitir que todos os robôs indexem o site
+User-agent: *
+Allow: /
+
+# GEO Optimization - Acesso Explicito para IAs Generativas
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+# Link para o Sitemap (ajudar o Google a encontrar suas páginas)
+Sitemap: https://savioomiodev.com.br/sitemap.xml

@@ -8,7 +8,7 @@ Ao terminar: marque aqui no mesmo PR e siga a [definição de pronto](../planeja
 
 - [x] **T00** Criar o repositório `savioomio/portfolio-webdev` a partir do portfólio pessoal, com o deploy em `webdev.savioomiodev.com.br`. *(feito em 20/10, commits `dc92a80` e `54ceb4f`)*
 - [x] **T01** Pasta `docs/` (requisitos, planejamento, backlog, ADRs, runbooks), `CLAUDE.md` inicial, README reescrito, `.env` no `.gitignore`, e descrição, site e tópicos do repositório no GitHub. Branch: `docs/planejamento`.
-- [ ] **T02** Padrões automáticos: Prettier, Husky, lint-staged (ESLint + Prettier nos arquivos do commit) e commitlint com Conventional Commits; scripts `format` e `lint` no `package.json`. Branch: `chore/qualidade-codigo`. Req 11, 12.
+- [x] **T02** Padrões automáticos: Prettier, Husky, lint-staged (ESLint + Prettier nos arquivos do commit) e commitlint com Conventional Commits; scripts `format` e `lint` no `package.json`. Branch: `chore/qualidade-codigo`. Req 11, 12.
   - Aceite: um commit com mensagem fora do padrão é recusado; um arquivo mal formatado é corrigido no commit.
 - [ ] **T03** Proteção da `main`: push direto bloqueado, merge só por PR com o CI verde (via `gh api`). Estratégia de branches descrita no README e no `CLAUDE.md`. Branch: `docs/estrategia-branches`. Req 11.
   - Aceite: `git push origin main` é recusado pelo GitHub.

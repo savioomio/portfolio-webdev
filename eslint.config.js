@@ -3,10 +3,11 @@ import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
+import eslintConfigPrettier from 'eslint-config-prettier/flat'
 import { globalIgnores } from 'eslint/config'
 
 export default tseslint.config([
-  globalIgnores(['dist']),
+  globalIgnores(['dist', '.wrangler']),
   {
     files: ['**/*.{ts,tsx}'],
     extends: [
@@ -20,4 +21,6 @@ export default tseslint.config([
       globals: globals.browser,
     },
   },
+  // Por último: desliga as regras de estilo do ESLint, que é papel do Prettier.
+  eslintConfigPrettier,
 ])

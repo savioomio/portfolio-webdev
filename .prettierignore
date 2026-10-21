@@ -1,0 +1,7 @@
+dist
+.wrangler
+public
+package-lock.json
+
+# A documentação é escrita à mão; o Prettier realinharia as tabelas e trocaria a ênfase.
+*.md

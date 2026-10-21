@@ -16,6 +16,9 @@
 /timeline/*
   Cache-Control: public, max-age=604800, stale-while-revalidate=86400
 
+/videos/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
 /*.webp
   Cache-Control: public, max-age=604800, stale-while-revalidate=86400
 

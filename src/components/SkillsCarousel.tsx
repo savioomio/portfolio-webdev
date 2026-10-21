@@ -1,21 +1,21 @@
-"use client"
+"use client";
 
-import { TechShowcase } from "@/components/ui/TechShowcase"
-import { useIsMobile } from "@/hooks/useIsMobile"
-import BootstrapLogo from "@/components/assets/logos/bootstrap.svg?react"
-import DjangoLogo from "@/components/assets/logos/django.svg?react"
-import ElectronLogo from "@/components/assets/logos/electron.svg?react"
-import GitLogo from "@/components/assets/logos/git.svg?react"
-import Js from "@/components/assets/logos/js.svg?react"
-import MysqlLogo from "@/components/assets/logos/mysql.svg?react"
-import PhpLogo from "@/components/assets/logos/php.svg?react"
-import PythonLogo from "@/components/assets/logos/python.svg?react"
-import ReactLogo from "@/components/assets/logos/react.svg?react"
-import TailwindLogo from "@/components/assets/logos/tailwind.svg?react"
-import TsLogo from "@/components/assets/logos/ts.svg?react"
-import Vtex from "@/components/assets/logos/vtex.svg?react"
-import WakeLogo from "@/components/assets/logos/wake.svg?react"
-import WordpressLogo from "@/components/assets/logos/wordpress.svg?react"
+import { TechShowcase } from "@/components/ui/TechShowcase";
+import { useIsMobile } from "@/hooks/useIsMobile";
+import BootstrapLogo from "@/components/assets/logos/bootstrap.svg?react";
+import DjangoLogo from "@/components/assets/logos/django.svg?react";
+import ElectronLogo from "@/components/assets/logos/electron.svg?react";
+import GitLogo from "@/components/assets/logos/git.svg?react";
+import Js from "@/components/assets/logos/js.svg?react";
+import MysqlLogo from "@/components/assets/logos/mysql.svg?react";
+import PhpLogo from "@/components/assets/logos/php.svg?react";
+import PythonLogo from "@/components/assets/logos/python.svg?react";
+import ReactLogo from "@/components/assets/logos/react.svg?react";
+import TailwindLogo from "@/components/assets/logos/tailwind.svg?react";
+import TsLogo from "@/components/assets/logos/ts.svg?react";
+import Vtex from "@/components/assets/logos/vtex.svg?react";
+import WakeLogo from "@/components/assets/logos/wake.svg?react";
+import WordpressLogo from "@/components/assets/logos/wordpress.svg?react";
 
 const allLogos = [
   { name: "JavaScript", id: 1, img: Js },
@@ -32,14 +32,17 @@ const allLogos = [
   { name: "Electron", id: 12, img: ElectronLogo },
   { name: "MySQL", id: 13, img: MysqlLogo },
   { name: "Python", id: 14, img: PythonLogo },
-]
+];
 
 export function SkillsCarousel() {
-  const isMobile = useIsMobile()
-  const columnCount = isMobile ? 3 : 4
+  const isMobile = useIsMobile();
+  const columnCount = isMobile ? 3 : 4;
 
   return (
-    <section id="skills" className="section-padding min-h-screen flex items-center justify-center relative z-10">
+    <section
+      id="skills"
+      className="section-padding min-h-screen flex items-center justify-center relative z-10"
+    >
       <div className="container-base w-full flex flex-col items-center">
         <div className="text-center mb-12">
           <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4">
@@ -50,8 +53,8 @@ export function SkillsCarousel() {
           </p>
         </div>
 
-        <TechShowcase columnCount={columnCount} logos={allLogos} /> 
+        <TechShowcase columnCount={columnCount} logos={allLogos} />
       </div>
     </section>
-  )
+  );
 }

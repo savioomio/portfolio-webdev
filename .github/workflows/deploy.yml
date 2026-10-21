@@ -1,6 +1,6 @@
 name: CI - Build
 
-# Valida que o projeto compila. O deploy no Cloudflare Workers e feito com `npm run deploy`.
+# Valida padrao de commits, lint, formatacao e build. O deploy no Cloudflare Workers e feito com `npm run deploy`.
 
 on:
   push:
@@ -19,6 +19,9 @@ jobs:
     steps:
       - name: Clonar o repositorio
         uses: actions/checkout@v4
+        with:
+          # Historico completo para o commitlint comparar a branch do PR com a main
+          fetch-depth: 0
 
       - name: Configurar Node
         uses: actions/setup-node@v4
@@ -28,6 +31,17 @@ jobs:
 
       - name: Instalar dependencias
         run: npm install --legacy-peer-deps
+
+      # Os hooks do Husky podem ser pulados com --no-verify; aqui nao
+      - name: Padrao dos commits do PR
+        if: github.event_name == 'pull_request'
+        run: npx commitlint --from ${{ github.event.pull_request.base.sha }} --to ${{ github.event.pull_request.head.sha }} --verbose
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Formatacao
+        run: npm run format:check
 
       - name: Build
         run: npm run build

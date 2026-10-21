@@ -34,7 +34,7 @@ Ponto de partida para as researches. Nada aqui é decisão até virar ADR.
 | E-mail | — | a definir | EmailJS, Formspree, Resend via Supabase Edge Function | R02 |
 | Tema | `next-themes` (instalado, sem uso) | a definir | Context + `localStorage`, Zustand | R04 |
 | Testes | — | Vitest + Testing Library | Playwright (e2e) | R05 |
-| Qualidade | ESLint 9 | + Prettier, Husky, lint-staged, commitlint | Biome | T02 |
+| Qualidade | ESLint 9 | + Prettier, Husky, lint-staged, commitlint | Biome | [ADR 0003](./adr/0003-qualidade-de-codigo.md) |
 | Hospedagem | Cloudflare Workers ([ADR 0002](./adr/0002-hospedagem-cloudflare-workers.md)) | + Vercel (obrigatória na entrega) | — | T07 |
 | Harness de IA | Claude Code | `CLAUDE.md`, `.claude/` (settings, skills, agents) e MCPs versionados | Cursor, Copilot | R06 |
 

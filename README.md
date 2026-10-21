@@ -18,9 +18,9 @@ Portfólio em React com uma cena 3D interativa, projetos carregados direto da AP
 | Estilo | Tailwind CSS 3, Framer Motion |
 | 3D | Three.js, React Three Fiber, Drei |
 | Rotas | React Router 7 |
-| Qualidade | ESLint 9 (typescript-eslint, react-hooks) |
+| Qualidade | ESLint 9 (typescript-eslint, react-hooks), Prettier, Husky, lint-staged, commitlint |
 | Hospedagem | Cloudflare Workers (Static Assets) |
-| CI | GitHub Actions: build a cada push e PR |
+| CI | GitHub Actions: padrão dos commits, lint, formatação e build a cada push e PR |
 
 As próximas escolhas (busca de dados, backend, formulário, testes) passam por uma comparação de alternativas e ficam registradas como ADR em [`docs/adr/`](./docs/adr/).
 
@@ -43,6 +43,9 @@ O site abre em `http://localhost:5173`.
 | `npm run build` | Checa os tipos e gera o build de produção em `dist/` |
 | `npm run preview` | Serve o `dist/` localmente |
 | `npm run lint` | Roda o ESLint |
+| `npm run lint:fix` | Roda o ESLint corrigindo o que for automático |
+| `npm run format` | Formata todos os arquivos com o Prettier |
+| `npm run format:check` | Só confere a formatação (é o que o CI roda) |
 | `npm run deploy` | Build e publicação na Cloudflare ([runbook](./docs/runbooks/deploy-cloudflare.md)) |
 
 O `.npmrc` usa `legacy-peer-deps=true`, necessário para o npm resolver as dependências com o React 19.
@@ -80,6 +83,14 @@ docs: registra a decisão de hospedagem
 ```
 
 Tipos: `feat`, `fix`, `docs`, `chore`, `refactor`, `test`, `perf`.
+
+**Checagem automática** ([ADR 0003](./docs/adr/0003-qualidade-de-codigo.md)): o `npm install` instala os hooks do Git pelo Husky.
+
+| Momento | O que roda |
+| --- | --- |
+| `pre-commit` | lint-staged: ESLint (`--fix`) e Prettier só nos arquivos do commit |
+| `commit-msg` | commitlint: recusa mensagens fora do Conventional Commits |
+| CI (push e PR) | commitlint nos commits do PR, `npm run lint`, `npm run format:check` e `npm run build` |
 
 **Branches:** GitHub Flow. A `main` está sempre publicável; cada tarefa ganha uma branch própria, integrada por pull request depois do CI passar.
 

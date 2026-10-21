@@ -6,7 +6,7 @@
   "assets": {
     "directory": "./dist",
     // Rotas do react-router: path desconhecido devolve o index.html com 200, senao F5 em /projetos/x daria 404.
-    "not_found_handling": "single-page-application"
+    "not_found_handling": "single-page-application",
   },
-  "routes": [{ "pattern": "webdev.savioomiodev.com.br", "custom_domain": true }]
+  "routes": [{ "pattern": "webdev.savioomiodev.com.br", "custom_domain": true }],
 }

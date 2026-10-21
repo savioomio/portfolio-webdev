@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
@@ -6,10 +6,12 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-D95NTX6SGZ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-      gtag('config', 'G-D95NTX6SGZ');
+      gtag("config", "G-D95NTX6SGZ");
     </script>
     <link rel="icon" type="image/png" href="/favicon.png?v=1" />
     <link rel="shortcut icon" href="/favicon.png?v=1" />
@@ -38,10 +40,7 @@
       property="og:description"
       content="Desenvolvedor focado em E-commerce de Alta Performance. Experiência com implementações complexas em VTEX e Wake para grandes players do mercado."
     />
-    <meta
-      property="og:image"
-      content="https://savioomiodev.com.br/og-image.png?v=1"
-    />
+    <meta property="og:image" content="https://savioomiodev.com.br/og-image.png?v=1" />
 
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
@@ -53,10 +52,7 @@
       name="twitter:description"
       content="Desenvolvedor focado em E-commerce de Alta Performance. Experiência com implementações complexas em VTEX e Wake para grandes players do mercado."
     />
-    <meta
-      name="twitter:image"
-      content="https://savioomiodev.com.br/og-image.png?v=1"
-    />
+    <meta name="twitter:image" content="https://savioomiodev.com.br/og-image.png?v=1" />
 
     <!-- Schema.org Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -68,7 +64,15 @@
         "url": "https://savioomiodev.com.br/",
         "image": "https://savioomiodev.com.br/capa_portifolio_mob.webp",
         "jobTitle": "Desenvolvedor Front-End Especialista em E-commerce",
-        "knowsAbout": ["VTEX IO", "Wake Commerce", "High Performance Web", "React", "TypeScript", "Three.js", "E-commerce Strategy"],
+        "knowsAbout": [
+          "VTEX IO",
+          "Wake Commerce",
+          "High Performance Web",
+          "React",
+          "TypeScript",
+          "Three.js",
+          "E-commerce Strategy"
+        ],
         "worksFor": {
           "@type": "Organization",
           "name": "Wicomm"
@@ -81,7 +85,7 @@
         ]
       }
     </script>
-    
+
     <!-- FAQ Schema para Otimização de IAs (GEO) -->
     <script type="application/ld+json">
       {
@@ -132,10 +136,10 @@
           align-items: center;
           justify-content: center;
           z-index: 9999;
-          font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+          font-family: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
           overflow: hidden;
         }
-        
+
         /* Stars effect background */
         #loader-wrapper::before {
           content: "";
@@ -144,12 +148,18 @@
           left: 0;
           width: 100%;
           height: 100%;
-          background-image: 
-            radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 3px),
-            radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 2px),
-            radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 3px);
-          background-size: 550px 550px, 350px 350px, 250px 250px;
-          background-position: 0 0, 40px 60px, 130px 270px;
+          background-image:
+            radial-gradient(white, rgba(255, 255, 255, 0.2) 2px, transparent 3px),
+            radial-gradient(white, rgba(255, 255, 255, 0.15) 1px, transparent 2px),
+            radial-gradient(white, rgba(255, 255, 255, 0.1) 2px, transparent 3px);
+          background-size:
+            550px 550px,
+            350px 350px,
+            250px 250px;
+          background-position:
+            0 0,
+            40px 60px,
+            130px 270px;
           opacity: 0.3;
           animation: twinkle 5s linear infinite;
         }
@@ -176,9 +186,11 @@
           transform: translate(-50%, -50%);
           width: 16px;
           height: 16px;
-          background: #61DAFB;
+          background: #61dafb;
           border-radius: 50%;
-          box-shadow: 0 0 15px #61DAFB, 0 0 30px rgba(97, 218, 251, 0.45);
+          box-shadow:
+            0 0 15px #61dafb,
+            0 0 30px rgba(97, 218, 251, 0.45);
         }
 
         .orbit {
@@ -212,38 +224,69 @@
           transform: translateX(-50%);
           width: 6px;
           height: 6px;
-          background: #61DAFB;
+          background: #61dafb;
           border-radius: 50%;
-          box-shadow: 0 0 10px #61DAFB;
+          box-shadow: 0 0 10px #61dafb;
         }
-        
+
         .loading-text {
           font-size: 1.2rem;
-          color: #E5E7EB;
+          color: #e5e7eb;
           font-weight: 300;
           text-align: center;
           letter-spacing: 4px;
           text-transform: uppercase;
           animation: fadePulse 2s infinite;
-          font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+          font-family: "Space Grotesk", "Segoe UI", sans-serif;
         }
-        
+
         .loading-subtext {
           margin-top: 10px;
           font-size: 0.9rem;
-          color: #9CA3AF;
+          color: #9ca3af;
           font-weight: 300;
           text-align: center;
           max-width: 600px;
           padding-inline: 20px;
-          font-family: 'Inter', sans-serif;
+          font-family: "Inter", sans-serif;
         }
 
-        @keyframes spin { 0% { transform: translate(-50%, -50%) rotate(0deg); } 100% { transform: translate(-50%, -50%) rotate(360deg); } }
-        @keyframes spin-reverse { 0% { transform: translate(-50%, -50%) rotate(0deg); } 100% { transform: translate(-50%, -50%) rotate(-360deg); } }
-        @keyframes twinkle { 0% { opacity: 0.3; } 50% { opacity: 0.5; } 100% { opacity: 0.3; } }
-        @keyframes fadePulse { 0%, 100% { opacity: 0.7; } 50% { opacity: 1; } }
-
+        @keyframes spin {
+          0% {
+            transform: translate(-50%, -50%) rotate(0deg);
+          }
+          100% {
+            transform: translate(-50%, -50%) rotate(360deg);
+          }
+        }
+        @keyframes spin-reverse {
+          0% {
+            transform: translate(-50%, -50%) rotate(0deg);
+          }
+          100% {
+            transform: translate(-50%, -50%) rotate(-360deg);
+          }
+        }
+        @keyframes twinkle {
+          0% {
+            opacity: 0.3;
+          }
+          50% {
+            opacity: 0.5;
+          }
+          100% {
+            opacity: 0.3;
+          }
+        }
+        @keyframes fadePulse {
+          0%,
+          100% {
+            opacity: 0.7;
+          }
+          50% {
+            opacity: 1;
+          }
+        }
       </style>
       <div id="loader-wrapper">
         <div class="loader-content">
@@ -258,7 +301,8 @@
             para E-commerce VTEX & Wake
           </h1>
           <p class="loading-subtext">
-            Desenvolvo interfaces de alta performance que unem design pixel-perfect e velocidade para maximizar conversões em grandes operações.
+            Desenvolvo interfaces de alta performance que unem design pixel-perfect e velocidade
+            para maximizar conversões em grandes operações.
           </p>
         </div>
       </div>
@@ -269,7 +313,8 @@
     <noscript>
       <h1>Especialista em Front-End para E-commerce VTEX & Wake</h1>
       <p>
-        Desenvolvo interfaces de alta performance que unem design pixel-perfect e velocidade para maximizar conversões em grandes operações.
+        Desenvolvo interfaces de alta performance que unem design pixel-perfect e velocidade para
+        maximizar conversões em grandes operações.
       </p>
     </noscript>
   </body>

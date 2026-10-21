@@ -105,7 +105,7 @@ export function FocusRail({
     <div
       className={cn(
         "group relative flex w-full flex-col overflow-hidden bg-transparent text-white outline-none select-none overflow-x-hidden",
-        className
+        className,
       )}
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
@@ -148,7 +148,7 @@ export function FocusRail({
                 key={absIndex}
                 className={cn(
                   "absolute w-[260px] lg:w-[480px] aspect-video rounded-2xl border border-glass bg-glass-secondary shadow-2xl transition-shadow duration-300 backdrop-blur-md",
-                  isCenter ? "z-20 shadow-accent-glow/20 border-accent/30" : "z-10"
+                  isCenter ? "z-20 shadow-accent-glow/20 border-accent/30" : "z-10",
                 )}
                 initial={false}
                 animate={{
@@ -212,9 +212,7 @@ export function FocusRail({
                   </p>
                 )}
                 {activeItem.tech && (
-                  <h4 className="text-xs font-body text-accent pt-2">
-                    {activeItem.tech}
-                  </h4>
+                  <h4 className="text-xs font-body text-accent pt-2">{activeItem.tech}</h4>
                 )}
               </motion.div>
             </AnimatePresence>

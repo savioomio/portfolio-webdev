@@ -1,4 +1,3 @@
-
 import { Timeline, type TimelineEntry } from "./ui/Timeline";
 import { Rocket, Zap, Cpu, Database, Globe } from "lucide-react";
 
@@ -39,26 +38,35 @@ export const Experience = () => {
           </div>
 
           <p className="text-text-secondary text-sm lg:text-base leading-relaxed">
-            Em 2021, comecei meu ensino médio integrado com o curso Técnico em Informática para Internet 
-            no Instituto Federal de Educação, Ciência e Tecnologia Baiano. Foi lá que tive meu primeiro 
-            contato significativo com tecnologia, descobrindo minha paixão por desenvolvimento.
+            Em 2021, comecei meu ensino médio integrado com o curso Técnico em Informática para
+            Internet no Instituto Federal de Educação, Ciência e Tecnologia Baiano. Foi lá que tive
+            meu primeiro contato significativo com tecnologia, descobrindo minha paixão por
+            desenvolvimento.
           </p>
 
           <ul className="space-y-2">
             <li className="flex items-start gap-2 text-text-secondary text-xs lg:text-sm">
-              <span className="text-accent" aria-hidden="true">✓</span>
+              <span className="text-accent" aria-hidden="true">
+                ✓
+              </span>
               <span>Lógica de Programação</span>
             </li>
             <li className="flex items-start gap-2 text-text-secondary text-xs lg:text-sm">
-              <span className="text-accent" aria-hidden="true">✓</span>
+              <span className="text-accent" aria-hidden="true">
+                ✓
+              </span>
               <span>Webdesign</span>
             </li>
             <li className="flex items-start gap-2 text-text-secondary text-xs lg:text-sm">
-              <span className="text-accent" aria-hidden="true">✓</span>
+              <span className="text-accent" aria-hidden="true">
+                ✓
+              </span>
               <span>Fundamentos de Informática</span>
             </li>
             <li className="flex items-start gap-2 text-text-secondary text-xs lg:text-sm">
-              <span className="text-accent" aria-hidden="true">✓</span>
+              <span className="text-accent" aria-hidden="true">
+                ✓
+              </span>
               <span>Fundamentos de Sistemas Operacionais</span>
             </li>
           </ul>
@@ -82,12 +90,16 @@ export const Experience = () => {
           </div>
 
           <p className="text-text-secondary text-sm lg:text-base leading-relaxed">
-            Já no segundo ano do ensino médio, tive contato com robótica através da disciplina de "Projeto Integrador I",
-            onde desenvolvemos projetos fascinantes como uma aranha robô e um sistema de detecção de vazamento de gás.
+            Já no segundo ano do ensino médio, tive contato com robótica através da disciplina de
+            "Projeto Integrador I", onde desenvolvemos projetos fascinantes como uma aranha robô e
+            um sistema de detecção de vazamento de gás.
           </p>
 
           <div className="flex flex-row flex-wrap gap-3 mt-6">
-            <VideoPlayer videoSrc="https://savioomiodev.com.br/assets/videos/aranha-robo.mp4" title="Aranha Robô - Projeto Integrador" />
+            <VideoPlayer
+              videoSrc="https://savioomiodev.com.br/assets/videos/aranha-robo.mp4"
+              title="Aranha Robô - Projeto Integrador"
+            />
             <div className="aspect-square sm:max-h-[200px] relative overflow-hidden rounded-lg group">
               <img
                 src="/timeline/control_aranha.webp"
@@ -114,23 +126,33 @@ export const Experience = () => {
 
           <ul className="space-y-2">
             <li className="flex items-start gap-2 text-text-secondary text-xs lg:text-sm">
-              <span className="text-accent" aria-hidden="true">✓</span>
+              <span className="text-accent" aria-hidden="true">
+                ✓
+              </span>
               <span>Projeto Integrador I</span>
             </li>
             <li className="flex items-start gap-2 text-text-secondary text-xs lg:text-sm">
-              <span className="text-accent" aria-hidden="true">✓</span>
+              <span className="text-accent" aria-hidden="true">
+                ✓
+              </span>
               <span>Análise de Sistemas para Web</span>
             </li>
             <li className="flex items-start gap-2 text-text-secondary text-xs lg:text-sm">
-              <span className="text-accent" aria-hidden="true">✓</span>
+              <span className="text-accent" aria-hidden="true">
+                ✓
+              </span>
               <span>Banco de Dados</span>
             </li>
             <li className="flex items-start gap-2 text-text-secondary text-xs lg:text-sm">
-              <span className="text-accent" aria-hidden="true">✓</span>
+              <span className="text-accent" aria-hidden="true">
+                ✓
+              </span>
               <span>Programação de Sistemas para Web I</span>
             </li>
             <li className="flex items-start gap-2 text-text-secondary text-xs lg:text-sm">
-              <span className="text-accent" aria-hidden="true">✓</span>
+              <span className="text-accent" aria-hidden="true">
+                ✓
+              </span>
               <span>Redes de Computadores</span>
             </li>
           </ul>
@@ -140,18 +162,19 @@ export const Experience = () => {
               <Database className="w-4 h-4 text-accent" /> Projeto Integrado
             </p>
             <p className="text-text-secondary text-sm leading-relaxed mb-3">
-              As disciplinas de Análise, Banco de Dados e Programação se uniram para um grande trabalho integrado.
-              Tivemos a experiência de desenvolver um protótipo de sistema completo, desde o levantamento de requisitos
-              e abstração do banco de dados até o sistema documentado.
+              As disciplinas de Análise, Banco de Dados e Programação se uniram para um grande
+              trabalho integrado. Tivemos a experiência de desenvolver um protótipo de sistema
+              completo, desde o levantamento de requisitos e abstração do banco de dados até o
+              sistema documentado.
             </p>
             <p className="text-text-secondary text-sm leading-relaxed mb-4">
-              O resultado foi um <strong>Sistema de Gerenciamento de Tarefas</strong> com ranking da turma,
-              projetado para causar competitividade e estimular a produtividade.
+              O resultado foi um <strong>Sistema de Gerenciamento de Tarefas</strong> com ranking da
+              turma, projetado para causar competitividade e estimular a produtividade.
             </p>
             <div className="rounded-lg overflow-hidden group relative w-fit sm:h-[200px] ">
-              <img 
-                src="/timeline/jsor_projeto_integrado.webp" 
-                alt="Sistema de Gerenciamento de Tarefas" 
+              <img
+                src="/timeline/jsor_projeto_integrado.webp"
+                alt="Sistema de Gerenciamento de Tarefas"
                 className="w-auto h-full object-contain group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
               />
@@ -166,15 +189,25 @@ export const Experience = () => {
               <Globe className="w-5 h-5 text-accent" /> Estágio no CETEIA
             </h5>
             <p className="text-text-secondary text-sm lg:text-base leading-relaxed mb-4">
-              Realizei meu estágio obrigatório do IF Baiano (não remunerado) desenvolvendo um site institucional para o <a href="https://www.instagram.com/ceteia_ifbaiano/" target="_blank" rel="noopener noreferrer" className="text-accent underline underline-offset-2 hover:text-accent-hover transition-colors" title="Visitar o perfil do CETEIA no Instagram">CETEIA</a>,
-              garantindo experiência prática com WordPress.
+              Realizei meu estágio obrigatório do IF Baiano (não remunerado) desenvolvendo um site
+              institucional para o{" "}
+              <a
+                href="https://www.instagram.com/ceteia_ifbaiano/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent underline underline-offset-2 hover:text-accent-hover transition-colors"
+                title="Visitar o perfil do CETEIA no Instagram"
+              >
+                CETEIA
+              </a>
+              , garantindo experiência prática com WordPress.
             </p>
-            
+
             <div className="flex flex-wrap gap-4 mb-3">
               <div className="aspect-video max-h-[200px] relative overflow-hidden rounded-lg group ">
-                <img 
-                  src="/timeline/build_site_ceteia.webp" 
-                  alt="Construção do site CETEIA" 
+                <img
+                  src="/timeline/build_site_ceteia.webp"
+                  alt="Construção do site CETEIA"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
@@ -183,9 +216,9 @@ export const Experience = () => {
                 </div>
               </div>
               <div className="aspect-square sm:max-h-[200px] relative overflow-hidden rounded-lg group">
-                <img 
-                  src="/timeline/present_site_ceteia.webp" 
-                  alt="Apresentação do site CETEIA" 
+                <img
+                  src="/timeline/present_site_ceteia.webp"
+                  alt="Apresentação do site CETEIA"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
@@ -194,10 +227,10 @@ export const Experience = () => {
                 </div>
               </div>
             </div>
-            
-            <a 
-              href="https://www.instagram.com/p/CuZ90PeguEZ/?img_index=1" 
-              target="_blank" 
+
+            <a
+              href="https://www.instagram.com/p/CuZ90PeguEZ/?img_index=1"
+              target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-accent text-sm underline underline-offset-2 hover:text-accent-hover transition-colors"
               title="Ver publicação original no Instagram"
@@ -223,31 +256,42 @@ export const Experience = () => {
               </p>
             </div>
           </div>
-          
+
           <p className="text-text-secondary text-sm lg:text-base leading-relaxed">
-            No final de 2023 eu comecei o último ano do ensino médio que iria acabar em 2024, consolidei minha formação técnica com disciplinas avançadas e projetos práticos,
+            No final de 2023 eu comecei o último ano do ensino médio que iria acabar em 2024,
+            consolidei minha formação técnica com disciplinas avançadas e projetos práticos,
             preparando-me para os desafios profissionais.
           </p>
 
           <ul className="space-y-2">
             <li className="flex items-start gap-2 text-text-secondary text-xs lg:text-sm">
-              <span className="text-accent" aria-hidden="true">✓</span>
+              <span className="text-accent" aria-hidden="true">
+                ✓
+              </span>
               <span>Projeto de Conclusão de Curso (PCC)</span>
             </li>
             <li className="flex items-start gap-2 text-text-secondary text-xs lg:text-sm">
-              <span className="text-accent" aria-hidden="true">✓</span>
+              <span className="text-accent" aria-hidden="true">
+                ✓
+              </span>
               <span>Projeto Integrador II</span>
             </li>
             <li className="flex items-start gap-2 text-text-secondary text-xs lg:text-sm">
-              <span className="text-accent" aria-hidden="true">✓</span>
+              <span className="text-accent" aria-hidden="true">
+                ✓
+              </span>
               <span>Programação de Sistemas para Web II</span>
             </li>
             <li className="flex items-start gap-2 text-text-secondary text-xs lg:text-sm">
-              <span className="text-accent" aria-hidden="true">✓</span>
+              <span className="text-accent" aria-hidden="true">
+                ✓
+              </span>
               <span>Instalação e Configuração de Servidores</span>
             </li>
             <li className="flex items-start gap-2 text-text-secondary text-xs lg:text-sm">
-              <span className="text-accent" aria-hidden="true">✓</span>
+              <span className="text-accent" aria-hidden="true">
+                ✓
+              </span>
               <span>Orientação de Prática Profissional</span>
             </li>
           </ul>
@@ -257,10 +301,19 @@ export const Experience = () => {
               <Cpu className="w-5 h-5 text-accent" /> Drones Guanambi
             </h5>
             <p className="text-text-secondary text-sm leading-relaxed mb-3">
-              Um grande marco na minha vida foi a entrada na equipe de drones do IF Baiano: <a href="https://www.instagram.com/dronesguanambi/" target="_blank" rel="noopener noreferrer" className="text-accent underline underline-offset-2 hover:text-accent-hover transition-colors" title="Visitar o perfil do Drones Guanambi no Instagram">"Drones Guanambi"</a>.
-              Foi uma oportunidade incrível de explorar novas tecnologias e trabalhar em equipe.
+              Um grande marco na minha vida foi a entrada na equipe de drones do IF Baiano:{" "}
+              <a
+                href="https://www.instagram.com/dronesguanambi/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent underline underline-offset-2 hover:text-accent-hover transition-colors"
+                title="Visitar o perfil do Drones Guanambi no Instagram"
+              >
+                "Drones Guanambi"
+              </a>
+              . Foi uma oportunidade incrível de explorar novas tecnologias e trabalhar em equipe.
             </p>
-            <div className="flex flex-wrap gap-4 mb-3"> 
+            <div className="flex flex-wrap gap-4 mb-3">
               <div className="rounded-lg overflow-hidden relative group w-fit sm:h-[200px] ">
                 <img
                   src="/timeline/drone_used_ifsc.webp"
@@ -306,7 +359,6 @@ export const Experience = () => {
                 </div>
               </div>
             </div>
-
           </div>
 
           <div className="mt-6 p-5 glass-card rounded-lg backdrop-blur-sm">
@@ -314,15 +366,15 @@ export const Experience = () => {
               <Database className="w-5 h-5 text-accent" /> Estágio Agro Callidos
             </h5>
             <p className="text-text-secondary text-sm lg:text-base leading-relaxed mb-4">
-              Em paralelo, fui aprovado no processo seletivo para bolsista de estágio técnico em informática 
-              no projeto "Agro Callidos" do CETEIA.
+              Em paralelo, fui aprovado no processo seletivo para bolsista de estágio técnico em
+              informática no projeto "Agro Callidos" do CETEIA.
             </p>
-            
-             <div className="flex flex-row flex-wrap gap-4 mb-3">
+
+            <div className="flex flex-row flex-wrap gap-4 mb-3">
               <div className="aspect-video relative overflow-hidden rounded-lg group sm:max-h-[200px]">
-                <img 
-                  src="/timeline/estagio_ceteia_meeting.webp" 
-                  alt="Reunião do estágio na Agro Callidos no CETEIA" 
+                <img
+                  src="/timeline/estagio_ceteia_meeting.webp"
+                  alt="Reunião do estágio na Agro Callidos no CETEIA"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
@@ -331,24 +383,24 @@ export const Experience = () => {
                 </div>
               </div>
               <div className="aspect-square relative overflow-hidden rounded-lg group sm:max-h-[200px]">
-                <img 
-                  src="/timeline/present_estagio_tenda_ciencia.jfif" 
-                  alt="Apresentação na Tenda da Ciência 2024" 
+                <img
+                  src="/timeline/present_estagio_tenda_ciencia.jfif"
+                  alt="Apresentação na Tenda da Ciência 2024"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
-                 <div className="absolute bottom-0 left-0 right-0 bg-black/60 p-2 text-xs text-accent text-center backdrop-blur-sm transform translate-y-0 md:translate-y-full md:group-hover:translate-y-0 transition-transform">
+                <div className="absolute bottom-0 left-0 right-0 bg-black/60 p-2 text-xs text-accent text-center backdrop-blur-sm transform translate-y-0 md:translate-y-full md:group-hover:translate-y-0 transition-transform">
                   Apresentação na Tenda da Ciência 2024
                 </div>
               </div>
               <div className="aspect-square relative overflow-hidden rounded-lg group sm:max-h-[200px]">
-                <img 
-                  src="/timeline/setup_estagio_caliduslink.jfif" 
-                  alt="Setup do estágio na Agro Callidos no CETEIA" 
+                <img
+                  src="/timeline/setup_estagio_caliduslink.jfif"
+                  alt="Setup do estágio na Agro Callidos no CETEIA"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
-                 <div className="absolute bottom-0 left-0 right-0 bg-black/60 p-2 text-xs text-accent text-center backdrop-blur-sm transform translate-y-0 md:translate-y-full md:group-hover:translate-y-0 transition-transform">
+                <div className="absolute bottom-0 left-0 right-0 bg-black/60 p-2 text-xs text-accent text-center backdrop-blur-sm transform translate-y-0 md:translate-y-full md:group-hover:translate-y-0 transition-transform">
                   Setup do estágio na Agro Callidos no CETEIA
                 </div>
               </div>
@@ -372,27 +424,35 @@ export const Experience = () => {
               </p>
             </div>
           </div>
-          
+
           <p className="text-text-secondary text-sm lg:text-base leading-relaxed">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque 
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
             laudantium, totam rem aperiam. Eaque ipsa quae ab illo inventore.
           </p>
 
           <ul className="space-y-2">
             <li className="flex items-start gap-2 text-text-secondary text-xs lg:text-sm">
-              <span className="text-accent" aria-hidden="true">✓</span>
+              <span className="text-accent" aria-hidden="true">
+                ✓
+              </span>
               <span>Nemo enim ipsam voluptatem quia voluptas</span>
             </li>
             <li className="flex items-start gap-2 text-text-secondary text-xs lg:text-sm">
-              <span className="text-accent" aria-hidden="true">✓</span>
+              <span className="text-accent" aria-hidden="true">
+                ✓
+              </span>
               <span>Aspernatur aut odit aut fugit sed quia</span>
             </li>
             <li className="flex items-start gap-2 text-text-secondary text-xs lg:text-sm">
-              <span className="text-accent" aria-hidden="true">✓</span>
+              <span className="text-accent" aria-hidden="true">
+                ✓
+              </span>
               <span>Consequuntur magni dolores eos qui ratione</span>
             </li>
             <li className="flex items-start gap-2 text-text-secondary text-xs lg:text-sm">
-              <span className="text-accent" aria-hidden="true">✓</span>
+              <span className="text-accent" aria-hidden="true">
+                ✓
+              </span>
               <span>Neque porro quisquam est qui dolorem</span>
             </li>
           </ul>
@@ -433,27 +493,35 @@ export const Experience = () => {
               </p>
             </div>
           </div>
-          
+
           <p className="text-text-secondary text-sm lg:text-base leading-relaxed">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque 
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
             laudantium, totam rem aperiam. Eaque ipsa quae ab illo inventore.
           </p>
 
           <ul className="space-y-2">
             <li className="flex items-start gap-2 text-text-secondary text-xs lg:text-sm">
-              <span className="text-accent" aria-hidden="true">✓</span>
+              <span className="text-accent" aria-hidden="true">
+                ✓
+              </span>
               <span>Nemo enim ipsam voluptatem quia voluptas</span>
             </li>
             <li className="flex items-start gap-2 text-text-secondary text-xs lg:text-sm">
-              <span className="text-accent" aria-hidden="true">✓</span>
+              <span className="text-accent" aria-hidden="true">
+                ✓
+              </span>
               <span>Aspernatur aut odit aut fugit sed quia</span>
             </li>
             <li className="flex items-start gap-2 text-text-secondary text-xs lg:text-sm">
-              <span className="text-accent" aria-hidden="true">✓</span>
+              <span className="text-accent" aria-hidden="true">
+                ✓
+              </span>
               <span>Consequuntur magni dolores eos qui ratione</span>
             </li>
             <li className="flex items-start gap-2 text-text-secondary text-xs lg:text-sm">
-              <span className="text-accent" aria-hidden="true">✓</span>
+              <span className="text-accent" aria-hidden="true">
+                ✓
+              </span>
               <span>Neque porro quisquam est qui dolorem</span>
             </li>
           </ul>
@@ -494,27 +562,35 @@ export const Experience = () => {
               </p>
             </div>
           </div>
-          
+
           <p className="text-text-secondary text-sm lg:text-base leading-relaxed">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque 
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
             laudantium, totam rem aperiam. Eaque ipsa quae ab illo inventore.
           </p>
 
           <ul className="space-y-2">
             <li className="flex items-start gap-2 text-text-secondary text-xs lg:text-sm">
-              <span className="text-accent" aria-hidden="true">✓</span>
+              <span className="text-accent" aria-hidden="true">
+                ✓
+              </span>
               <span>Nemo enim ipsam voluptatem quia voluptas</span>
             </li>
             <li className="flex items-start gap-2 text-text-secondary text-xs lg:text-sm">
-              <span className="text-accent" aria-hidden="true">✓</span>
+              <span className="text-accent" aria-hidden="true">
+                ✓
+              </span>
               <span>Aspernatur aut odit aut fugit sed quia</span>
             </li>
             <li className="flex items-start gap-2 text-text-secondary text-xs lg:text-sm">
-              <span className="text-accent" aria-hidden="true">✓</span>
+              <span className="text-accent" aria-hidden="true">
+                ✓
+              </span>
               <span>Consequuntur magni dolores eos qui ratione</span>
             </li>
             <li className="flex items-start gap-2 text-text-secondary text-xs lg:text-sm">
-              <span className="text-accent" aria-hidden="true">✓</span>
+              <span className="text-accent" aria-hidden="true">
+                ✓
+              </span>
               <span>Neque porro quisquam est qui dolorem</span>
             </li>
           </ul>

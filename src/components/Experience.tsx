@@ -1,12 +1,27 @@
+import { useRef } from "react";
 import { Timeline, type TimelineEntry } from "./ui/Timeline";
 import { Rocket, Zap, Cpu, Database, Globe } from "lucide-react";
+import { useInViewPlay } from "../hooks/useInViewPlay";
 
-const VideoPlayer = ({ videoSrc, title }: { videoSrc: string; title: string }) => {
+const VideoPlayer = ({
+  videoSrc,
+  poster,
+  title,
+}: {
+  videoSrc: string;
+  poster: string;
+  title: string;
+}) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  useInViewPlay(videoRef);
+
   return (
     <div className="w-full max-w-[355px] h-[200px] rounded-lg overflow-hidden relative shadow-lg glass-card group">
       <video
+        ref={videoRef}
         src={videoSrc}
-        autoPlay
+        poster={poster}
+        preload="none"
         muted
         loop
         playsInline
@@ -97,7 +112,8 @@ export const Experience = () => {
 
           <div className="flex flex-row flex-wrap gap-3 mt-6">
             <VideoPlayer
-              videoSrc="https://savioomiodev.com.br/assets/videos/aranha-robo.mp4"
+              videoSrc="/videos/aranha-robo.mp4"
+              poster="/videos/aranha-robo-poster.webp"
               title="Aranha Robô - Projeto Integrador"
             />
             <div className="aspect-square sm:max-h-[200px] relative overflow-hidden rounded-lg group">

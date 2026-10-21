@@ -1,8 +1,4 @@
-import {
-  useScroll,
-  useTransform,
-  motion,
-} from "framer-motion";
+import { useScroll, useTransform, motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 
 export interface TimelineEntry {
@@ -31,17 +27,15 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const opacityTransform = useTransform(scrollYProgress, [0, 0.05], [0, 1]);
 
   return (
-    <div
-      className="w-full font-body"
-      ref={containerRef}
-    >
+    <div className="w-full font-body" ref={containerRef}>
       <div className="container-base">
         <h2 className="font-heading text-3xl lg:text-4xl font-bold mb-4 text-text-primary flex items-center gap-4">
           <span className="w-2 h-10 bg-accent rounded-full"></span>
           Linha do tempo
         </h2>
         <p className="text-text-secondary text-sm lg:text-base max-w-2xl mb-12">
-          Minha jornada de aprendizado e desenvolvimento profissional.</p>
+          Minha jornada de aprendizado e desenvolvimento profissional.
+        </p>
       </div>
 
       <div ref={ref} className="relative container-base pb-12 lg:pb-20 max-lg:pl-0">
@@ -56,20 +50,18 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                   <div className="absolute left-0 lg:left-0 top-0 lg:top-0 h-10 w-10 rounded-full bg-black flex items-center justify-center z-0">
                     <div className="h-4 w-4 rounded-full bg-glass-secondary border border-accent/30 p-2 shadow-[0_0_12px_rgba(97,218,251,0.3)]" />
                   </div>
-                
+
                   <h3 className="font-heading text-xl lg:text-3xl xl:text-4xl font-bold text-text-secondary ml-10 lg:ml-14 max-lg:w-max max-lg:px-4 max-lg:py-2 max-lg:rounded-2xl max-lg:backdrop-blur-lg max-lg:border max-lg:border-glass max-lg:[background:var(--glass-primary)] lg:min-w-[141px]">
                     {item.title}
                   </h3>
                 </div>
               </div>
 
-              <div className="flex-1 pb-14 lg:pb-12 pt-14 lg:pt-0">
-                {item.content}
-              </div>
+              <div className="flex-1 pb-14 lg:pb-12 pt-14 lg:pt-0">{item.content}</div>
             </li>
           ))}
         </ol>
-        
+
         <div
           style={{
             height: height + "px",

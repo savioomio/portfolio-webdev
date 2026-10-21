@@ -61,9 +61,7 @@ export const Footer = ({
                         aria-label={link.label}
                         rel={isMailto ? undefined : "noopener noreferrer"}
                       >
-                        <div className="w-6 h-6 hover:scale-110 duration-300">
-                          {link.icon}
-                        </div>
+                        <div className="w-6 h-6 hover:scale-110 duration-300">{link.icon}</div>
                         <span className="sr-only">{link.label}</span>
                       </a>
                     );
@@ -106,10 +104,10 @@ export const Footer = ({
         </div>
 
         {/* Large background text */}
-        <div 
+        <div
           className="bg-gradient-to-b from-text-primary/10 via-text-primary/10 to-transparent bg-clip-text text-transparent leading-none absolute left-1/2 -translate-x-1/2 max-lg:top-20 lg:bottom-32 font-heading font-extrabold tracking-tighter pointer-events-none select-none text-center container-base text-[12vh] lg:text-[24vh]"
           style={{
-            width: '100%'
+            width: "100%",
           }}
         >
           SÁVIO <br /> PESSÔA <br /> AFONSO

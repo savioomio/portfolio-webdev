@@ -1,35 +1,35 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { motion, type HTMLMotionProps } from "framer-motion"
+import * as React from "react";
+import { motion, type HTMLMotionProps } from "framer-motion";
 
-import { cn } from "@/lib/utils"
-import type { LucideIcon } from "lucide-react"
+import { cn } from "@/lib/utils";
+import type { LucideIcon } from "lucide-react";
 
 export interface MenuItem {
-  icon: LucideIcon | React.FC
-  label: string
-  href: string
-  gradient: string
-  iconColor: string
+  icon: LucideIcon | React.FC;
+  label: string;
+  href: string;
+  gradient: string;
+  iconColor: string;
 }
 
 interface MenuBarProps extends HTMLMotionProps<"nav"> {
-  items: MenuItem[]
-  activeItem?: string
-  onItemClick?: (label: string) => void
-  orientation?: "horizontal" | "vertical"
+  items: MenuItem[];
+  activeItem?: string;
+  onItemClick?: (label: string) => void;
+  orientation?: "horizontal" | "vertical";
 }
 
 const itemVariants = {
   initial: { rotateX: 0, opacity: 1 },
   hover: { rotateX: -90, opacity: 0 },
-}
+};
 
 const backVariants = {
   initial: { rotateX: 90, opacity: 0 },
   hover: { rotateX: 0, opacity: 1 },
-}
+};
 
 const glowVariants = {
   initial: { opacity: 0, scale: 0.8 },
@@ -41,7 +41,7 @@ const glowVariants = {
       scale: { duration: 0.5, type: "spring" as const, stiffness: 300, damping: 25 },
     },
   },
-}
+};
 
 const navGlowVariants = {
   initial: { opacity: 0 },
@@ -52,14 +52,14 @@ const navGlowVariants = {
       ease: [0.4, 0, 0.2, 1] as const,
     },
   },
-}
+};
 
 const sharedTransition = {
   type: "spring" as const,
   stiffness: 100,
   damping: 20,
   duration: 0.5,
-}
+};
 
 export const MenuBar = React.forwardRef<HTMLElement, MenuBarProps>(
   ({ className, items, activeItem, onItemClick, orientation = "horizontal", ...props }, ref) => {
@@ -78,21 +78,26 @@ export const MenuBar = React.forwardRef<HTMLElement, MenuBarProps>(
           className="absolute bg-gradient-radial from-transparent via-accent/20 to-transparent rounded-3xl z-0 pointer-events-none"
           variants={navGlowVariants}
         />
-        <ul className={cn("flex items-center relative z-10", orientation === "vertical" ? "flex-col gap-6" : "flex-row gap-2")}>
+        <ul
+          className={cn(
+            "flex items-center relative z-10",
+            orientation === "vertical" ? "flex-col gap-6" : "flex-row gap-2",
+          )}
+        >
           {items.map((item) => {
-            const Icon = item.icon
-            const isActive = item.label === activeItem
+            const Icon = item.icon;
+            const isActive = item.label === activeItem;
 
             return (
               <motion.li key={item.label} className="relative">
                 <a
                   href={item.href}
                   onClick={(e) => {
-                    e.preventDefault()
-                    onItemClick?.(item.label)
-                    const element = document.querySelector(item.href)
+                    e.preventDefault();
+                    onItemClick?.(item.label);
+                    const element = document.querySelector(item.href);
                     if (element) {
-                      element.scrollIntoView({ behavior: "smooth" })
+                      element.scrollIntoView({ behavior: "smooth" });
                     }
                   }}
                   className="block w-full !text-inherit !no-underline"
@@ -167,12 +172,12 @@ export const MenuBar = React.forwardRef<HTMLElement, MenuBarProps>(
                   </motion.div>
                 </a>
               </motion.li>
-            )
+            );
           })}
         </ul>
       </motion.nav>
-    )
+    );
   },
-)
+);
 
-MenuBar.displayName = "MenuBar"
+MenuBar.displayName = "MenuBar";

@@ -12,7 +12,7 @@ Ao terminar: marque aqui no mesmo PR e siga a [definição de pronto](../planeja
   - Aceite: um commit com mensagem fora do padrão é recusado; um arquivo mal formatado é corrigido no commit.
 - [ ] **T03** Proteção da `main`: push direto bloqueado, merge só por PR com o CI verde (via `gh api`). Estratégia de branches descrita no README e no `CLAUDE.md`. Branch: `docs/estrategia-branches`. Req 11.
   - Aceite: `git push origin main` é recusado pelo GitHub.
-- [ ] **T04** Remover o Google Analytics do site pessoal (`G-D95NTX6SGZ`) do `index.html`; se quiser analytics, usar `VITE_GA_ID` e criar o `.env.example`. Branch: `fix/analytics`.
+- [x] **T04** Remover o Google Analytics do site pessoal (`G-D95NTX6SGZ`) do `index.html`; se quiser analytics, usar `VITE_GA_ID` e criar o `.env.example`. Branch: `fix/analytics`. *(removido sem substituto; o `VITE_GA_ID` fica para quando houver um ID próprio do projeto)*
   - Aceite: nenhuma requisição para `google-analytics.com` com o ID pessoal.
 - [ ] **T05** Corrigir o e-mail do rodapé: `saviopessaafonso` → `saviopessoaafonso`. Branch: `fix/email-rodape`.
 - [x] **T06** Vídeo da aranha robô no `Experience.tsx`: trocar a URL absoluta por `/videos/aranha-robo.mp4`, usar `poster="/videos/aranha-robo-poster.webp"` e `preload="none"`, e dar play só quando o vídeo aparecer na tela (IntersectionObserver). Branch: `fix/video-aranha`. Req 8.

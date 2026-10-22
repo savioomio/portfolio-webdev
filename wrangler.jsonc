@@ -1,6 +1,8 @@
 {
   // Worker separado do site pessoal (savioomiodev): deploy aqui nunca sobrescreve o dominio principal.
   "name": "portfolio-webdev",
+  // Conta da Cloudflare (o ID nao e segredo); assim o deploy pelo CI so precisa do CLOUDFLARE_API_TOKEN.
+  "account_id": "f44313ac7ffa8ff75063bb54ff40b6f0",
   "compatibility_date": "2026-09-16",
   "workers_dev": true,
   "assets": {

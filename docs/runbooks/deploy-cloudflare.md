@@ -1,20 +1,41 @@
 # Runbook: deploy na Cloudflare
 
-Publica o build em `https://webdev.savioomiodev.com.br` (Worker `portfolio-webdev`). Decisão em [ADR 0002](../adr/0002-hospedagem-cloudflare-workers.md).
+Publica o build em `https://webdev.savioomiodev.com.br` (Worker `portfolio-webdev`). Decisões em [ADR 0002](../adr/0002-hospedagem-cloudflare-workers.md) (hospedagem) e [ADR 0005](../adr/0005-deploy-automatico-github-actions.md) (deploy automático).
 
 > **Atenção:** o Worker `savioomiodev` é o **site pessoal**. Antes de qualquer deploy, confira que `wrangler.jsonc` tem `"name": "portfolio-webdev"`.
 
-## Quando usar
+## Deploy automático (o normal)
 
-Até a T07 (deploy automático) ficar pronta, use este runbook depois de cada merge na `main`. Depois dela, só em emergência ou para fazer rollback.
+Cada merge na `main` dispara o job **Deploy na Cloudflare** do CI ([`.github/workflows/deploy.yml`](../../.github/workflows/deploy.yml)): ele só roda depois do `Build de validacao` passar e executa o mesmo `npm run deploy` do deploy manual. PR nunca publica. Acompanhe em **Actions** no GitHub ou com:
 
-## Pré-requisitos
+```bash
+gh run watch                       # acompanha a execução mais recente
+npx wrangler deployments list      # a versão nova aparece com a hora do merge
+```
+
+### Token da Cloudflare (criar ou trocar)
+
+O job precisa do segredo `CLOUDFLARE_API_TOKEN` no GitHub. O ID da conta já está no `wrangler.jsonc`. Se o token expirar ou vazar:
+
+1. Em <https://dash.cloudflare.com/profile/api-tokens>: **Create Token** → modelo **Edit Cloudflare Workers** → **Use template**.
+2. **Account Resources:** Include → `Saviopessoaafonso@gmail.com's Account`. **Zone Resources:** Include → Specific zone → `savioomiodev.com.br`.
+3. **Continue to summary** → **Create Token** → copie o token (ele só aparece uma vez).
+4. Em <https://github.com/savioomio/portfolio-webdev/settings/secrets/actions>: **New repository secret**, nome `CLOUDFLARE_API_TOKEN`, cole o token e salve. Pelo terminal: `gh secret set CLOUDFLARE_API_TOKEN` e cole quando pedir.
+5. Rode o job de novo em **Actions** (ou faça um merge) e confira que ele passou.
+
+Se o job falhar com erro de permissão no domínio, edite o token e acrescente **Zone → DNS → Edit** para `savioomiodev.com.br`.
+
+## Deploy manual (emergência)
+
+Use só se o CI estiver fora do ar ou para publicar uma correção urgente que já está na `main`.
+
+### Pré-requisitos
 
 - Dependências instaladas: `npm install`.
 - Wrangler logado na conta `saviopessoaafonso@gmail.com`. Confira com `npx wrangler whoami`; se não estiver logado, siga o [setup do PC do lab](./setup-pc-do-lab.md#3-login-no-cloudflare).
 - Estar na `main` atualizada: `git switch main && git pull`.
 
-## Passos
+### Passos
 
 ```bash
 npm run deploy          # = npm run build && wrangler deploy
@@ -43,9 +64,11 @@ npx wrangler rollback <version-id> # volta para uma versão anterior
 
 | Arquivo | Papel |
 | --- | --- |
-| `wrangler.jsonc` | Nome do Worker, pasta `dist/`, fallback de SPA (`not_found_handling`) e domínio (`routes`) |
+| `wrangler.jsonc` | Nome do Worker, conta (`account_id`), pasta `dist/`, fallback de SPA (`not_found_handling`) e domínio (`routes`) |
 | `public/_headers` | Cache: `assets/` e `fonts/` imutáveis; imagens por 7 dias; HTML sempre revalida |
 | `package.json` | Script `deploy` |
+| `.github/workflows/deploy.yml` | Job **Deploy na Cloudflare**, que roda `npm run deploy` a cada push na `main` |
+| Segredo `CLOUDFLARE_API_TOKEN` (GitHub) | Token do modelo "Edit Cloudflare Workers", usado só pelo job de deploy |
 
 ## Problemas conhecidos
 

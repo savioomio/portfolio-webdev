@@ -10,7 +10,7 @@ Ao terminar: marque aqui no mesmo PR e siga a [definição de pronto](../planeja
 - [x] **T01** Pasta `docs/` (requisitos, planejamento, backlog, ADRs, runbooks), `CLAUDE.md` inicial, README reescrito, `.env` no `.gitignore`, e descrição, site e tópicos do repositório no GitHub. Branch: `docs/planejamento`.
 - [x] **T02** Padrões automáticos: Prettier, Husky, lint-staged (ESLint + Prettier nos arquivos do commit) e commitlint com Conventional Commits; scripts `format` e `lint` no `package.json`. Branch: `chore/qualidade-codigo`. Req 11, 12.
   - Aceite: um commit com mensagem fora do padrão é recusado; um arquivo mal formatado é corrigido no commit.
-- [ ] **T03** Proteção da `main`: push direto bloqueado, merge só por PR com o CI verde (via `gh api`). Estratégia de branches descrita no README e no `CLAUDE.md`. Branch: `docs/estrategia-branches`. Req 11.
+- [x] **T03** Proteção da `main`: push direto bloqueado, merge só por PR com o CI verde (via `gh api`). Estratégia de branches descrita no README e no `CLAUDE.md`. Branch: `docs/estrategia-branches`. Req 11.
   - Aceite: `git push origin main` é recusado pelo GitHub.
 - [x] **T04** Remover o Google Analytics do site pessoal (`G-D95NTX6SGZ`) do `index.html`; se quiser analytics, usar `VITE_GA_ID` e criar o `.env.example`. Branch: `fix/analytics`. *(removido sem substituto; o `VITE_GA_ID` fica para quando houver um ID próprio do projeto)*
   - Aceite: nenhuma requisição para `google-analytics.com` com o ID pessoal.

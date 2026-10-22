@@ -31,7 +31,7 @@ export function Contact() {
     },
     {
       icon: <WhatsAppIcon className="w-5 h-5" />,
-      href: "https://wa.me/5577991599090?text=Ol%C3%A1%20S%C3%A1vio!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar.",
+      href: "https://wa.me/5577991966527?text=Ol%C3%A1%20S%C3%A1vio!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar.",
       label: "WhatsApp",
     },
     {

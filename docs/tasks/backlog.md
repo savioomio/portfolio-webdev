@@ -15,6 +15,7 @@ Ao terminar: marque aqui no mesmo PR e siga a [definição de pronto](../planeja
 - [x] **T04** Remover o Google Analytics do site pessoal (`G-D95NTX6SGZ`) do `index.html`; se quiser analytics, usar `VITE_GA_ID` e criar o `.env.example`. Branch: `fix/analytics`. *(removido sem substituto; o `VITE_GA_ID` fica para quando houver um ID próprio do projeto)*
   - Aceite: nenhuma requisição para `google-analytics.com` com o ID pessoal.
 - [x] **T05** Corrigir o e-mail do rodapé: `saviopessaafonso` → `saviopessoaafonso`. Branch: `fix/email-rodape`. *(corrigido também na página `/links`)*
+- [x] **T30** Corrigir o WhatsApp do contato e da página `/links`: `77 99159-9090` → `77 99196-6527`. Branch: `fix/whatsapp`.
 - [x] **T06** Vídeo da aranha robô no `Experience.tsx`: trocar a URL absoluta por `/videos/aranha-robo.mp4`, usar `poster="/videos/aranha-robo-poster.webp"` e `preload="none"`, e dar play só quando o vídeo aparecer na tela (IntersectionObserver). Branch: `fix/video-aranha`. Req 8.
   - Arquivos em `public/videos/`: `aranha-robo.mp4` (1,36 MB; 640×360, 30 fps, H.264, sem áudio, `faststart`) e `aranha-robo-poster.webp` (35 KB). Origem: https://www.youtube.com/watch?v=ujD9UP9rh4U (canal próprio, 26 s), comprimido com o `ffmpeg-static` do projeto: `-an -vf "scale=640:-2,fps=30" -c:v libx264 -preset slow -crf 28 -movflags +faststart`.
   - Aceite: o vídeo roda em loop no desktop e no celular, e não aparece na aba Network antes de rolar até a seção.

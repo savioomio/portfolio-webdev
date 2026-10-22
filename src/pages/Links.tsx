@@ -35,7 +35,7 @@ export function Links() {
     },
     {
       label: "WhatsApp",
-      href: "https://wa.me/5577991599090?text=Ol%C3%A1%20S%C3%A1vio!%20Vi%20seu%20link%20na%20bio.",
+      href: "https://wa.me/5577991966527?text=Ol%C3%A1%20S%C3%A1vio!%20Vi%20seu%20link%20na%20bio.",
       icon: <WhatsAppIcon className="w-5 h-5" />,
     },
     {

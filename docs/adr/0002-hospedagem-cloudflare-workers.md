@@ -1,6 +1,6 @@
 # 0002. Hospedar em Cloudflare Workers, num Worker separado do site pessoal
 
-- **Status:** Aceito
+- **Status:** Aceito; a parte da Vercel foi substituída pelo [ADR 0004](./0004-entrega-sem-vercel.md)
 - **Data:** 2026-10-20
 
 ## Contexto

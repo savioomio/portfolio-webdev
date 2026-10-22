@@ -18,14 +18,16 @@ Ao terminar: marque aqui no mesmo PR e siga a [definição de pronto](../planeja
 - [x] **T06** Vídeo da aranha robô no `Experience.tsx`: trocar a URL absoluta por `/videos/aranha-robo.mp4`, usar `poster="/videos/aranha-robo-poster.webp"` e `preload="none"`, e dar play só quando o vídeo aparecer na tela (IntersectionObserver). Branch: `fix/video-aranha`. Req 8.
   - Arquivos em `public/videos/`: `aranha-robo.mp4` (1,36 MB; 640×360, 30 fps, H.264, sem áudio, `faststart`) e `aranha-robo-poster.webp` (35 KB). Origem: https://www.youtube.com/watch?v=ujD9UP9rh4U (canal próprio, 26 s), comprimido com o `ffmpeg-static` do projeto: `-an -vf "scale=640:-2,fps=30" -c:v libx264 -preset slow -crf 28 -movflags +faststart`.
   - Aceite: o vídeo roda em loop no desktop e no celular, e não aparece na aba Network antes de rolar até a seção.
-- [ ] **T07** Deploy automático a cada push na `main`, na Cloudflare (Workers Builds ligado ao repo, ou GitHub Actions com `CLOUDFLARE_API_TOKEN`) e na Vercel (projeto importado do GitHub). Branch: `chore/deploy-automatico`. Req 10. Runbook: [`deploy-cloudflare.md`](../runbooks/deploy-cloudflare.md).
-  - Aceite: um merge na `main` atualiza as duas URLs sem comando manual; o link da Vercel anotado no README.
+- [ ] **T07** Deploy automático a cada push na `main`, na Cloudflare (Workers Builds ligado ao repo, ou GitHub Actions com `CLOUDFLARE_API_TOKEN`). Sem Vercel ([ADR 0004](../adr/0004-entrega-sem-vercel.md)). Branch: `chore/deploy-automatico`. Req 10. Runbook: [`deploy-cloudflare.md`](../runbooks/deploy-cloudflare.md).
+  - Aceite: um merge na `main` atualiza `webdev.savioomiodev.com.br` sem comando manual.
 - [ ] **R06** Research do harness de IA: ferramenta e modelo, o que vai em `CLAUDE.md`, skills, agents, hooks e MCPs; comparar com Cursor e Copilot. Vira ADR. Req 11, 12, vídeo parte 3.
 - [ ] **T09** Montar o harness definido na R06: `CLAUDE.md` completo (arquitetura, nomenclatura, commits, branches), `.claude/settings.json`, skills e agents versionados. Branch: `chore/harness-ia`.
   - Aceite: pedir uma feature para a IA gera branch, commits e estrutura de pastas no padrão sem precisar lembrar as regras no prompt.
 
 ## Fase 1: Rotas e GitHub (22/10 – 24/10)
 
+- [ ] **R07** Research de identidade visual: o que representa a área de e-commerce (conceito "o portfólio é uma loja", com ou sem 3D). Rascunho em [`research/identidade-visual.md`](../research/identidade-visual.md); falta a decisão do Savio. Vira ADR. Req 7, 8.
+- [!] **T29** Conteúdo de 2024 em diante: experiências e projetos pessoais (GasMaster: repositório privado, só com capa). Branch: `feature/conteudo-2024`. *Bloqueado: aguardando o conteúdo do Savio.*
 - [ ] **R01** Research de rotas e dados: React Router vs TanStack Router; TanStack Query vs SWR vs `fetch` manual. Critérios: cache entre páginas, estados de loading/erro/vazio, tamanho do bundle, curva de aprendizado. Vira ADR.
 - [ ] **T10** Reorganizar as pastas conforme a [arquitetura alvo](../planejamento.md#arquitetura-alvo), sem mudar comportamento. Convenções de nomenclatura no README e no `CLAUDE.md`. Branch: `refactor/estrutura-pastas`. Req 12.
 - [ ] **T11** Componentes base em `components/ui/`: `Button`, `Card`, `Input`, `Skeleton`, `Spinner`, usados em todas as páginas. Branch: `feature/componentes-base`. Req 7.

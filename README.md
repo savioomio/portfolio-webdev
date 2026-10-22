@@ -7,7 +7,6 @@ Portfólio em React com uma cena 3D interativa, projetos carregados direto da AP
 | | |
 | --- | --- |
 | Site | https://webdev.savioomiodev.com.br |
-| Vercel | em breve |
 | Vídeo de apresentação | em breve |
 
 ## Tecnologias

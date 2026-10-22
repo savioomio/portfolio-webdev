@@ -5,8 +5,9 @@ Um ADR registra **uma** decisão: o contexto, as opções comparadas, o critéri
 | # | Decisão | Status |
 | --- | --- | --- |
 | [0001](./0001-reaproveitar-portfolio-existente.md) | Reaproveitar o portfólio pessoal como base, com histórico novo | Aceito |
-| [0002](./0002-hospedagem-cloudflare-workers.md) | Hospedar em Cloudflare Workers, num Worker separado do site pessoal | Aceito |
+| [0002](./0002-hospedagem-cloudflare-workers.md) | Hospedar em Cloudflare Workers, num Worker separado do site pessoal | Aceito; a parte da Vercel foi substituída pelo ADR 0004 |
 | [0003](./0003-qualidade-de-codigo.md) | ESLint + Prettier, com Husky, lint-staged e commitlint | Aceito |
+| [0004](./0004-entrega-sem-vercel.md) | Entregar só com a Cloudflare, sem a Vercel | Aceito |
 
 ## Modelo
 

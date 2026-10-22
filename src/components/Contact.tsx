@@ -36,7 +36,7 @@ export function Contact() {
     },
     {
       icon: <Mail className="w-5 h-5" />,
-      href: "mailto:saviopessaafonso@gmail.com",
+      href: "mailto:saviopessoaafonso@gmail.com",
       label: "Email",
     },
   ];

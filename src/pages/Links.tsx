@@ -55,7 +55,7 @@ export function Links() {
     },
     {
       label: "Email",
-      href: "mailto:saviopessaafonso@gmail.com",
+      href: "mailto:saviopessoaafonso@gmail.com",
       icon: <Mail className="w-5 h-5" />,
     },
   ];

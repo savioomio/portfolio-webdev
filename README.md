@@ -93,6 +93,8 @@ Tipos: `feat`, `fix`, `docs`, `chore`, `refactor`, `test`, `perf`.
 
 **Branches:** GitHub Flow. A `main` está sempre publicável; cada tarefa ganha uma branch própria, integrada por pull request depois do CI passar.
 
+A `main` é protegida no GitHub, inclusive para o administrador: push direto, force push e exclusão são recusados, e o merge de um PR só é liberado com o check `Build de validacao` verde.
+
 | Prefixo | Uso |
 | --- | --- |
 | `feature/` | funcionalidade nova |

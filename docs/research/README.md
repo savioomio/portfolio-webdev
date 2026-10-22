@@ -10,6 +10,7 @@ Uma research compara alternativas **antes** de uma decisão. Ao terminar, ela vi
 | R04 | Tema claro/escuro persistido sem flash | 3 | a criar |
 | R05 | Ferramentas de teste | 4 | a criar |
 | R06 | Harness de IA: ferramenta, modelo, instruções, skills, agents, MCPs | 0 | a criar |
+| R07 | Identidade visual: o que representa a área de e-commerce? | 1 | [identidade-visual.md](./identidade-visual.md) (em aberto) |
 
 As perguntas detalhadas e os critérios de cada uma estão no [backlog](../tasks/backlog.md).
 

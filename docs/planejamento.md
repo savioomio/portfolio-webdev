@@ -1,6 +1,6 @@
 # Planejamento
 
-**Entrega:** terça, 03/11/2026, com três links no Teams: GitHub, Vercel e YouTube (não listado).
+**Entrega:** terça, 03/11/2026, com três links no Teams: GitHub, site publicado na Cloudflare (no lugar da Vercel, [ADR 0004](./adr/0004-entrega-sem-vercel.md)) e YouTube (não listado).
 **Ponto de partida:** portfólio pessoal copiado em 20/10 ([ADR 0001](./adr/0001-reaproveitar-portfolio-existente.md)). O diagnóstico está em [`requisitos.md`](./requisitos.md#diagnóstico-do-código-herdado-20102026).
 **Tarefas:** [`tasks/backlog.md`](./tasks/backlog.md).
 
@@ -10,7 +10,7 @@ Uma fase por bloco de requisitos, com pelo menos um commit por dia para o histó
 
 | Fase | Datas | Entrega | Requisitos |
 | --- | --- | --- | --- |
-| 0. Fundação | ter 20/10 – qua 21/10 | Docs, padrões de código e commits, proteção da `main`, deploy automático (Cloudflare + Vercel), bugs herdados | 10, 11, 12, repositório |
+| 0. Fundação | ter 20/10 – qua 21/10 | Docs, padrões de código e commits, proteção da `main`, deploy automático na Cloudflare, bugs herdados | 10, 11, 12, repositório |
 | 1. Rotas e GitHub | qui 22/10 – sáb 24/10 | Estrutura de pastas, componentes base, cards vindos da API do GitHub com cache, `/projetos/:slug`, 404 e erro | 1, 2, 3, 7, 8 (cache) |
 | 2. Contato | dom 25/10 – ter 27/10 | Formulário validado, envio por e-mail e persistência no banco | 2, 4 |
 | 3. Dashboard e tema | qua 28/10 – qui 29/10 | Login, rota protegida, mensagens, projetos em destaque e tema persistido | 5, 6, 8 (lazy) |
@@ -26,7 +26,7 @@ Ponto de partida para as researches. Nada aqui é decisão até virar ADR.
 | Área | Já no projeto | Proposta | Alternativas a comparar | Research |
 | --- | --- | --- | --- | --- |
 | Build | Vite 5 + React 19 + TypeScript | manter | — | — |
-| Estilo e 3D | Tailwind 3, React Three Fiber, Framer Motion | manter | — | — |
+| Estilo e 3D | Tailwind 3, React Three Fiber, Framer Motion | identidade em revisão: o fundo espacial não representa e-commerce | conceito "o portfólio é uma loja", com ou sem 3D | R07 |
 | Rotas | React Router 7 | manter, com `errorElement` e rotas lazy | TanStack Router, wouter | R01 |
 | Dados de API e cache | — | TanStack Query | SWR, `fetch` + `useState` | R01 |
 | Formulário | — | React Hook Form + Zod | Formik + Yup, validação manual | R03 |
@@ -35,10 +35,10 @@ Ponto de partida para as researches. Nada aqui é decisão até virar ADR.
 | Tema | `next-themes` (instalado, sem uso) | a definir | Context + `localStorage`, Zustand | R04 |
 | Testes | — | Vitest + Testing Library | Playwright (e2e) | R05 |
 | Qualidade | ESLint 9 | + Prettier, Husky, lint-staged, commitlint | Biome | [ADR 0003](./adr/0003-qualidade-de-codigo.md) |
-| Hospedagem | Cloudflare Workers ([ADR 0002](./adr/0002-hospedagem-cloudflare-workers.md)) | + Vercel (obrigatória na entrega) | — | T07 |
+| Hospedagem | Cloudflare Workers ([ADR 0002](./adr/0002-hospedagem-cloudflare-workers.md)) | manter, sem Vercel ([ADR 0004](./adr/0004-entrega-sem-vercel.md)) | Vercel | T07 |
 | Harness de IA | Claude Code | `CLAUDE.md`, `.claude/` (settings, skills, agents) e MCPs versionados | Cursor, Copilot | R06 |
 
-Critério geral: o front continua sendo uma SPA estática. Todo o backend fica num serviço gerenciado (BaaS), então o mesmo build roda na Cloudflare e na Vercel sem código específico de nenhuma das duas.
+Critério geral: o front continua sendo uma SPA estática. Todo o backend fica num serviço gerenciado (BaaS), então o build não depende de nada específico da Cloudflare.
 
 ## Arquitetura alvo
 
@@ -70,8 +70,7 @@ Supabase (destaques) ──► services/projects.ts ──┘
 
 ```
 branch feature/x ──► commit ──► push ──► Pull Request ──► CI ──► merge na main ──► deploy automático
-                      │                                  │                         ├─ Cloudflare: webdev.savioomiodev.com.br
-                      │                                  │                         └─ Vercel
+                      │                                  │                         └─ Cloudflare: webdev.savioomiodev.com.br
                       │                                  └─ lint + testes + build (obrigatório para o merge)
                       └─ Husky: lint-staged (ESLint + Prettier) e commitlint (Conventional Commits)
 ```

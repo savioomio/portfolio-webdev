@@ -4,22 +4,62 @@ Trabalho da faculdade com entrega em **03/11/2026**: portfólio em React publica
 
 ## Antes de qualquer tarefa
 
-1. Leia `docs/planejamento.md` (cronograma, stack proposta, arquitetura alvo, fluxo de entrega).
-2. Pegue a próxima tarefa aberta em `docs/tasks/backlog.md`, use a branch indicada nela e marque `[~]` ao começar.
-3. Decisões tomadas estão em `docs/adr/`. Não reabra uma decisão sem um motivo novo; se mudar, escreva um ADR que substitui o anterior.
-4. Escolha de tecnologia passa por uma research em `docs/research/` e vira ADR antes do código.
+1. **PC do laboratório** (Windows, usuário `labsfiap`): o hook de início de sessão diz o que falta configurar. Se faltar algo, rode o [setup do PC do lab](docs/runbooks/setup-pc-do-lab.md) antes de tudo. No Mac (máquina principal) nada se perde e o setup não se aplica.
+2. Leia `docs/planejamento.md` (cronograma, stack proposta, arquitetura alvo, fluxo de entrega).
+3. Pegue a próxima tarefa aberta em `docs/tasks/backlog.md` e use a branch indicada nela.
+4. Decisões tomadas estão em `docs/adr/`. Não reabra uma decisão sem um motivo novo; se mudar, escreva um ADR que substitui o anterior.
+5. Escolha de tecnologia passa por uma research em `docs/research/` e vira ADR antes do código (skill `decisao`).
+
+O ciclo completo de uma tarefa, do backlog ao deploy conferido, está na skill `tarefa`.
 
 ## Regras
 
-- **PC do laboratório** (Windows, usuário `labsfiap`): ele apaga tudo ao desligar, inclusive a memória do Claude Code. No começo da sessão, rode o [setup do PC do lab](docs/runbooks/setup-pc-do-lab.md) inteiro (autor, dependências, login no Cloudflare, MCP do Chrome); antes de sair, tudo enviado ao GitHub e os logins encerrados. No Mac (máquina principal) nada se perde e o runbook não se aplica.
 - **Comandos:** antes de rodar cada comando, diga em uma frase o que ele faz e por quê; depois, o resultado. Nunca rode comandos em sequência sem explicar.
-- **Autor dos commits:** `savioomio <saviopessoaafonso@gmail.com>`. No PC do laboratório, confira `git config user.email` antes do primeiro commit e configure só no repo, nunca `--global` (`docs/runbooks/setup-pc-do-lab.md`).
+- **Autor dos commits:** `savioomio <saviopessoaafonso@gmail.com>`, configurado só no repositório, nunca `--global` (no PC do lab, a config global assinaria os commits de outras pessoas). Confira `git config user.email` antes do primeiro commit.
 - **Commits:** Conventional Commits em português, ex.: `feat: adiciona validação do formulário de contato`. Tipos: `feat`, `fix`, `docs`, `chore`, `refactor`, `test`, `perf`.
-- **Hooks do Git** ([ADR 0003](docs/adr/0003-qualidade-de-codigo.md)): o `pre-commit` roda ESLint e Prettier nos arquivos do commit e o `commit-msg` roda o commitlint. Nunca use `--no-verify`; se um hook recusar, corrija a causa e faça um commit novo. O CI repete as mesmas checagens.
+- **Hooks do Git** ([ADR 0003](docs/adr/0003-qualidade-de-codigo.md)): o `pre-commit` roda ESLint e Prettier nos arquivos do commit e o `commit-msg` roda o commitlint. Nunca pule os hooks; se um deles recusar, corrija a causa e faça um commit novo. O CI repete as mesmas checagens.
 - **Branches:** GitHub Flow. Uma branch por tarefa (`feature/*`, `fix/*`, `docs/*`, `chore/*`, `refactor/*`, `test/*`, `perf/*`), integrada na `main` por PR. Não commitar direto na `main`: ela é protegida (push direto recusado, merge só com o check `Build de validacao` verde).
-- **PRs e merge:** o Claude abre o PR e faz o merge sozinho assim que o CI passar (`gh pr merge --merge --delete-branch`), sem esperar revisão; o Savio só confere o resultado. Se a mudança afeta o site, publicar depois do merge e conferir na URL pública. Relatório final curto: o que mudou e o link.
-- **Deploy:** este projeto é o Worker `portfolio-webdev` (`webdev.savioomiodev.com.br`). Nunca publicar no Worker `savioomiodev`, que é o site pessoal (`docs/runbooks/deploy-cloudflare.md`).
+- **PRs e merge:** o Claude abre o PR e faz o merge sozinho assim que o CI passar (`gh pr merge --merge --delete-branch`), sem esperar revisão; o Savio só confere o resultado. Relatório final curto: o que mudou e o link.
+- **Deploy** ([ADR 0005](docs/adr/0005-deploy-automatico-github-actions.md)): automático, pelo job **Deploy na Cloudflare** do CI, a cada merge na `main`. Depois do merge, confira a mudança em `https://webdev.savioomiodev.com.br`. Deploy manual só em emergência (`docs/runbooks/deploy-cloudflare.md`). Nunca publicar no Worker `savioomiodev`, que é o site pessoal.
+- **Credenciais:** tokens e segredos (Cloudflare, GitHub, backend) são criados pelo Savio. A IA não cria token, não grava segredo e não digita senha; ela prepara o passo a passo e espera.
 - **Logins por navegador** (Wrangler etc.): gerar o link sem abrir o navegador e abrir no Chrome.
 - **Ao terminar uma tarefa:** siga a definição de pronto em `docs/planejamento.md` e marque `[x]` no backlog no mesmo PR.
+- **Antes de sair do lab:** tudo enviado ao GitHub e os logins encerrados (passo 5 do setup).
 
-As convenções de pastas, nomenclatura e código entram aqui na T09 e na T10.
+## Código
+
+- **Arquitetura** (a T10 move os arquivos atuais para cá):
+
+  ```
+  src/
+  ├── app/          # App, rotas e providers
+  ├── pages/        # uma página por rota
+  ├── components/
+  │   ├── ui/       # Button, Card, Input, Skeleton, Spinner: só apresentação
+  │   ├── sections/ # blocos da Home
+  │   └── three/    # cenas 3D, sempre carregadas sob demanda
+  ├── hooks/        # useRepos, useContactForm, useAuth...
+  ├── services/     # acesso a APIs, sem React
+  ├── schemas/      # schemas de validação
+  ├── lib/          # funções puras
+  └── types/
+  ```
+
+  Componente visual não chama API: ele recebe dados de um hook, e o hook usa um service.
+- **Nomenclatura:** componentes em PascalCase (`ProjectCard.tsx`), hooks começando com `use` (`useRepos.ts`), services e funções em camelCase (`github.ts`), imports a partir de `src` com `@/`.
+- **Idioma:** nomes no código em inglês; textos da interface, comentários, commits e documentação em português.
+- **Performance** (requisito 8): cena 3D e páginas pesadas (dashboard) com `React.lazy`, fora do bundle inicial; imagens com largura e altura definidas.
+- **Estilo:** Tailwind. Componente que se repete em mais de uma página vira `components/ui/`.
+
+## Harness de IA ([ADR 0006](docs/adr/0006-harness-ia-claude-code.md))
+
+| Arquivo | Papel |
+| --- | --- |
+| `.claude/settings.json` | Libera comandos de verificação e liga os hooks |
+| `.claude/hooks/guard-bash.mjs` | Bloqueia pular os hooks do Git, config global do Git e deploy no Worker do site pessoal |
+| `.claude/hooks/lab-check.mjs` | No PC do lab, diz no início da sessão o que falta do setup |
+| `.claude/skills/` | `tarefa`, `decisao`, `conferir-no-navegador` |
+| `.claude/agents/` | `revisor` (diff contra estas regras), `pesquisador` (research com fontes oficiais) |
+| `.mcp.json` | Documentação da Cloudflare |
+
+O MCP do Chrome (`chrome-devtools`) fica no escopo de usuário de cada máquina (passo 4 do setup do lab).

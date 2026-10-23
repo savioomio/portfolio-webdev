@@ -114,12 +114,21 @@ A `main` é protegida no GitHub, inclusive para o administrador: push direto, fo
 | [`docs/requisitos.md`](./docs/requisitos.md) | Enunciado do trabalho e diagnóstico do ponto de partida |
 | [`docs/planejamento.md`](./docs/planejamento.md) | Cronograma, stack, arquitetura e fluxo até o deploy |
 | [`docs/tasks/backlog.md`](./docs/tasks/backlog.md) | Tarefas e status |
+| [`docs/research/`](./docs/research/) | Comparações de alternativas antes de cada decisão |
 | [`docs/adr/`](./docs/adr/) | Decisões de arquitetura |
 | [`docs/runbooks/`](./docs/runbooks/) | Deploy e setup da máquina |
 
 ## Desenvolvimento com IA
 
-O projeto é desenvolvido com o Claude Code. As instruções que a IA segue (padrões de commits, branches e o fluxo de trabalho pelo backlog) ficam versionadas em [`CLAUDE.md`](./CLAUDE.md).
+O projeto é desenvolvido com o Claude Code ([ADR 0006](./docs/adr/0006-harness-ia-claude-code.md)). Tudo o que a IA segue fica versionado no repositório, então um pedido curto ("faz a T12") já sai com branch, commits, PR e deploy no padrão:
+
+| Peça | Onde | O que faz |
+| --- | --- | --- |
+| Instruções | [`CLAUDE.md`](./CLAUDE.md) | Fluxo de trabalho, regras, arquitetura e nomenclatura |
+| Skills | [`.claude/skills/`](./.claude/skills/) | `tarefa` (do backlog ao deploy conferido), `decisao` (research + ADR), `conferir-no-navegador` |
+| Agents | [`.claude/agents/`](./.claude/agents/) | `revisor` (revisa o diff contra as regras), `pesquisador` (researches com fontes oficiais) |
+| Hooks | [`.claude/settings.json`](./.claude/settings.json) | Bloqueiam o que as regras proíbem (pular os hooks do Git, deploy no site pessoal) e conferem o setup no PC do lab |
+| MCPs | [`.mcp.json`](./.mcp.json) e Chrome DevTools | Documentação da Cloudflare; controle do Chrome para conferir cada mudança |
 
 ## Origem
 

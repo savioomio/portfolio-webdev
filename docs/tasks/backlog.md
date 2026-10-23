@@ -21,8 +21,8 @@ Ao terminar: marque aqui no mesmo PR e siga a [definição de pronto](../planeja
   - Aceite: o vídeo roda em loop no desktop e no celular, e não aparece na aba Network antes de rolar até a seção.
 - [x] **T07** Deploy automático a cada push na `main`, na Cloudflare (Workers Builds ligado ao repo, ou GitHub Actions com `CLOUDFLARE_API_TOKEN`). Sem Vercel ([ADR 0004](../adr/0004-entrega-sem-vercel.md)). Branch: `chore/deploy-automatico`. Req 10. Runbook: [`deploy-cloudflare.md`](../runbooks/deploy-cloudflare.md).
   - Aceite: um merge na `main` atualiza `webdev.savioomiodev.com.br` sem comando manual.
-- [ ] **R06** Research do harness de IA: ferramenta e modelo, o que vai em `CLAUDE.md`, skills, agents, hooks e MCPs; comparar com Cursor e Copilot. Vira ADR. Req 11, 12, vídeo parte 3.
-- [ ] **T09** Montar o harness definido na R06: `CLAUDE.md` completo (arquitetura, nomenclatura, commits, branches), `.claude/settings.json`, skills e agents versionados. Branch: `chore/harness-ia`.
+- [x] **R06** Research do harness de IA: ferramenta e modelo, o que vai em `CLAUDE.md`, skills, agents, hooks e MCPs; comparar com Cursor e Copilot. Vira ADR. Req 11, 12, vídeo parte 3.
+- [x] **T09** Montar o harness definido na R06: `CLAUDE.md` completo (arquitetura, nomenclatura, commits, branches), `.claude/settings.json`, skills e agents versionados. Branch: `chore/harness-ia`. *(o aceite é conferido na primeira tarefa de código numa sessão nova, a T10)*
   - Aceite: pedir uma feature para a IA gera branch, commits e estrutura de pastas no padrão sem precisar lembrar as regras no prompt.
 
 ## Fase 1: Rotas e GitHub (22/10 – 24/10)

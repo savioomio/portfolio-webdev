@@ -22,6 +22,9 @@ img_ops.local.py
 .dev.vars
 .wrangler/
 
+# Permissões pessoais do Claude Code (as do projeto ficam em .claude/settings.json)
+.claude/settings.local.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

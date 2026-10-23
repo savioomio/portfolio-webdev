@@ -19,7 +19,7 @@ Portfólio em React com uma cena 3D interativa, projetos carregados direto da AP
 | Rotas | React Router 7 |
 | Qualidade | ESLint 9 (typescript-eslint, react-hooks), Prettier, Husky, lint-staged, commitlint |
 | Hospedagem | Cloudflare Workers (Static Assets) |
-| CI | GitHub Actions: padrão dos commits, lint, formatação e build a cada push e PR |
+| CI/CD | GitHub Actions: padrão dos commits, lint, formatação e build a cada push e PR; deploy na Cloudflare a cada merge na `main` ([ADR 0005](./docs/adr/0005-deploy-automatico-github-actions.md)) |
 
 As próximas escolhas (busca de dados, backend, formulário, testes) passam por uma comparação de alternativas e ficam registradas como ADR em [`docs/adr/`](./docs/adr/).
 

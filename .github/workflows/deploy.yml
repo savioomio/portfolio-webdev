@@ -1,6 +1,7 @@
-name: CI - Build
+name: CI - Build e deploy
 
-# Valida padrao de commits, lint, formatacao e build. O deploy no Cloudflare Workers e feito com `npm run deploy`.
+# Valida padrao de commits, lint, formatacao e build em todo push e PR.
+# Num push na main (merge de PR), publica no Worker portfolio-webdev (ADR 0005).
 
 on:
   push:
@@ -51,3 +52,36 @@ jobs:
 
       - name: Conferir que _headers foi copiado
         run: test -f dist/_headers && echo "Headers OK"
+
+  deploy:
+    name: Deploy na Cloudflare
+    # So depois do build passar, e so na main: PR nunca publica
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    # Um deploy por vez; um merge novo espera o anterior terminar
+    concurrency:
+      group: deploy-producao
+      cancel-in-progress: false
+    environment:
+      name: producao
+      url: https://webdev.savioomiodev.com.br
+
+    steps:
+      - name: Clonar o repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      # Instala o wrangler na versao do package-lock, a mesma do deploy manual
+      - name: Instalar dependencias
+        run: npm install --legacy-peer-deps
+
+      - name: Build e publicacao
+        run: npm run deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

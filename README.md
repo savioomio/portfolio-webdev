@@ -116,7 +116,7 @@ Cada merge na `main` passa por commitlint, lint, formatação, testes e build, e
 ## Requisitos e qualidade
 
 - Cada requisito do enunciado aponta para onde está no código: [`docs/requisitos.md`](./docs/requisitos.md#situação-na-entrega-31102026).
-- Notas do Lighthouse: [`docs/qualidade/lighthouse.md`](./docs/qualidade/lighthouse.md).
+- PageSpeed e performance real: [`docs/qualidade/lighthouse.md`](./docs/qualidade/lighthouse.md).
 - Identidade visual: [`DESIGN.md`](./DESIGN.md).
 
 ## IA no projeto

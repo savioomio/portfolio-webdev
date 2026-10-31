@@ -2,309 +2,49 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/favicon.png?v=1" />
-    <link rel="shortcut icon" href="/favicon.png?v=1" />
-    <link rel="apple-touch-icon" href="/favicon.png?v=1" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- SEO Primário -->
-    <title>Sávio Pessôa | Especialista E-commerce VTEX & Wake</title>
-    <meta name="title" content="Sávio Pessôa | Especialista E-commerce VTEX & Wake" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#F5B800" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <link
+      rel="preload"
+      href="/fonts/nunito/nunito-latin-wght-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/lato/lato-latin-400-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <!-- Aplica o tema antes da primeira pintura, senão a página piscaria na cor errada. -->
+    <script>
+      (function () {
+        var theme = null;
+        try {
+          theme = localStorage.getItem("theme");
+        } catch (error) {
+          theme = null;
+        }
+        if (theme !== "light" && theme !== "dark") {
+          theme = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+    <!--head:start-->
+    <title>Sávio Pessôa | Especialista E-commerce VTEX e Wake</title>
     <meta
       name="description"
-      content="Desenvolvedor Front-End Especialista em E-commerce de Alta Performance. Experiência em projetos para grandes marcas com VTEX e Wake."
+      content="Desenvolvedor front-end especialista em e-commerce: 33 lojas em VTEX e Wake, 2 projetos reais em WordPress e 3 anos de experiência."
     />
-    <meta
-      name="keywords"
-      content="Desenvolvedor VTEX, VTEX IO, Wake Commerce, E-commerce de Alta Performance, Front-end Specialist, React, SEO, Performance, Wicomm, Sávio Pessôa, E-commerce Enterprise, savio pessoa, savio pessoa afonso, savio, Sávio, Sávio Portfólio"
-    />
-    <meta name="author" content="Sávio Pessôa Afonso" />
-
-    <meta name="robots" content="index, follow, max-image-preview:large" />
-
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://savioomiodev.com.br/" />
-    <meta property="og:title" content="Sávio Pessôa | Especialista VTEX & Wake" />
-    <meta
-      property="og:description"
-      content="Desenvolvedor focado em E-commerce de Alta Performance. Experiência com implementações complexas em VTEX e Wake para grandes players do mercado."
-    />
-    <meta property="og:image" content="https://savioomiodev.com.br/og-image.png?v=1" />
-
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Sávio Pessôa | Especialista VTEX & Wake" />
-    <meta
-      name="twitter:description"
-      content="Desenvolvedor focado em E-commerce de Alta Performance. Experiência com implementações complexas em VTEX e Wake para grandes players do mercado."
-    />
-    <meta name="twitter:image" content="https://savioomiodev.com.br/og-image.png?v=1" />
-
-    <!-- Schema.org Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Sávio Pessôa Afonso",
-        "alternateName": ["Savio Pessoa", "Sávio Pessôa", "Savio Omio", "Savio Dev"],
-        "url": "https://savioomiodev.com.br/",
-        "image": "https://savioomiodev.com.br/capa_portifolio_mob.webp",
-        "jobTitle": "Desenvolvedor Front-End Especialista em E-commerce",
-        "knowsAbout": [
-          "VTEX IO",
-          "Wake Commerce",
-          "High Performance Web",
-          "React",
-          "TypeScript",
-          "Three.js",
-          "E-commerce Strategy"
-        ],
-        "worksFor": {
-          "@type": "Organization",
-          "name": "Wicomm"
-        },
-        "description": "Desenvolvedor focado em E-commerce de Alta Performance. Experiência com implementações complexas em VTEX e Wake para grandes players do mercado.",
-        "sameAs": [
-          "https://www.linkedin.com/in/savioomio",
-          "https://www.instagram.com/savioomio",
-          "https://github.com/savioomio"
-        ]
-      }
-    </script>
-
-    <!-- FAQ Schema para Otimização de IAs (GEO) -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Quais tipos de interfaces Sávio Pessôa desenvolve em VTEX e Wake?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Sávio desenvolve qualquer tela de e-commerce (Home, PDP, Checkout, Landing Pages) com precisão absoluta. Especialista em entregar layouts 'Pixel Perfect' e funcionalidades complexas nas plataformas VTEX IO e Wake Commerce."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Como Sávio Pessôa otimiza e-commerces para SEO e Performance de IAs (GEO)?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Com domínio em Core Web Vitals e SEO Técnico, Sávio cria códigos otimizados para carregar instantaneamente. Utiliza estratégias de GEO (Generative Engine Optimization) para que sua loja seja recomendada por IAs e rankeie no topo do Google."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Qual o nível de detalhe e qualidade das entregas de Sávio Pessôa?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Definido pelo capricho extremo e perfeccionismo. Sávio não aceita o 'básico': refina obsessivamente cada interação e elemento visual até que a experiência de uso esteja impecável e o desempenho seja máximo."
-            }
-          }
-        ]
-      }
-    </script>
+    <!--head:end-->
   </head>
   <body>
-    <div id="root">
-      <style>
-        /* Critical CSS for the loader - DESIGN SYSTEM */
-        #loader-wrapper {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: #000000;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          z-index: 9999;
-          font-family: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-          overflow: hidden;
-        }
-
-        /* Stars effect background */
-        #loader-wrapper::before {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-image:
-            radial-gradient(white, rgba(255, 255, 255, 0.2) 2px, transparent 3px),
-            radial-gradient(white, rgba(255, 255, 255, 0.15) 1px, transparent 2px),
-            radial-gradient(white, rgba(255, 255, 255, 0.1) 2px, transparent 3px);
-          background-size:
-            550px 550px,
-            350px 350px,
-            250px 250px;
-          background-position:
-            0 0,
-            40px 60px,
-            130px 270px;
-          opacity: 0.3;
-          animation: twinkle 5s linear infinite;
-        }
-
-        .loader-content {
-          position: relative;
-          z-index: 2;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .atom {
-          position: relative;
-          width: 80px;
-          height: 80px;
-          margin-bottom: 2rem;
-        }
-
-        .center {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: 16px;
-          height: 16px;
-          background: #61dafb;
-          border-radius: 50%;
-          box-shadow:
-            0 0 15px #61dafb,
-            0 0 30px rgba(97, 218, 251, 0.45);
-        }
-
-        .orbit {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          width: 100%;
-          height: 100%;
-          border: 1px solid rgba(97, 218, 251, 0.3);
-          border-radius: 50%;
-          animation: spin 2s linear infinite;
-        }
-        .orbit:nth-child(2) {
-          width: 70%;
-          height: 70%;
-          animation: spin-reverse 1.5s linear infinite;
-          border-color: rgba(97, 218, 251, 0.5);
-        }
-        .orbit:nth-child(3) {
-          width: 130%;
-          height: 130%;
-          animation: spin 3s linear infinite;
-          border-color: rgba(97, 218, 251, 0.2);
-        }
-
-        .orbit::before {
-          content: "";
-          position: absolute;
-          top: -3px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 6px;
-          height: 6px;
-          background: #61dafb;
-          border-radius: 50%;
-          box-shadow: 0 0 10px #61dafb;
-        }
-
-        .loading-text {
-          font-size: 1.2rem;
-          color: #e5e7eb;
-          font-weight: 300;
-          text-align: center;
-          letter-spacing: 4px;
-          text-transform: uppercase;
-          animation: fadePulse 2s infinite;
-          font-family: "Space Grotesk", "Segoe UI", sans-serif;
-        }
-
-        .loading-subtext {
-          margin-top: 10px;
-          font-size: 0.9rem;
-          color: #9ca3af;
-          font-weight: 300;
-          text-align: center;
-          max-width: 600px;
-          padding-inline: 20px;
-          font-family: "Inter", sans-serif;
-        }
-
-        @keyframes spin {
-          0% {
-            transform: translate(-50%, -50%) rotate(0deg);
-          }
-          100% {
-            transform: translate(-50%, -50%) rotate(360deg);
-          }
-        }
-        @keyframes spin-reverse {
-          0% {
-            transform: translate(-50%, -50%) rotate(0deg);
-          }
-          100% {
-            transform: translate(-50%, -50%) rotate(-360deg);
-          }
-        }
-        @keyframes twinkle {
-          0% {
-            opacity: 0.3;
-          }
-          50% {
-            opacity: 0.5;
-          }
-          100% {
-            opacity: 0.3;
-          }
-        }
-        @keyframes fadePulse {
-          0%,
-          100% {
-            opacity: 0.7;
-          }
-          50% {
-            opacity: 1;
-          }
-        }
-      </style>
-      <div id="loader-wrapper">
-        <div class="loader-content">
-          <div class="atom">
-            <div class="center"></div>
-            <div class="orbit"></div>
-            <div class="orbit"></div>
-            <div class="orbit"></div>
-          </div>
-          <h1 class="loading-text">
-            Especialista em Front-End <br />
-            para E-commerce VTEX & Wake
-          </h1>
-          <p class="loading-subtext">
-            Desenvolvo interfaces de alta performance que unem design pixel-perfect e velocidade
-            para maximizar conversões em grandes operações.
-          </p>
-        </div>
-      </div>
-    </div>
+    <div id="root"><!--app-html--></div>
     <script type="module" src="/src/main.tsx"></script>
-
-    <!-- Fallback para SEO e Acessibilidade (NoScript) -->
-    <noscript>
-      <h1>Especialista em Front-End para E-commerce VTEX & Wake</h1>
-      <p>
-        Desenvolvo interfaces de alta performance que unem design pixel-perfect e velocidade para
-        maximizar conversões em grandes operações.
-      </p>
-    </noscript>
   </body>
 </html>

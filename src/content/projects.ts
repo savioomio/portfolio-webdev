@@ -15,6 +15,8 @@ export interface Project {
   /** Nome curto, usado na navegação do trilho. */
   label: string;
   name: string;
+  /** Título do painel, quando for diferente do nome. */
+  headline?: string;
   period: string;
   /** Período curto da lista de projetos. */
   when: string;
@@ -95,8 +97,8 @@ export const projects: Project[] = [
     },
     gallery: [
       {
-        src: "/media/trofeu.webp",
-        alt: "Troféu de primeiro lugar da Competição Nacional de Drones",
+        src: "/media/drone.webp",
+        alt: "Drone da equipe usado na Competição Nacional de Drones",
         width: 400,
         height: 400,
       },
@@ -116,7 +118,10 @@ export const projects: Project[] = [
     body: [
       "Automação e monitoramento de consumo hídrico com IoT em perímetros irrigados. Foi meu primeiro ano de experiência.",
     ],
-    facts: ["352 horas de estágio bolsista."],
+    facts: [
+      "352 horas de estágio bolsista.",
+      "Medalha de honra ao mérito científico na Tenda da Ciência.",
+    ],
     tech: ["IoT", "Automação"],
     links: [],
     cover: {
@@ -131,6 +136,12 @@ export const projects: Project[] = [
         alt: "Sávio apresentando o projeto na Tenda da Ciência",
         width: 400,
         height: 400,
+      },
+      {
+        src: "/media/medalhas-tenda.webp",
+        alt: "As 2 medalhas de honra ao mérito científico da Tenda da Ciência, na minha mão",
+        width: 456,
+        height: 456,
       },
     ],
   },
@@ -151,6 +162,7 @@ export const projects: Project[] = [
     facts: [
       "16 letras do alfabeto em Libras.",
       "Artigo em equipe na Mostra Nacional de Robótica 2024.",
+      "Medalha de honra ao mérito científico na Tenda da Ciência.",
       "As outras 10 letras pedem um novo pulso.",
     ],
     tech: ["Arduino", "Impressão 3D", "Servos"],
@@ -161,7 +173,14 @@ export const projects: Project[] = [
       width: 640,
       height: 360,
     },
-    gallery: [],
+    gallery: [
+      {
+        src: "/media/medalhas-tenda.webp",
+        alt: "As 2 medalhas de honra ao mérito científico da Tenda da Ciência, na minha mão",
+        width: 456,
+        height: 456,
+      },
+    ],
   },
   {
     slug: "jsom",
@@ -210,7 +229,8 @@ export const projects: Project[] = [
   {
     slug: "gasmaster",
     label: "GasMaster",
-    name: "Usado por 2 postos de gasolina",
+    name: "GasMaster",
+    headline: "Usado por 2 postos de gasolina",
     period: "2025 até hoje, GasMaster",
     when: "2025 até hoje",
     summary: "Sistema real, usado por 2 postos de gasolina.",

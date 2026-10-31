@@ -394,8 +394,24 @@ export function createFacaScene(canvas: HTMLCanvasElement, reduced: boolean) {
     const h = 1.4;
     const Q = Math.PI / 2;
     addFaces(sheet.root, flatBase(w, d), sheet.outer);
-    addPanel(sheet, sheet.root, { at: [w / 2, 0], dir: "x+", len: h, wid: d, angle: Q, from: 0, to: 0.45 });
-    addPanel(sheet, sheet.root, { at: [-w / 2, 0], dir: "x-", len: h, wid: d, angle: Q, from: 0.05, to: 0.5 });
+    addPanel(sheet, sheet.root, {
+      at: [w / 2, 0],
+      dir: "x+",
+      len: h,
+      wid: d,
+      angle: Q,
+      from: 0,
+      to: 0.45,
+    });
+    addPanel(sheet, sheet.root, {
+      at: [-w / 2, 0],
+      dir: "x-",
+      len: h,
+      wid: d,
+      angle: Q,
+      from: 0.05,
+      to: 0.5,
+    });
     addPanel(sheet, sheet.root, {
       at: [0, d / 2],
       dir: "z+",
@@ -456,11 +472,40 @@ export function createFacaScene(canvas: HTMLCanvasElement, reduced: boolean) {
       to: 0.55,
       print: printedTexture("wake", "11 LOJAS"),
     });
-    const back = addPanel(sheet, sheet.root, { at: [0, -d / 2], dir: "z-", len: h, wid: w, angle: Q, from: 0.05, to: 0.6 });
-    addPanel(sheet, sheet.root, { at: [w / 2, 0], dir: "x+", len: h, wid: d, angle: Q, from: 0.2, to: 0.75 });
-    addPanel(sheet, sheet.root, { at: [-w / 2, 0], dir: "x-", len: h, wid: d, angle: Q, from: 0.25, to: 0.8 });
+    const back = addPanel(sheet, sheet.root, {
+      at: [0, -d / 2],
+      dir: "z-",
+      len: h,
+      wid: w,
+      angle: Q,
+      from: 0.05,
+      to: 0.6,
+    });
+    addPanel(sheet, sheet.root, {
+      at: [w / 2, 0],
+      dir: "x+",
+      len: h,
+      wid: d,
+      angle: Q,
+      from: 0.2,
+      to: 0.75,
+    });
+    addPanel(sheet, sheet.root, {
+      at: [-w / 2, 0],
+      dir: "x-",
+      len: h,
+      wid: d,
+      angle: Q,
+      from: 0.25,
+      to: 0.8,
+    });
     sheet.handles = [];
-    ([[front, h], [back, -h]] as [Group, number][]).forEach(([panel, z]) => {
+    (
+      [
+        [front, h],
+        [back, -h],
+      ] as [Group, number][]
+    ).forEach(([panel, z]) => {
       const handle = new Mesh(
         new TorusGeometry(0.36, 0.03, 10, 28, Math.PI),
         new MeshStandardMaterial({ color: new Color("#F5B800"), roughness: 0.4, metalness: 0.2 }),
@@ -502,26 +547,52 @@ export function createFacaScene(canvas: HTMLCanvasElement, reduced: boolean) {
     sheet.letterRange = [0.74, 1];
     sheet.root.add(sheet.letter);
 
-    const folds: LineBuffer = { p: [], i: [] };
-    (
-      [
-        [-w / 2, d / 2],
-        [w / 2, d / 2],
-      ] as Point[]
-    ).forEach((corner) => addQuad(folds, corner, [0, 0.04], 0.03));
     sheet.foldMat = new MeshBasicMaterial({
       color: new Color("#123F55"),
       side: DoubleSide,
       transparent: true,
       opacity: 0,
     });
-    const foldLines = linesMesh(folds, sheet.foldMat);
-    foldLines.position.y = 0.2;
-    sheet.root.add(foldLines);
 
-    addPanel(sheet, sheet.root, { at: [-w / 2, 0], dir: "x-", len: w * 0.52, wid: d, angle: P * 0.985, from: 0, to: 0.3, tri: true, lift });
-    addPanel(sheet, sheet.root, { at: [w / 2, 0], dir: "x+", len: w * 0.52, wid: d, angle: P * 0.98, from: 0.06, to: 0.36, tri: true, lift });
-    addPanel(sheet, sheet.root, { at: [0, d / 2], dir: "z+", len: d * 0.62, wid: w, angle: P * 0.972, from: 0.2, to: 0.5, tri: true, lift });
+    addPanel(sheet, sheet.root, {
+      at: [-w / 2, 0],
+      dir: "x-",
+      len: w * 0.52,
+      wid: d,
+      angle: P * 0.985,
+      from: 0,
+      to: 0.3,
+      tri: true,
+      lift,
+    });
+    addPanel(sheet, sheet.root, {
+      at: [w / 2, 0],
+      dir: "x+",
+      len: w * 0.52,
+      wid: d,
+      angle: P * 0.98,
+      from: 0.06,
+      to: 0.36,
+      tri: true,
+      lift,
+    });
+    const bottom = addPanel(sheet, sheet.root, {
+      at: [0, d / 2],
+      dir: "z+",
+      len: d * 0.62,
+      wid: w,
+      angle: P * 0.972,
+      from: 0.2,
+      to: 0.5,
+      tri: true,
+      lift,
+    });
+    const seams: LineBuffer = { p: [], i: [] };
+    addQuad(seams, [-w / 2, 0], [0, d * 0.62], 0.03);
+    addQuad(seams, [w / 2, 0], [0, d * 0.62], 0.03);
+    const seamLines = linesMesh(seams, sheet.foldMat);
+    seamLines.position.y = -0.012;
+    bottom.add(seamLines);
     const flap = addPanel(sheet, sheet.root, {
       at: [0, -d / 2],
       dir: "z-",
@@ -532,8 +603,8 @@ export function createFacaScene(canvas: HTMLCanvasElement, reduced: boolean) {
       to: 0.62,
       tri: true,
       round: true,
-      lift,
-      reopen: [0.74, 0.92, P * 0.93],
+      lift: 0.01,
+      reopen: [0.74, 0.92, P * 1.08],
     });
 
     // Forro dourado por dentro da aba: aparece quando ela abre
@@ -603,7 +674,7 @@ export function createFacaScene(canvas: HTMLCanvasElement, reduced: boolean) {
       const [start, end] = sheet.letterRange;
       const rise = ease(clamp((fold - start) / (end - start)));
       sheet.letter.visible = rise > 0.001;
-      sheet.letter.position.z = -rise * 1.16;
+      sheet.letter.position.z = -rise * 0.98;
     }
     sheet.lineMat.opacity = 1 - ease(clamp((fold - 0.3) / 0.4));
     sheet.lineMat.visible = sheet.lineMat.opacity > 0.01;
@@ -641,9 +712,10 @@ export function createFacaScene(canvas: HTMLCanvasElement, reduced: boolean) {
       const hero = small ? groundAt(0.1, -0.6) : groundAt(0.25, -0.03);
       const holds = small
         ? [groundAt(0, 0.56), groundAt(0, 0.44), groundAt(0, 0.5)]
-        : [groundAt(0.29, -0.2), groundAt(-0.2, -0.26), groundAt(0.37, -0.02)];
+        : [groundAt(0.29, -0.2), groundAt(-0.2, -0.26), groundAt(0.36, -0.24)];
       const heroScale = small ? 0.5 : 0.8;
       const holdScale = small ? 0.58 : 1.2;
+      const mailScale = small ? 0.52 : 1.02;
       const away = small ? 7 : 13;
 
       sheets.forEach((sheet, i) => {
@@ -665,7 +737,8 @@ export function createFacaScene(canvas: HTMLCanvasElement, reduced: boolean) {
         position.lerpVectors(i === 0 ? hero : holds[i], holds[i], settled);
         position.x += slideIn * away - slideOut * away;
         position.y = i === 0 ? (1 - settled) * 0.16 : 0;
-        sheet.root.scale.setScalar(lerp(i === 0 ? heroScale : holdScale, holdScale, settled));
+        const scale = i === 2 ? mailScale : holdScale;
+        sheet.root.scale.setScalar(lerp(i === 0 ? heroScale : scale, scale, settled));
 
         const sway = reduced ? 0.4 : Math.sin(time * 0.4) * 0.14;
         const stand = i === 2 ? fold * 0.95 : 0;
@@ -676,7 +749,7 @@ export function createFacaScene(canvas: HTMLCanvasElement, reduced: boolean) {
           flatTurn + fold * baseTurn + (sway + pointerX * 0.28) * fold,
           0,
         );
-        if (i === 2) position.y = fold * 0.75;
+        if (i === 2) position.y = fold * 0.5;
       });
 
       renderer.render(scene, camera);

@@ -11,6 +11,7 @@ Um ADR registra **uma** decisão: o contexto, as opções comparadas, o critéri
 | [0005](./0005-deploy-automatico-github-actions.md) | Deploy automático pelo GitHub Actions | Aceito |
 | [0006](./0006-harness-ia-claude-code.md) | Harness de IA com Claude Code, versionado no repositório | Aceito; o navegador no Mac foi substituído pelo ADR 0007 |
 | [0007](./0007-navegador-no-mac-com-dev-browser.md) | Conferência no navegador do Mac com dev-browser | Aceito |
+| [0008](./0008-identidade-faca-dourada.md) | Identidade visual: Faca Dourada | Aceito |
 
 ## Modelo
 

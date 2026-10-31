@@ -57,7 +57,10 @@ export function createHandScene(canvas: HTMLCanvasElement, reduced: boolean) {
     segment.position.y = length / 2;
     const pin = new Mesh(new CylinderGeometry(width * 0.3, width * 0.3, width * 1.06, 18), dark);
     pin.rotation.z = Math.PI / 2;
-    const cap = new Mesh(new CylinderGeometry(width * 0.13, width * 0.13, width * 1.12, 12), pinMaterial);
+    const cap = new Mesh(
+      new CylinderGeometry(width * 0.13, width * 0.13, width * 1.12, 12),
+      pinMaterial,
+    );
     cap.rotation.z = Math.PI / 2;
     parent.add(segment, pin, cap);
   };

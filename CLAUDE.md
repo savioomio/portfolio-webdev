@@ -36,8 +36,10 @@ O ciclo completo de uma tarefa, do backlog ao deploy conferido, está na skill `
   ├── pages/        # uma página por rota
   ├── components/
   │   ├── ui/       # Button, Card, Input, Skeleton, Spinner: só apresentação
+  │   ├── layout/   # Header, Footer e o que envolve todas as páginas
   │   ├── sections/ # blocos da Home
   │   └── three/    # cenas 3D, sempre carregadas sob demanda
+  ├── content/      # textos e dados fixos do site
   ├── hooks/        # useRepos, useContactForm, useAuth...
   ├── services/     # acesso a APIs, sem React
   ├── schemas/      # schemas de validação
@@ -59,7 +61,7 @@ O ciclo completo de uma tarefa, do backlog ao deploy conferido, está na skill `
 | `.claude/hooks/guard-bash.mjs` | Bloqueia pular os hooks do Git, config global do Git e deploy no Worker do site pessoal |
 | `.claude/hooks/lab-check.mjs` | No PC do lab, diz no início da sessão o que falta do setup |
 | `.claude/skills/` | `tarefa`, `decisao`, `conferir-no-navegador`, `impeccable` (design, instalada em `.agents/`) |
-| `PRODUCT.md` | Público, posicionamento e conteúdo real, lidos pela skill `impeccable` |
+| `PRODUCT.md` e `DESIGN.md` | Público, conteúdo real e identidade visual, lidos pela skill `impeccable` |
 | `.claude/agents/` | `revisor` (diff contra estas regras), `pesquisador` (research com fontes oficiais) |
 | `.mcp.json` | Documentação da Cloudflare |
 

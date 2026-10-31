@@ -10,7 +10,7 @@ Uma research compara alternativas **antes** de uma decisão. Ao terminar, ela vi
 | R04 | Tema claro/escuro persistido sem flash | 3 | a criar |
 | R05 | Ferramentas de teste | 4 | a criar |
 | R06 | Harness de IA: ferramenta, modelo, instruções, skills, agents, MCPs | 0 | [harness-ia.md](./harness-ia.md) (ADR 0006) |
-| R07 | Identidade visual: o que representa a área de e-commerce? | 1 | [identidade-visual.md](./identidade-visual.md) (em aberto) |
+| R07 | Identidade visual: o que representa a área de e-commerce? | 1 | [identidade-visual.md](./identidade-visual.md) (ADR 0008) |
 | R08 | Deploy automático: Workers Builds ou GitHub Actions? | 0 | [deploy-automatico.md](./deploy-automatico.md) (ADR 0005) |
 
 As perguntas detalhadas e os critérios de cada uma estão no [backlog](../tasks/backlog.md).

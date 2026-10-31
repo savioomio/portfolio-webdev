@@ -1,11 +1,10 @@
 import path from "path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import svgr from "vite-plugin-svgr";
 
 // https://vite.dev/config/
-export default defineConfig({
-  plugins: [react(), svgr()],
+export default defineConfig(({ isSsrBuild }) => ({
+  plugins: [react()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
@@ -15,13 +14,14 @@ export default defineConfig({
     // Sem sourcemap em produção: não publica o código-fonte junto do build
     // e corta o peso do upload. Use `npm run build -- --sourcemap` se precisar.
     sourcemap: false,
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          vendor: ["react", "react-dom"],
-          three: ["three", "@react-three/fiber"],
+    rollupOptions: isSsrBuild
+      ? undefined
+      : {
+          output: {
+            manualChunks: {
+              vendor: ["react", "react-dom", "react-router-dom"],
+            },
+          },
         },
-      },
-    },
   },
-});
+}));

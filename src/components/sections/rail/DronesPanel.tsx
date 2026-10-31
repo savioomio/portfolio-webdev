@@ -1,0 +1,77 @@
+import { useEffect, useRef } from "react";
+import type { WinchScene } from "@/components/three/winch";
+import type { Project } from "@/content/projects";
+import { prefersReducedMotion } from "@/lib/utils";
+import { PanelCopy } from "./PanelCopy";
+import { RailPanel } from "./RailPanel";
+import { RailVideo } from "./RailVideo";
+import { useRailFrame } from "./railContext";
+
+export function DronesPanel({ project }: { project: Project }) {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const scene = useRef<WinchScene | null>(null);
+  const started = useRef(false);
+
+  useRailFrame((loc) => {
+    if (Math.abs(loc) >= 1.05) return;
+    if (!started.current && canvasRef.current) {
+      started.current = true;
+      const canvas = canvasRef.current;
+      import("@/components/three/winch")
+        .then(({ createWinchScene }) => createWinchScene(canvas, prefersReducedMotion()))
+        .then((created) => {
+          scene.current = created;
+        })
+        .catch(() => undefined);
+    }
+    scene.current?.draw();
+  });
+
+  useEffect(() => {
+    const onResize = () => scene.current?.size();
+    window.addEventListener("resize", onResize);
+    return () => {
+      window.removeEventListener("resize", onResize);
+      scene.current?.dispose();
+      scene.current = null;
+      started.current = false;
+    };
+  }, []);
+
+  return (
+    <RailPanel project={project}>
+      <img
+        className="absolute inset-0 size-full object-cover"
+        src="/media/voo-bristol.webp"
+        alt="Drone da equipe em voo na IMAV 2024, em Bristol"
+        width={960}
+        height={638}
+        loading="lazy"
+      />
+      <div className="panel-inner">
+        <PanelCopy project={project} className="panel-glass" />
+        <div className="media-drones">
+          <figure className="winch">
+            <canvas ref={canvasRef} aria-label="Guincho do drone em 3D" />
+            <figcaption className="pointer-events-none absolute inset-x-2.5 bottom-2 text-[13px] leading-tight">
+              Guincho que modelei para o drone. Arraste para girar.
+            </figcaption>
+          </figure>
+          <RailVideo
+            src="/media/aereo.mp4"
+            poster="/media/aereo.webp"
+            label="Vista aérea feita com o drone"
+          />
+          <img
+            className="h-full w-full rounded-[14px] object-cover"
+            src="/media/drone.webp"
+            alt="Drone da equipe usado na Competição Nacional de Drones"
+            width={400}
+            height={400}
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </RailPanel>
+  );
+}

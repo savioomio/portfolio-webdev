@@ -1,54 +1,41 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: ["./index.html", "./src/**/*.{ts,tsx}"],
+  darkMode: ["selector", '[data-theme="dark"]'],
   theme: {
     extend: {
-      // Tipografia obrigatória
+      screens: {
+        md: "861px",
+      },
       fontFamily: {
-        heading: ["Space Grotesk", "system-ui", "sans-serif"],
-        body: ["Inter", "system-ui", "sans-serif"],
-        sans: ["Inter", "system-ui", "sans-serif"],
+        display: ["Nunito", "ui-rounded", "Segoe UI", "system-ui", "sans-serif"],
+        body: ["Lato", "Segoe UI", "system-ui", "sans-serif"],
+        sans: ["Lato", "Segoe UI", "system-ui", "sans-serif"],
       },
-
-      // Paleta de cores do Design System
+      // As cores da interface vêm de variáveis CSS, que trocam com o tema (src/index.css).
       colors: {
-        accent: {
-          DEFAULT: "#48c9ea",
-          hover: "#8BE6FF",
-          soft: "rgba(97, 218, 251, 0.25)",
-          glow: "rgba(97, 218, 251, 0.45)",
+        bg: "var(--bg)",
+        surface: "var(--surface)",
+        ink: "var(--ink)",
+        mute: "var(--mute)",
+        line: "var(--line)",
+        gold: {
+          DEFAULT: "var(--gold)",
+          hover: "var(--gold-hover)",
+          ink: "var(--gold-ink)",
+          soft: "var(--gold-soft)",
         },
-
-        // Glass morphism
-        glass: {
-          primary: "rgba(10, 15, 25, 0.55)",
-          secondary: "rgba(17, 25, 40, 0.60)",
-          border: "rgba(255, 255, 255, 0.08)",
-        },
-
-        // Texto
-        text: {
-          primary: "#E5E7EB",
-          secondary: "#9CA3AF",
-          disabled: "#6B7280",
-        },
+        vtex: { DEFAULT: "#F71963", ink: "var(--vtex-ink)" },
+        wake: { DEFAULT: "#C505F2", ink: "var(--wake-ink)" },
+        wp: { DEFAULT: "#21759B", ink: "var(--wp-ink)" },
+        danger: "var(--danger)",
       },
-
-      // Backgrounds para glass morphism
-      backgroundColor: {
-        "glass-primary": "rgba(10, 15, 25, 0.55)",
-        "glass-secondary": "rgba(17, 25, 40, 0.60)",
+      maxWidth: {
+        wrap: "1240px",
       },
-
-      // Borders
-      borderColor: {
-        glass: "rgba(255, 255, 255, 0.08)",
-      },
-
-      // Box shadows para glow effects
-      boxShadow: {
-        "glow-accent": "0 0 20px rgba(97, 218, 251, 0.45)",
-        "glow-accent-lg": "0 0 40px rgba(97, 218, 251, 0.45)",
+      padding: {
+        gl: "var(--gl)",
+        gr: "var(--gr)",
       },
     },
   },

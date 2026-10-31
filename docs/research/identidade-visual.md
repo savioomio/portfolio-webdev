@@ -1,7 +1,7 @@
 # R07. Identidade visual: o que representa a área de e-commerce?
 
 - **Data:** 2026-10-21, atualizada em 2026-10-31
-- **Status:** em aberto; a Faca foi escolhida como base e a terceira rodada aguarda o retorno do Savio
+- **Status:** decidida em 31/10, a Faca Dourada ([ADR 0008](../adr/0008-identidade-faca-dourada.md))
 - **Requisitos atendidos:** 7, 8
 
 ## Contexto
@@ -89,6 +89,12 @@ Uma prévia, a **Faca Dourada**, a partir do pedido do Savio:
 - **História:** primeiro uma lista de projetos; depois um trilho horizontal, com uma seção por projeto, cada uma com fundo e letras na cor do projeto.
 - **Algo próprio em cada projeto:** vídeos da aranha; guincho do drone em 3D; água subindo no Callidus Link; mão 3D que faz os sinais pelo teclado; telas reais da JSOM e do GasMaster, com dados fictícios.
 
+O Savio aprovou a direção em 31/10 ("é literalmente isso que eu quero mesmo") e pediu ajustes: incluir o Platão e o Synesthesia, não citar Deco, melhorar o objeto 3D do WordPress e trocar a foto da medalha pela do troféu.
+
 ## Fontes
 
-- a preencher ao fechar a research
+Decisão de gosto, tomada pelo Savio a partir das três prévias:
+
+- [Rodada 1](https://claude.ai/artifact/SaioSuuKMCMKcRWtfyZoCg)
+- [Rodada 2](https://claude.ai/artifact/5ZJ4WfNjBX4kuU4hs4ym5G)
+- [Rodada 3](https://claude.ai/artifact/CMFyUijVgNzMTPeoLTdrXw)

@@ -30,7 +30,7 @@ Especialista em front-end para e-commerce, com loja de verdade em produção: VT
 - Requisitos em `docs/requisitos.md`: rotas com 404, dados do GitHub com estados de carregamento, formulário validado, dashboard com login, tema claro/escuro persistido, testes.
 - Lighthouse mobile ≥ 80, com a cena 3D e o dashboard fora do pacote inicial. A nota medida em 30/10/2026 no site atual foi 68.
 - SPA estática em Cloudflare Workers; backend em serviço gerenciado.
-- Em aberto: identidade visual (R07), backend e serviço de e-mail (R02).
+- Backend em Supabase e e-mail pelo Formspree ([ADR 0010](docs/adr/0010-backend-supabase-e-formspree.md)).
 
 ## Brand Commitments
 
@@ -47,11 +47,11 @@ Especialista em front-end para e-commerce, com loja de verdade em produção: VT
 Dados publicados no LinkedIn (`linkedin.com/in/savioomio`, lidos em 30/10/2026) e no site atual.
 
 - **Experiência:** Desenvolvedor Front-End Pleno na Wicomm, remoto, desde out/2024: referência técnica em VTEX FastStore e dev lead em projetos FastStore, reportando ao tech lead. Estágio bolsista no IF Baiano, set/2023 a ago/2024, no projeto Callidus Link (automação e monitoramento de consumo hídrico com IoT em perímetros irrigados, 352 h).
-- **Lojas:** 33 lojas no site: FastStore (11), Store Framework (11) e Wake (11, uma delas com Deco), mais 2 projetos em WordPress. A loja com Eitri + VTEX fica fora das contas do site. Os nomes das marcas não entram no site nem no repositório.
+- **Lojas:** 33 lojas no site: FastStore (11), Store Framework (11) e Wake (11), mais 2 projetos em WordPress. Deco não é citado: foi um projeto de uma vez. A loja com Eitri + VTEX fica fora das contas do site. Os nomes das marcas não entram no site nem no repositório.
 - **Formação:** Bacharelado em Computer Software Engineering na FIAP, fev/2026 a dez/2029. Técnico em Informática para Internet no IF Baiano, ago/2021 a out/2024.
 - **Destaques:** 2º lugar no primeiro Wackathon da Wicomm, em dupla com Rafael Gomes de Oliveira, construindo uma loja completa só com prompts. Equipe campeã na Competição Nacional de Drones (Florianópolis, 2023). IMAV 2024 em Bristol, Inglaterra, de 16 a 20/09/2024, representando o Brasil como única equipe de ensino médio ao lado de pós-graduação, como a USP: modelagem 3D e mecânica do drone da equipe Drones Guanambi e apresentação em inglês do artigo "Comparative Analysis of Cameras for ArUco Marker Recognition in Unmanned Aerial Vehicles".
 - **Certificados:** Python Development e Design Thinking (FIAP, 2026), Competição de Drones (IFSC, 2023), IV Vila da Ciência, VIMAD e Tenda da Ciência com Premiação 2 (Even3, 2023).
-- **Competências:** Vtex, Vtex Store Framework, Vtex FastStore, Vtex IO, Wake, Scriban, Deco, WordPress, React.js, TypeScript, JavaScript, Tailwind CSS, SASS, Bootstrap, PHP, Django, Claude Code, Python, Web Scraping, Automação de processos, Arduino, Robótica, Drones, C, C++.
+- **Competências:** Vtex, Vtex Store Framework, Vtex FastStore, Vtex IO, Wake, Scriban, WordPress, React.js, TypeScript, JavaScript, Tailwind CSS, SASS, Bootstrap, PHP, Django, Claude Code, Python, Web Scraping, Automação de processos, Arduino, Robótica, Drones, C, C++.
 - **Projetos no site:** Gas Master (sistema desktop para postos, repositório `sistema-notas-posto`), E-commerce Platform, Task Management App, 3D Portfolio Website. Capas em `public/projects/`.
 - **Números:** 3 anos de experiência, sendo 1 de estágio e 2 em e-commerce, e 33 lojas. Os "+22 projetos" e "+15 com participação ativa" do site atual estão defasados em relação à lista de lojas.
 - **Mídia:** vídeo da aranha robô em `public/videos/`. Fora do repositório: outro vídeo da aranha (`~/Videos/A melhor aranha.mp4`), mão robótica em Libras (`~/Videos/sinais ‐ Feito com o Clipchamp.mp4`), fotos da IMAV e guincho do drone em 3D (`~/Drone Guanambi`) e fotos da competição do IFSC (`~/Portfólio`).
@@ -59,9 +59,13 @@ Dados publicados no LinkedIn (`linkedin.com/in/savioomio`, lidos em 30/10/2026) 
 - **Mão robótica:** artigo na Mostra Nacional de Robótica 2024, em equipe de três alunos e um orientador. Reproduziu 16 letras do alfabeto em Libras; F, H, J, K, M, N, P, Q, R e Z falharam e dependem de um novo pulso.
 - **JSOM:** Projeto de Conclusão de Curso em grupo, sistema de gestão de alunos de academia em Django (`~/PCC(JSOM)`).
 - **GasMaster:** usado por 2 postos de gasolina. Electron e SQLite, com um computador servindo os outros na rede local.
+- **Platão:** app de ajuda em call para quem atende clientes VTEX e Wake. Escuta a reunião, percebe quando a pessoa não lembra a resposta e mostra a resposta certa da documentação oficial, com os links. Tauri 2, Rust, React e SQLite. Página em `platao.savioomiodev.com.br`.
+- **Synesthesia:** app Android da equipe SAVAC no JOVI Challenge da FIAP 2026. Lê a cena com IA e entrega foto, filtro e trilha sonora prontos para postar. Repositório público em `SAVAC-Challenge-FIAP/synesthesia-app`. As pessoas do vídeo foram geradas com IA.
+- **Tenda da Ciência:** o Sávio apresentou o Callidus Link e a mão robótica na mesma feira e ganhou 2 medalhas de honra ao mérito científico.
+- **Guincho do drone:** modelo 3D feito pelo Sávio.
 - **Fontes:** LinkedIn, currículo em `docs/research/Curriculo_Savio_Pessoa_Afonso.pdf`, perfil no portal de carreiras da FIAP e lista enviada pelo Sávio.
 - **Não existem e não podem ser inventados:** depoimentos, preços, métricas de resultado de lojas e idiomas (o LinkedIn não lista nenhum). Os números "+40%", "-60%" e "95+" do site atual são lorem ipsum.
-- **Não usar:** telas do Gas Master com nomes e valores de clientes, documentos internos da Wicomm, fotos de colegas no site público sem a autorização deles e, sem resolver a licença, o modelo 3D da mão: a base é da BBProjects (Brian Brocken), sob CC BY-NC-ND 4.0, que não permite distribuir versão modificada.
+- **Não usar:** telas do Gas Master com nomes e valores de clientes, documentos internos da Wicomm, fotos com o rosto de colegas no site público sem a autorização deles e a malha 3D original da mão: a base é da BBProjects (Brian Brocken), sob CC BY-NC-ND 4.0, que não permite distribuir versão modificada. A mão 3D do site é modelada em código, em `src/components/three/hand.ts`.
 
 ## Product Principles
 

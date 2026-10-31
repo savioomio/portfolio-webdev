@@ -46,12 +46,18 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          # Limite maior na API para gerar as paginas dos repositorios
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Conferir que o dist foi gerado
         run: test -f dist/index.html && echo "Build OK"
 
       - name: Conferir que _headers foi copiado
         run: test -f dist/_headers && echo "Headers OK"
+
+      - name: Conferir as paginas geradas
+        run: test -f dist/404.html && test -f dist/sitemap.xml && test -f dist/projetos/platao/index.html && echo "Paginas OK"
 
   deploy:
     name: Deploy na Cloudflare
@@ -85,6 +91,7 @@ jobs:
         run: npm run deploy
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # Valores publicos por natureza: quem protege os dados e o RLS do banco
           VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
           VITE_SUPABASE_PUBLISHABLE_KEY: ${{ vars.VITE_SUPABASE_PUBLISHABLE_KEY }}

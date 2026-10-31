@@ -2,7 +2,9 @@ import { useNavigate } from "react-router-dom";
 import { FeaturedPicker } from "@/components/dashboard/FeaturedPicker";
 import { MessageList } from "@/components/dashboard/MessageList";
 import { RequireAuth } from "@/components/layout/RequireAuth";
+import { Seo } from "@/components/layout/Seo";
 import { Button } from "@/components/ui/Button";
+import { seoForPrivatePage } from "@/lib/seo";
 import { signOut } from "@/services/auth";
 
 function DashboardContent() {
@@ -43,8 +45,11 @@ function DashboardContent() {
 
 export default function Dashboard() {
   return (
-    <RequireAuth>
-      <DashboardContent />
-    </RequireAuth>
+    <>
+      <Seo data={seoForPrivatePage("Painel")} />
+      <RequireAuth>
+        <DashboardContent />
+      </RequireAuth>
+    </>
   );
 }

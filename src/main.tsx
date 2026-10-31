@@ -1,4 +1,5 @@
 import { createAsyncStoragePersister } from "@tanstack/query-async-storage-persister";
+import { hydrate } from "@tanstack/react-query";
 import { PersistQueryClientProvider } from "@tanstack/react-query-persist-client";
 import { StrictMode } from "react";
 import { createRoot, hydrateRoot } from "react-dom/client";
@@ -11,6 +12,10 @@ import "./index.css";
 
 const root = document.getElementById("root") as HTMLElement;
 const queryClient = createQueryClient();
+
+// Dados do GitHub que vieram prontos no HTML da página
+const preloaded = document.getElementById("query-state")?.textContent;
+if (preloaded) hydrate(queryClient, JSON.parse(preloaded));
 
 const persister = createAsyncStoragePersister({
   storage: window.localStorage,

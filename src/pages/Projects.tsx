@@ -1,9 +1,11 @@
 import { useMemo, useState, type CSSProperties } from "react";
 import { Link } from "react-router-dom";
+import { Seo } from "@/components/layout/Seo";
 import { RepoGrid } from "@/components/projects/RepoGrid";
 import { projects } from "@/content/projects";
 import { useRepos } from "@/hooks/useRepos";
 import { repoLanguages } from "@/lib/repos";
+import { seoForProjects } from "@/lib/seo";
 
 const ALL = "Todas";
 
@@ -19,6 +21,7 @@ export default function Projects() {
 
   return (
     <main className="relative mx-auto w-full max-w-wrap px-[var(--gl)] pb-20 pt-28 md:pt-32">
+      <Seo data={seoForProjects()} />
       <h1 className="text-[clamp(2.6rem,6vw,4.8rem)] font-black leading-[1.06] tracking-[-0.025em]">
         Projetos
       </h1>

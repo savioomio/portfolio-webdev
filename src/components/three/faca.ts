@@ -14,7 +14,7 @@ import {
   Mesh,
   MeshBasicMaterial,
   MeshStandardMaterial,
-  PCFSoftShadowMap,
+  PCFShadowMap,
   PerspectiveCamera,
   Plane,
   PlaneGeometry,
@@ -236,7 +236,7 @@ export function createFacaScene(canvas: HTMLCanvasElement, reduced: boolean) {
   const renderer = new WebGLRenderer({ canvas, antialias: true, alpha: true });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.shadowMap.enabled = true;
-  renderer.shadowMap.type = PCFSoftShadowMap;
+  renderer.shadowMap.type = PCFShadowMap;
 
   const scene = new Scene();
   const camera = new PerspectiveCamera(30, 1, 0.1, 60);

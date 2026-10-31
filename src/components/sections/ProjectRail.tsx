@@ -169,6 +169,7 @@ export function ProjectRail({ ref }: { ref?: Ref<RailHandle> }) {
       style={{ "--n": count } as CSSProperties}
       aria-label="Projetos, um por seção"
     >
+      <h2 className="sr-only">Projetos</h2>
       <div className="rail-stick">
         <RailContext.Provider value={rail}>
           <div ref={trackRef} className="rail-track" onFocus={onFocus}>

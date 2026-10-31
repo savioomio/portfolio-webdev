@@ -234,7 +234,7 @@ const plataoModes = {
   vtex: {
     label: "VTEX",
     background: "#142032",
-    accent: "#F71963",
+    accent: "#C20C4A",
     image: "/media/platao-inicio-vtex.webp",
     alt: "Tela inicial do Platão no modo VTEX",
     question: "Dá para ter um preço diferente para cada canal de venda?",

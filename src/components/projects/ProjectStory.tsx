@@ -1,8 +1,10 @@
 import type { CSSProperties } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Seo } from "@/components/layout/Seo";
 import { ExternalButton } from "@/components/ui/Button";
 import { projects, type Project } from "@/content/projects";
+import { seoForProject } from "@/lib/seo";
 
 /** Página própria de um projeto: as mesmas cores do painel, com o texto e as imagens. */
 export function ProjectStory({ project }: { project: Project }) {
@@ -11,6 +13,7 @@ export function ProjectStory({ project }: { project: Project }) {
 
   return (
     <main>
+      <Seo data={seoForProject(project)} />
       <header
         className="bg-[var(--c)] px-[var(--gl)] pb-14 pt-28 text-[var(--k)] md:pt-32"
         style={{ "--c": project.color, "--k": project.ink } as CSSProperties}

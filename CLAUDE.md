@@ -51,6 +51,7 @@ O ciclo completo de uma tarefa, do backlog ao deploy conferido, está na skill `
 - **Nomenclatura:** componentes em PascalCase (`ProjectCard.tsx`), hooks começando com `use` (`useRepos.ts`), services e funções em camelCase (`github.ts`), imports a partir de `src` com `@/`.
 - **Idioma:** nomes no código em inglês; textos da interface, comentários, commits e documentação em português.
 - **Performance** (requisito 8): cena 3D e páginas pesadas (dashboard) com `React.lazy`, fora do bundle inicial; imagens com largura e altura definidas.
+- **SEO** ([ADR 0014](docs/adr/0014-seo-pre-renderizacao.md)): toda página renderiza no build, então nada de `window` durante o render, e cada página declara o componente `Seo`. Rota nova entra em `src/app/pages.ts`, `src/entry-server.tsx` e, se for fixa, em `staticPaths`.
 - **Estilo:** Tailwind. Componente que se repete em mais de uma página vira `components/ui/`.
 
 ## Harness de IA ([ADR 0006](docs/adr/0006-harness-ia-claude-code.md))

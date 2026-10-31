@@ -66,10 +66,10 @@ export function DronesPanel({ project }: { project: Project }) {
           )}
           <img
             className="h-full w-full rounded-[14px] object-cover"
-            src="/media/drone-bristol.webp"
-            alt="Drone da equipe na bancada do Bristol Robotics Laboratory"
-            width={640}
-            height={469}
+            src="/media/trofeu.webp"
+            alt="Troféu de primeiro lugar da Competição Nacional de Drones, em Florianópolis"
+            width={400}
+            height={400}
             loading="lazy"
           />
         </div>

@@ -60,7 +60,7 @@ Dados publicados no LinkedIn (`linkedin.com/in/savioomio`, lidos em 30/10/2026) 
 - **JSOM:** Projeto de Conclusão de Curso em grupo, sistema de gestão de alunos de academia em Django (`~/PCC(JSOM)`).
 - **GasMaster:** usado por 2 postos de gasolina. Electron e SQLite, com um computador servindo os outros na rede local.
 - **Platão:** app de ajuda em call para quem atende clientes VTEX e Wake. Escuta a reunião, percebe quando a pessoa não lembra a resposta e mostra a resposta certa da documentação oficial, com os links. Tauri 2, Rust, React e SQLite. Página em `platao.savioomiodev.com.br`.
-- **Synesthesia:** app Android da equipe SAVAC no JOVI Challenge da FIAP 2026. Lê a cena com IA e entrega foto, filtro e trilha sonora prontos para postar. Repositório público em `SAVAC-Challenge-FIAP/synesthesia-app`. As pessoas do vídeo foram geradas com IA.
+- **Synesthesia:** app Android da equipe SAVAC no JOVI Challenge da FIAP 2026. Lê a cena com IA e entrega foto, filtro e trilha sonora prontos para postar. Repositório público em `SAVAC-Challenge-FIAP/synesthesia-app`. O site mostra a gravação do app em uso, cortada antes da tela de compartilhamento, que tem contatos reais.
 - **Tenda da Ciência:** o Sávio apresentou o Callidus Link e a mão robótica na mesma feira e ganhou 2 medalhas de honra ao mérito científico.
 - **Guincho do drone:** modelo 3D feito pelo Sávio, o mecanismo de coleta da prova. O vídeo da prova traz a legenda da equipe aprovando o mecanismo.
 - **Fontes:** LinkedIn, currículo em `docs/research/Curriculo_Savio_Pessoa_Afonso.pdf`, perfil no portal de carreiras da FIAP e lista enviada pelo Sávio.

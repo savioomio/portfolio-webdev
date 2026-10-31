@@ -30,7 +30,7 @@ Ao terminar: marque aqui no mesmo PR e siga a [definição de pronto](../planeja
 - [x] **R07** Research de identidade visual: o que representa a área de e-commerce. Decidida: Faca Dourada ([ADR 0008](../adr/0008-identidade-faca-dourada.md)). Req 7, 8.
 - [x] **T29** Conteúdo de 2024 em diante: experiências e projetos pessoais. Branch: `feature/identidade-faca-dourada`. *Saiu junto com a T34: o lorem ipsum foi removido e o conteúdo real está em `src/content/`.*
 - [x] **T31** Harness no Mac: a skill `conferir-no-navegador` e o `CLAUDE.md` citam só o MCP `chrome-devtools`, mas o Mac usa o Comet com `dev-browser`. Registrar a skill `impeccable`. Branch: `chore/harness-mac`.
-- [ ] **T32** Estudo sobre o Savio para levantar projetos e conteúdo: percorrer as pastas de trabalho, separar o que pode ser público e transformar em fichas de projeto. Atenção a dados de clientes e documentos internos da Wicomm. Branch: `docs/estudo-conteudo`.
+- [ ] **T32** *(fica para depois da entrega)* Estudo sobre o Savio para levantar projetos e conteúdo: percorrer as pastas de trabalho, separar o que pode ser público e transformar em fichas de projeto. Atenção a dados de clientes e documentos internos da Wicomm. Branch: `docs/estudo-conteudo`.
 - [x] **T33** História no fim da Home: lista de projetos e trilho horizontal com uma seção por projeto (aranha, drones, Callidus Link, mão robótica, JSOM, GasMaster, Synesthesia e Platão), cada uma com a cor do projeto, vídeos, fotos e telas. Branch: `feature/identidade-faca-dourada`. *Sem rostos de colegas nas fotos e com a mão 3D modelada em código.*
 - [x] **T34** Levar a Faca Dourada ao site: tokens, tema base, fontes próprias, motor 3D em Three.js, novo objeto do WordPress, seções da Home, `DESIGN.md` e remoção do visual antigo, do R3F, do Framer Motion e do Helmet. Branch: `feature/identidade-faca-dourada`. Req 7.
 - [x] **R01** Research de rotas e dados ([ADR 0009](../adr/0009-rotas-e-dados.md)): React Router vs TanStack Router; TanStack Query vs SWR vs `fetch` manual. Critérios: cache entre páginas, estados de loading/erro/vazio, tamanho do bundle, curva de aprendizado. Vira ADR.
@@ -64,12 +64,12 @@ Ao terminar: marque aqui no mesmo PR e siga a [definição de pronto](../planeja
 - [x] **T35** SEO: pré-renderização de cada rota, 404 real, JSON-LD, Open Graph, sitemap gerado no build, `robots.txt` e `llms.txt` ([ADR 0014](../adr/0014-seo-pre-renderizacao.md)). Branch: `feature/seo`. Aceite: Lighthouse SEO 100 no celular; `/qualquer-coisa` responde 404.
 - [x] **R05** Research de testes ([ADR 0013](../adr/0013-testes-vitest.md)): Vitest + Testing Library vs Playwright. Vira ADR.
 - [x] **T22** Testes da validação do formulário e do bloqueio do dashboard sem login; o CI roda os testes e bloqueia o merge se falharem. Branch: `test/formulario-e-dashboard`. Req 9.
-- [ ] **T23** Performance: Lighthouse mobile ≥ 80 (print salvo em `docs/`); imagens com `srcset`/`sizes` e AVIF/WebP; `.jfif` convertidos; cena 3D fora do bundle inicial; CLS próximo de 0; análise do bundle com `rollup-plugin-visualizer`. Branch: `perf/lighthouse`. Req 8.
-- [ ] **T24** Revisão responsiva em celular (390 px) e desktop (1440 px), com prints de cada página. Branch: `fix/responsivo`. Req 7.
+- [x] **T23** Performance: Lighthouse mobile ≥ 80 (print salvo em `docs/`); imagens com `srcset`/`sizes` e AVIF/WebP; `.jfif` convertidos; cena 3D fora do bundle inicial; CLS próximo de 0; análise do bundle com `rollup-plugin-visualizer`. Branch: `perf/lighthouse`. Req 8.
+- [x] **T24** Revisão responsiva em celular (390 px) e desktop (1440 px), com prints de cada página. Branch: `fix/responsivo`. Req 7.
 
 ## Fase 5: Entrega (01/11 – 03/11)
 
-- [ ] **T25** README final: sobre o projeto, tecnologias, como rodar, variáveis de ambiente, padrões de commits, branches, pastas e nomenclatura, e links das URLs publicadas. Branch: `docs/readme`. Repositório, req 11, 12.
-- [ ] **T26** Diagramas para o vídeo: pastas, fluxo de dados e branch até deploy. Branch: `docs/diagramas`.
-- [ ] **T27** Roteiro do vídeo em `docs/video-roteiro.md`: três partes, até 8 minutos. Branch: `docs/roteiro-video`.
+- [x] **T25** README final: sobre o projeto, tecnologias, como rodar, variáveis de ambiente, padrões de commits, branches, pastas e nomenclatura, e links das URLs publicadas. Branch: `docs/readme`. Repositório, req 11, 12.
+- [x] **T26** Diagramas para o vídeo: pastas, fluxo de dados e branch até deploy. Branch: `docs/diagramas`.
+- [x] **T27** Roteiro do vídeo em `docs/video-roteiro.md`: três partes, até 8 minutos. Branch: `docs/roteiro-video`.
 - [ ] **T28** Gravar (rosto e tela), subir no YouTube como não listado e entregar os três links no Teams até 03/11.

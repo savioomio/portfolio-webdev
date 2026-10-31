@@ -19,30 +19,13 @@ Uma fase por bloco de requisitos, com pelo menos um commit por dia para o histó
 
 Folga: a Fase 5 tem dois dias de buffer. Se uma fase atrasar, a gravação do vídeo é o que não pode ser comprimido (precisa de pelo menos um dia).
 
-## Stack proposta
+## Stack
 
-Ponto de partida para as researches. Nada aqui é decisão até virar ADR.
-
-| Área | Já no projeto | Proposta | Alternativas a comparar | Research |
-| --- | --- | --- | --- | --- |
-| Build | Vite 5 + React 19 + TypeScript | manter | — | — |
-| Estilo e 3D | Tailwind 3, React Three Fiber, Framer Motion | identidade em revisão: o fundo espacial não representa e-commerce | conceito "o portfólio é uma loja", com ou sem 3D | R07 |
-| Rotas | React Router 7 | manter, com `errorElement` e rotas lazy | TanStack Router, wouter | R01 |
-| Dados de API e cache | — | TanStack Query | SWR, `fetch` + `useState` | R01 |
-| Formulário | — | React Hook Form + Zod | Formik + Yup, validação manual | R03 |
-| Backend (auth + banco) | — | Supabase (Auth + Postgres com RLS) | Firebase, Appwrite, PocketBase, Node próprio | R02 |
-| E-mail | — | a definir | EmailJS, Formspree, Resend via Supabase Edge Function | R02 |
-| Tema | `next-themes` (instalado, sem uso) | a definir | Context + `localStorage`, Zustand | R04 |
-| Testes | — | Vitest + Testing Library | Playwright (e2e) | R05 |
-| Qualidade | ESLint 9 | + Prettier, Husky, lint-staged, commitlint | Biome | [ADR 0003](./adr/0003-qualidade-de-codigo.md) |
-| Hospedagem | Cloudflare Workers ([ADR 0002](./adr/0002-hospedagem-cloudflare-workers.md)) | manter, sem Vercel ([ADR 0004](./adr/0004-entrega-sem-vercel.md)) | Vercel | T07 |
-| Harness de IA | Claude Code | `CLAUDE.md`, `.claude/` (settings, skills, agents) e MCPs versionados | Cursor, Copilot | R06 |
-
-Critério geral: o front continua sendo uma SPA estática. Todo o backend fica num serviço gerenciado (BaaS), então o build não depende de nada específico da Cloudflare.
+As decisões estão em [`docs/adr`](./adr/README.md) e a lista completa no [README](../README.md#tecnologias).
 
 ## Arquitetura alvo
 
-Proposta de pastas (fechada na T10). A regra é que componente visual não chama API: ele recebe dados de um hook, e o hook usa um service.
+Estrutura de pastas, fechada na T10. A regra é que componente visual não chama API: ele recebe dados de um hook, e o hook usa um service.
 
 ```
 src/
@@ -50,8 +33,12 @@ src/
 ├── pages/          # uma página por rota: Home, ProjectDetail, NotFound, Login, Dashboard
 ├── components/
 │   ├── ui/         # Button, Card, Input, Skeleton, Spinner: só apresentação, sem regra de negócio
-│   ├── sections/   # blocos da Home: Hero, Experience, Projects, Contact
+│   ├── layout/     # Header, Footer, Seo e o que envolve todas as páginas
+│   ├── sections/   # blocos da Home: Hero, Storefront, Experience, ProjectRail, Contact
+│   ├── projects/   # cartões e páginas de projeto
+│   ├── dashboard/  # blocos do painel
 │   └── three/      # cenas 3D, sempre carregadas sob demanda
+├── content/        # textos e dados fixos do site
 ├── hooks/          # useRepos, useRepo, useContactForm, useAuth, useTheme
 ├── services/       # github.ts, supabase.ts, messages.ts: só acesso a APIs, sem React
 ├── schemas/        # schemas Zod (contactSchema)

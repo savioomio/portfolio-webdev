@@ -62,8 +62,8 @@ Ao terminar: marque aqui no mesmo PR e siga a [definição de pronto](../planeja
 ## Fase 4: Qualidade (30/10 – 31/10)
 
 - [x] **T35** SEO: pré-renderização de cada rota, 404 real, JSON-LD, Open Graph, sitemap gerado no build, `robots.txt` e `llms.txt` ([ADR 0014](../adr/0014-seo-pre-renderizacao.md)). Branch: `feature/seo`. Aceite: Lighthouse SEO 100 no celular; `/qualquer-coisa` responde 404.
-- [ ] **R05** Research de testes: Vitest + Testing Library vs Playwright. Vira ADR.
-- [ ] **T22** Testes da validação do formulário e do bloqueio do dashboard sem login; o CI roda os testes e bloqueia o merge se falharem. Branch: `test/formulario-e-dashboard`. Req 9.
+- [x] **R05** Research de testes ([ADR 0013](../adr/0013-testes-vitest.md)): Vitest + Testing Library vs Playwright. Vira ADR.
+- [x] **T22** Testes da validação do formulário e do bloqueio do dashboard sem login; o CI roda os testes e bloqueia o merge se falharem. Branch: `test/formulario-e-dashboard`. Req 9.
 - [ ] **T23** Performance: Lighthouse mobile ≥ 80 (print salvo em `docs/`); imagens com `srcset`/`sizes` e AVIF/WebP; `.jfif` convertidos; cena 3D fora do bundle inicial; CLS próximo de 0; análise do bundle com `rollup-plugin-visualizer`. Branch: `perf/lighthouse`. Req 8.
 - [ ] **T24** Revisão responsiva em celular (390 px) e desktop (1440 px), com prints de cada página. Branch: `fix/responsivo`. Req 7.
 

@@ -5,6 +5,10 @@ import react from "@vitejs/plugin-react";
 // https://vite.dev/config/
 export default defineConfig(({ isSsrBuild }) => ({
   plugins: [react()],
+  define: {
+    // Invalida o cache do navegador a cada build
+    __BUILD_ID__: JSON.stringify(Date.now().toString(36)),
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

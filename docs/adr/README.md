@@ -9,7 +9,8 @@ Um ADR registra **uma** decisão: o contexto, as opções comparadas, o critéri
 | [0003](./0003-qualidade-de-codigo.md) | ESLint + Prettier, com Husky, lint-staged e commitlint | Aceito |
 | [0004](./0004-entrega-sem-vercel.md) | Entregar só com a Cloudflare, sem a Vercel | Aceito |
 | [0005](./0005-deploy-automatico-github-actions.md) | Deploy automático pelo GitHub Actions | Aceito |
-| [0006](./0006-harness-ia-claude-code.md) | Harness de IA com Claude Code, versionado no repositório | Aceito |
+| [0006](./0006-harness-ia-claude-code.md) | Harness de IA com Claude Code, versionado no repositório | Aceito; o navegador no Mac foi substituído pelo ADR 0007 |
+| [0007](./0007-navegador-no-mac-com-dev-browser.md) | Conferência no navegador do Mac com dev-browser | Aceito |
 
 ## Modelo
 

@@ -172,64 +172,6 @@ export function GasMasterPanel({ project }: PanelProps) {
   );
 }
 
-const lenses = [
-  { name: "Original", filter: "none" },
-  { name: "Vívido", filter: "saturate(1.7) contrast(1.08)" },
-  { name: "Neon", filter: "saturate(1.9) hue-rotate(-28deg) contrast(1.12)" },
-  { name: "Noir", filter: "grayscale(1) contrast(1.22)" },
-  { name: "Vintage", filter: "sepia(0.62) saturate(1.2) brightness(0.96)" },
-];
-
-export function SynesthesiaPanel({ project }: PanelProps) {
-  const [lens, setLens] = useState(lenses[0]);
-
-  return (
-    <RailPanel
-      project={project}
-      style={{ "--accent": "#F4A20C", "--on-accent": "#1C0507" } as CSSProperties}
-    >
-      <div className="panel-inner">
-        <PanelCopy project={project}>
-          <div className="chip-row" role="group" aria-label="Filtros do vídeo">
-            {lenses.map((item) => (
-              <button
-                key={item.name}
-                type="button"
-                aria-pressed={item.name === lens.name}
-                onClick={() => setLens(item)}
-              >
-                {item.name}
-              </button>
-            ))}
-          </div>
-        </PanelCopy>
-        <div className="media-syn">
-          <div className="phone" style={{ "--lens": lens.filter } as CSSProperties}>
-            <RailVideo
-              src="/media/synesthesia.mp4"
-              poster="/media/synesthesia-poster.webp"
-              label="Vídeo do app Synesthesia, com o filtro escolhido"
-              className="[filter:var(--lens)]"
-            />
-          </div>
-          <div className="syn-shots">
-            {project.gallery.map((image) => (
-              <img
-                key={image.src}
-                src={image.src}
-                alt={image.alt}
-                width={image.width}
-                height={image.height}
-                loading="lazy"
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-    </RailPanel>
-  );
-}
-
 /** Os dois exemplos saem do banco de testes do app, com o tempo que levaram de verdade. */
 const plataoModes = {
   vtex: {

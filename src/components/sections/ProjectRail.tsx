@@ -12,15 +12,9 @@ import { projects, type Project } from "@/content/projects";
 import { clamp, ease, lerp, prefersReducedMotion } from "@/lib/utils";
 import { DronesPanel } from "./rail/DronesPanel";
 import { MaoPanel } from "./rail/MaoPanel";
-import {
-  AranhaPanel,
-  CallidusPanel,
-  GasMasterPanel,
-  JsomPanel,
-  PlataoPanel,
-  SynesthesiaPanel,
-} from "./rail/panels";
+import { AranhaPanel, CallidusPanel, GasMasterPanel, JsomPanel, PlataoPanel } from "./rail/panels";
 import { RailContext, RailIndexContext, type RailFrame } from "./rail/railContext";
+import { SynesthesiaPanel } from "./rail/SynesthesiaPanel";
 
 const panelBySlug: Record<string, ComponentType<{ project: Project }>> = {
   "aranha-robo": AranhaPanel,

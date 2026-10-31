@@ -568,7 +568,7 @@
       background 0.15s ease,
       transform 0.15s ease;
   }
-  .hand-keys button:hover:not(:disabled) {
+  .hand-keys button:not(:disabled, [aria-pressed="true"]):hover {
     background: #fff;
   }
   .hand-keys button[aria-pressed="true"] {

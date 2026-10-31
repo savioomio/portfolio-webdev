@@ -40,13 +40,13 @@ const screens: AppScreen[] = [
   {
     label: "Galeria",
     text: "Cada momento guarda vibe e trilha.",
-    src: "/media/syn-galeria.webp",
+    src: "/media/syn-tela-galeria.webp",
     alt: "Galeria com os momentos salvos no app",
   },
   {
     label: "Ajustes",
     text: "IA e localização são opcionais.",
-    src: "/media/syn-ajustes.webp",
+    src: "/media/syn-tela-ajustes.webp",
     alt: "Tela de ajustes do Synesthesia",
   },
 ];

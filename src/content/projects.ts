@@ -352,9 +352,10 @@ export const projects: Project[] = [
       height: 800,
     },
     video: {
-      src: "/media/synesthesia.mp4",
-      poster: "/media/synesthesia-poster.webp",
-      label: "Gravação do app em uso: foto, leitura da cena, look aplicado e escolha da trilha",
+      src: "/media/synesthesia-app.mp4",
+      poster: "/media/synesthesia-app-poster.webp",
+      label:
+        "Gravação da tela do app: foto, leitura da cena, look aplicado, escolha da trilha e vídeo gerado",
       width: 360,
       height: 800,
     },
@@ -378,13 +379,13 @@ export const projects: Project[] = [
         height: 800,
       },
       {
-        src: "/media/syn-galeria.webp",
+        src: "/media/syn-tela-galeria.webp",
         alt: "Galeria com os momentos salvos no app",
         width: 360,
         height: 800,
       },
       {
-        src: "/media/syn-ajustes.webp",
+        src: "/media/syn-tela-ajustes.webp",
         alt: "Tela de ajustes do Synesthesia",
         width: 360,
         height: 800,

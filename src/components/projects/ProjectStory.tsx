@@ -84,6 +84,20 @@ export function ProjectStory({ project }: { project: Project }) {
           </aside>
         </div>
 
+        {project.video && (
+          <video
+            src={project.video.src}
+            poster={project.video.poster}
+            width={project.video.width}
+            height={project.video.height}
+            aria-label={project.video.label}
+            controls
+            playsInline
+            preload="none"
+            className="mx-auto mt-12 max-h-[70svh] w-auto rounded-2xl bg-black"
+          />
+        )}
+
         {project.gallery.length > 0 && (
           <section aria-label="Imagens do projeto" className="mt-12">
             <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

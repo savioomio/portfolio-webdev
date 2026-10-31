@@ -423,10 +423,10 @@
     grid-row: 1 / 3;
   }
   .media-drones {
-    height: clamp(190px, 31svh, 300px);
+    height: clamp(240px, 46svh, 420px);
     min-height: 0;
     display: grid;
-    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 0.72fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr) minmax(0, 0.9fr);
     gap: 12px;
     align-self: end;
   }
@@ -806,9 +806,8 @@
     }
     .media-drones {
       height: 100%;
-      grid-template-columns: minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1fr) minmax(0, 0.84fr);
     }
-    .media-drones video,
     .media-drones > img {
       display: none;
     }

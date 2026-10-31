@@ -5,6 +5,14 @@ export interface ProjectImage {
   height: number;
 }
 
+export interface ProjectVideo {
+  src: string;
+  poster: string;
+  label: string;
+  width: number;
+  height: number;
+}
+
 export interface ProjectLink {
   label: string;
   href: string;
@@ -30,6 +38,7 @@ export interface Project {
   tech: string[];
   links: ProjectLink[];
   cover: ProjectImage;
+  video?: ProjectVideo;
   gallery: ProjectImage[];
 }
 
@@ -63,6 +72,13 @@ export const projects: Project[] = [
       width: 640,
       height: 360,
     },
+    video: {
+      src: "/media/aranha.mp4",
+      poster: "/media/aranha-poster.webp",
+      label: "A aranha robô andando",
+      width: 640,
+      height: 360,
+    },
     gallery: [
       {
         src: "/media/aranha-app.webp",
@@ -86,7 +102,11 @@ export const projects: Project[] = [
     body: [
       "Fomos campeões na Competição Nacional de Drones, em Florianópolis. Em 2024 representamos o Brasil na IMAV, como única equipe de ensino médio ao lado de pós-graduação, como a USP.",
     ],
-    facts: ["Cuidei da modelagem 3D e da mecânica do drone.", "Apresentei nosso artigo em inglês."],
+    facts: [
+      "Cuidei da modelagem 3D e da mecânica do drone.",
+      "Fiz o guincho, o mecanismo de coleta da prova.",
+      "Apresentei nosso artigo em inglês.",
+    ],
     tech: ["Modelagem 3D", "Mecânica", "Drones"],
     links: [],
     cover: {
@@ -95,12 +115,19 @@ export const projects: Project[] = [
       width: 960,
       height: 638,
     },
+    video: {
+      src: "/media/missao-guincho.mp4",
+      poster: "/media/missao-guincho.webp",
+      label: "O drone em voo na prova do guincho, com a legenda da equipe aprovando o mecanismo",
+      width: 360,
+      height: 640,
+    },
     gallery: [
       {
-        src: "/media/drone.webp",
-        alt: "Drone da equipe usado na Competição Nacional de Drones",
-        width: 400,
-        height: 400,
+        src: "/media/drone-bristol.webp",
+        alt: "Drone da equipe na bancada do Bristol Robotics Laboratory",
+        width: 640,
+        height: 469,
       },
     ],
   },
@@ -170,6 +197,13 @@ export const projects: Project[] = [
     cover: {
       src: "/media/mao-poster.webp",
       alt: "Mão robótica impressa em 3D fazendo um sinal",
+      width: 640,
+      height: 360,
+    },
+    video: {
+      src: "/media/mao.mp4",
+      poster: "/media/mao-poster.webp",
+      label: "A mão real fazendo os sinais",
       width: 640,
       height: 360,
     },
@@ -308,6 +342,13 @@ export const projects: Project[] = [
     cover: {
       src: "/media/synesthesia-poster.webp",
       alt: "Vídeo de apresentação do app Synesthesia",
+      width: 432,
+      height: 768,
+    },
+    video: {
+      src: "/media/synesthesia.mp4",
+      poster: "/media/synesthesia-poster.webp",
+      label: "Vídeo de apresentação do app Synesthesia",
       width: 432,
       height: 768,
     },

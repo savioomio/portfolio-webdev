@@ -54,20 +54,22 @@ export function DronesPanel({ project }: { project: Project }) {
           <figure className="winch">
             <canvas ref={canvasRef} aria-label="Guincho do drone em 3D" />
             <figcaption className="pointer-events-none absolute inset-x-2.5 bottom-2 text-[13px] leading-tight">
-              Guincho que modelei para o drone. Arraste para girar.
+              O guincho que modelei. Arraste para girar.
             </figcaption>
           </figure>
-          <RailVideo
-            src="/media/aereo.mp4"
-            poster="/media/aereo.webp"
-            label="Vista aérea feita com o drone"
-          />
+          {project.video && (
+            <RailVideo
+              src={project.video.src}
+              poster={project.video.poster}
+              label={project.video.label}
+            />
+          )}
           <img
             className="h-full w-full rounded-[14px] object-cover"
-            src="/media/drone.webp"
-            alt="Drone da equipe usado na Competição Nacional de Drones"
-            width={400}
-            height={400}
+            src="/media/drone-bristol.webp"
+            alt="Drone da equipe na bancada do Bristol Robotics Laboratory"
+            width={640}
+            height={469}
             loading="lazy"
           />
         </div>

@@ -62,7 +62,7 @@ Dados publicados no LinkedIn (`linkedin.com/in/savioomio`, lidos em 30/10/2026) 
 - **Platão:** app de ajuda em call para quem atende clientes VTEX e Wake. Escuta a reunião, percebe quando a pessoa não lembra a resposta e mostra a resposta certa da documentação oficial, com os links. Tauri 2, Rust, React e SQLite. Página em `platao.savioomiodev.com.br`.
 - **Synesthesia:** app Android da equipe SAVAC no JOVI Challenge da FIAP 2026. Lê a cena com IA e entrega foto, filtro e trilha sonora prontos para postar. Repositório público em `SAVAC-Challenge-FIAP/synesthesia-app`. As pessoas do vídeo foram geradas com IA.
 - **Tenda da Ciência:** o Sávio apresentou o Callidus Link e a mão robótica na mesma feira e ganhou 2 medalhas de honra ao mérito científico.
-- **Guincho do drone:** modelo 3D feito pelo Sávio.
+- **Guincho do drone:** modelo 3D feito pelo Sávio, o mecanismo de coleta da prova. O vídeo da prova traz a legenda da equipe aprovando o mecanismo.
 - **Fontes:** LinkedIn, currículo em `docs/research/Curriculo_Savio_Pessoa_Afonso.pdf`, perfil no portal de carreiras da FIAP e lista enviada pelo Sávio.
 - **Não existem e não podem ser inventados:** depoimentos, preços, métricas de resultado de lojas e idiomas (o LinkedIn não lista nenhum). Os números "+40%", "-60%" e "95+" do site atual são lorem ipsum.
 - **Não usar:** telas do Gas Master com nomes e valores de clientes, documentos internos da Wicomm, fotos com o rosto de colegas no site público sem a autorização deles e a malha 3D original da mão: a base é da BBProjects (Brian Brocken), sob CC BY-NC-ND 4.0, que não permite distribuir versão modificada. A mão 3D do site é modelada em código, em `src/components/three/hand.ts`.

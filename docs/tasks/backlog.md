@@ -27,8 +27,11 @@ Ao terminar: marque aqui no mesmo PR e siga a [definição de pronto](../planeja
 
 ## Fase 1: Rotas e GitHub (22/10 – 24/10)
 
-- [ ] **R07** Research de identidade visual: o que representa a área de e-commerce (conceito "o portfólio é uma loja", com ou sem 3D). Rascunho em [`research/identidade-visual.md`](../research/identidade-visual.md); falta a decisão do Savio. Vira ADR. Req 7, 8.
-- [!] **T29** Conteúdo de 2024 em diante: experiências e projetos pessoais (GasMaster: repositório privado, só com capa). Branch: `feature/conteudo-2024`. *Bloqueado: aguardando o conteúdo do Savio.*
+- [~] **R07** Research de identidade visual: o que representa a área de e-commerce. Decisões parciais em [`research/identidade-visual.md`](../research/identidade-visual.md): com 3D, e-commerce como foco, sem o tema de peças de montar. Falta o Savio escolher entre as duas prévias. Vira ADR. Req 7, 8.
+- [~] **T29** Conteúdo de 2024 em diante: experiências e projetos pessoais (GasMaster: repositório privado, só com capa). Branch: `feature/conteudo-2024`. *O LinkedIn, o currículo e a lista de lojas cobrem a maior parte; o site publicado ainda mostra lorem ipsum nos blocos de 2024 a 2026, inclusive números como "+40%".*
+- [ ] **T31** Harness no Mac: a skill `conferir-no-navegador` e o `CLAUDE.md` citam só o MCP `chrome-devtools`, mas o Mac usa o Comet com `dev-browser`. Registrar a skill `impeccable`. Branch: `chore/harness-mac`.
+- [ ] **T32** Estudo sobre o Savio para levantar projetos e conteúdo: percorrer as pastas de trabalho, separar o que pode ser público e transformar em fichas de projeto. Atenção a dados de clientes e documentos internos da Wicomm. Branch: `docs/estudo-conteudo`.
+- [ ] **T33** Uma página para cada época da vida (aranha robô, drones, mão robótica, Wicomm...), com vídeo e fotos, linkadas no fim da Home. Branch: `feature/paginas-epocas`. Aguarda a R07 e a autorização das pessoas nas fotos.
 - [ ] **R01** Research de rotas e dados: React Router vs TanStack Router; TanStack Query vs SWR vs `fetch` manual. Critérios: cache entre páginas, estados de loading/erro/vazio, tamanho do bundle, curva de aprendizado. Vira ADR.
 - [ ] **T10** Reorganizar as pastas conforme a [arquitetura alvo](../planejamento.md#arquitetura-alvo), sem mudar comportamento. Convenções de nomenclatura no README e no `CLAUDE.md`. Branch: `refactor/estrutura-pastas`. Req 12.
 - [ ] **T11** Componentes base em `components/ui/`: `Button`, `Card`, `Input`, `Skeleton`, `Spinner`, usados em todas as páginas. Branch: `feature/componentes-base`. Req 7.

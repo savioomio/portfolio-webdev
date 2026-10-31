@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ButtonLink } from "@/components/ui/Button";
 import { buttonVariants } from "@/components/ui/buttonVariants";
 import { site } from "@/content/site";
+import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
   { to: "/#lojas", label: "Lojas" },
@@ -29,6 +30,7 @@ export function SiteHeader() {
           </Link>
         ))}
       </nav>
+      <ThemeToggle />
       <ButtonLink to="/#contato" size="sm">
         Falar comigo
       </ButtonLink>

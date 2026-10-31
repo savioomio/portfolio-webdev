@@ -16,6 +16,7 @@ Um ADR registra **uma** decisão: o contexto, as opções comparadas, o critéri
 | [0010](./0010-backend-supabase-e-formspree.md) | Backend em Supabase e e-mail pelo Formspree | Aceito |
 | [0011](./0011-formulario-rhf-zod.md) | Formulário com React Hook Form e Zod | Aceito |
 | [0012](./0012-tema-sem-flash.md) | Tema com script no head e Context | Aceito |
+| [0014](./0014-seo-pre-renderizacao.md) | SEO com pré-renderização no build e 404 real | Aceito |
 
 ## Modelo
 

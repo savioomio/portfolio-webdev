@@ -7,8 +7,10 @@
   "workers_dev": true,
   "assets": {
     "directory": "./dist",
-    // Rotas do react-router: path desconhecido devolve o index.html com 200, senao F5 em /projetos/x daria 404.
-    "not_found_handling": "single-page-application",
+    // Cada rota tem um HTML gerado no build, servido sem barra no final para a URL canonica nao redirecionar.
+    "html_handling": "drop-trailing-slash",
+    // Rota desconhecida responde 404 de verdade, com o 404.html, que abre o app no navegador.
+    "not_found_handling": "404-page",
   },
   "routes": [{ "pattern": "webdev.savioomiodev.com.br", "custom_domain": true }],
 }

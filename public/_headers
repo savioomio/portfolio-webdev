@@ -1,37 +1,19 @@
-# Cache — substitui o antigo public/serve.json (era do `serve` no Termux).
-
 # Bundles do Vite: o nome já tem hash de conteúdo, então cache eterno é seguro.
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 
-# Fontes: nome traz a versão (inter-v20-..., space-grotesk-v22-...), não mudam.
+# Fontes: o arquivo não muda.
 /fonts/*
   Cache-Control: public, max-age=31536000, immutable
 
-# Imagens de public/: nome é fixo, então SEM `immutable` — se você trocar uma
-# imagem mantendo o nome, o navegador revalida em até 7 dias em vez de nunca.
-/projects/*
-  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
-
-/timeline/*
-  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
-
-/videos/*
-  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
-
-/*.webp
+# Mídia: nome fixo, então sem `immutable`. Trocar um arquivo vale em até 7 dias.
+/media/*
   Cache-Control: public, max-age=604800, stale-while-revalidate=86400
 
 /*.png
   Cache-Control: public, max-age=604800, stale-while-revalidate=86400
 
-# HTML e arquivos de SEO sempre revalidam, senão o deploy novo não aparece.
-/
-  Cache-Control: no-cache
-
-/index.html
-  Cache-Control: no-cache
-
+# Arquivos de SEO sempre revalidam, senão o deploy novo não aparece.
 /sitemap.xml
   Cache-Control: no-cache
 

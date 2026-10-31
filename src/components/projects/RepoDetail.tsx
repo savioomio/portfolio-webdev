@@ -1,10 +1,12 @@
 import { ArrowLeft, Star } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Seo } from "@/components/layout/Seo";
 import { ExternalButton } from "@/components/ui/Button";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { useRepo } from "@/hooks/useRepos";
 import { formatDate } from "@/lib/format";
 import { isHiddenRepo } from "@/lib/repos";
+import { seoForRepo } from "@/lib/seo";
 import { GithubApiError } from "@/services/github";
 import NotFound from "@/pages/NotFound";
 import { RepoError } from "./RepoGrid";
@@ -41,6 +43,7 @@ export function RepoDetail({ name }: { name: string }) {
 
   return (
     <main className={wrapperClass}>
+      <Seo data={seoForRepo(repo)} />
       <nav aria-label="Caminho" className="text-sm font-bold">
         <Link to="/projetos" className="inline-flex items-center gap-1.5">
           <ArrowLeft className="size-4" aria-hidden="true" />

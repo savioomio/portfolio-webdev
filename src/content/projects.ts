@@ -81,7 +81,7 @@ export const projects: Project[] = [
     summary: "Campeão nacional de drones e Brasil na IMAV.",
     description:
       "Equipe Drones Guanambi: campeã da Competição Nacional de Drones e representante do Brasil na IMAV 2024, em Bristol, com modelagem 3D e mecânica de Sávio Pessôa.",
-    color: "#2F80DC",
+    color: "#2272D2",
     ink: "#FFFFFF",
     body: [
       "Fomos campeões na Competição Nacional de Drones, em Florianópolis. Em 2024 representamos o Brasil na IMAV, como única equipe de ensino médio ao lado de pós-graduação, como a USP.",

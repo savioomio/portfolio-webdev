@@ -39,10 +39,12 @@ export function ScreenTabs({ title, screens }: { title: string; screens: Screen[
           </button>
         ))}
       </div>
-      <figure className="screen-frame" role="tabpanel" aria-label={screen.label}>
-        <img src={screen.src} alt={screen.alt} width={1200} height={750} loading="lazy" />
-        <figcaption>Print real, com dados fictícios</figcaption>
-      </figure>
+      <div role="tabpanel" aria-label={screen.label}>
+        <figure className="screen-frame">
+          <img src={screen.src} alt={screen.alt} width={1200} height={750} loading="lazy" />
+          <figcaption>Print real, com dados fictícios</figcaption>
+        </figure>
+      </div>
     </div>
   );
 }

@@ -2,11 +2,13 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import { Seo } from "@/components/layout/Seo";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Field, Input } from "@/components/ui/Input";
 import { Spinner } from "@/components/ui/Spinner";
 import { useAuth } from "@/hooks/useAuth";
+import { seoForPrivatePage } from "@/lib/seo";
 import { loginSchema, type LoginValues } from "@/schemas/loginSchema";
 import { signIn } from "@/services/auth";
 
@@ -39,6 +41,7 @@ export default function Login() {
 
   return (
     <main className="mx-auto flex min-h-svh w-full max-w-md flex-col justify-center px-[var(--gl)] py-28">
+      <Seo data={seoForPrivatePage("Entrar")} />
       <h1 className="text-[2.4rem] font-black leading-[1.1] tracking-[-0.02em]">Área do dono</h1>
       <p className="mt-1.5 text-mute">Entre para ver as mensagens e escolher os destaques.</p>
       <Card className="mt-6">

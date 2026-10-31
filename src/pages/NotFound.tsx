@@ -1,8 +1,11 @@
+import { Seo } from "@/components/layout/Seo";
 import { ButtonLink } from "@/components/ui/Button";
+import { seoForNotFound } from "@/lib/seo";
 
 export default function NotFound() {
   return (
     <main className="mx-auto flex min-h-svh w-full max-w-wrap flex-col justify-center px-[var(--gl)] py-32">
+      <Seo data={seoForNotFound()} />
       <p className="font-display text-lg font-extrabold text-gold-ink">Erro 404</p>
       <h1 className="mt-2 max-w-[14em] text-[clamp(2.4rem,6vw,4.6rem)] font-black leading-[1.06] tracking-[-0.025em]">
         Esta página saiu de <span className="highlight">estoque</span>

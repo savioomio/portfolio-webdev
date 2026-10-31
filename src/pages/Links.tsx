@@ -1,8 +1,10 @@
 import { Github, Globe, Instagram, Linkedin, Mail, MessageCircle } from "lucide-react";
 import type { ComponentType } from "react";
 import { Link } from "react-router-dom";
+import { Seo } from "@/components/layout/Seo";
 import { buttonVariants } from "@/components/ui/buttonVariants";
 import { site } from "@/content/site";
+import { seoForLinks } from "@/lib/seo";
 
 interface LinkItem {
   label: string;
@@ -24,6 +26,7 @@ const itemClass = (variant: "primary" | "outline") =>
 export default function Links() {
   return (
     <main className="mx-auto flex min-h-svh w-full max-w-md flex-col justify-center px-[var(--gl)] py-28">
+      <Seo data={seoForLinks()} />
       <h1 className="text-[2.4rem] font-black leading-[1.1] tracking-[-0.02em]">{site.name}</h1>
       <p className="mt-1.5 text-mute">{site.title}</p>
       <ul className="mt-6 grid gap-2.5">

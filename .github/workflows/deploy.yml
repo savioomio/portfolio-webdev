@@ -85,3 +85,7 @@ jobs:
         run: npm run deploy
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          # Valores publicos por natureza: quem protege os dados e o RLS do banco
+          VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_PUBLISHABLE_KEY: ${{ vars.VITE_SUPABASE_PUBLISHABLE_KEY }}
+          VITE_FORMSPREE_ID: ${{ vars.VITE_FORMSPREE_ID }}

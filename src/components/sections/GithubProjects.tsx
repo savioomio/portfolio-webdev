@@ -1,14 +1,12 @@
 import { RepoGrid } from "@/components/projects/RepoGrid";
 import { ButtonLink } from "@/components/ui/Button";
 import { useInView } from "@/hooks/useInView";
-import { useRepos } from "@/hooks/useRepos";
-
-const FEATURED_COUNT = 6;
+import { FEATURED_LIMIT, useFeaturedRepos } from "@/hooks/useFeatured";
 
 /** Só consulta o GitHub quando a seção chega perto da tela. */
 export function GithubProjects() {
   const { ref, inView } = useInView<HTMLElement>();
-  const { data, isPending, error, refetch } = useRepos({ enabled: inView });
+  const { data, isPending, error, refetch } = useFeaturedRepos({ enabled: inView });
 
   return (
     <section
@@ -32,10 +30,10 @@ export function GithubProjects() {
         </div>
         <div className="mt-8">
           <RepoGrid
-            repos={data?.slice(0, FEATURED_COUNT)}
+            repos={data}
             loading={isPending}
             error={error}
-            skeletons={FEATURED_COUNT}
+            skeletons={FEATURED_LIMIT}
             onRetry={() => refetch()}
           />
         </div>

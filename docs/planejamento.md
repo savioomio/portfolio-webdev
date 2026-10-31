@@ -93,7 +93,7 @@ branch feature/x ──► commit ──► push ──► Pull Request ──�
 | --- | --- | --- |
 | Limite da API do GitHub sem token: 60 requisições/hora **por IP**. No laboratório a turma inteira divide o mesmo IP | Cards em erro durante a aula ou a gravação | Cache do TanStack Query com `staleTime` longo e persistência local; tela de erro amigável para 403/429; gravar o vídeo fora da rede do lab |
 | PC do laboratório compartilhado guarda os logins (`gh`, Wrangler) | Outra pessoa publicar na sua conta | Rodar `npx wrangler logout` ao sair ([runbook](./runbooks/setup-pc-do-lab.md)) |
-| Segredos do backend expostos no front | Acesso indevido ao banco | Só a chave pública (`anon`) vai para o front; regras de RLS no banco; `.env` fora do Git |
+| Segredos do backend expostos no front | Acesso indevido ao banco | Só a chave pública (publishable key) vai para o front; regras de RLS no banco; `.env` fora do Git |
 | Cena 3D derrubar a nota do Lighthouse mobile | Requisito 8 reprovado | Cena fora do bundle inicial, carregada depois da primeira pintura; versão leve no celular |
 | Vídeo da aranha pesando na página | Pior nota no Lighthouse | Já comprimido para 1,36 MB (T06); `preload="none"` e play só ao aparecer na tela |
 

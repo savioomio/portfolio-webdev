@@ -10,6 +10,8 @@ export function AppRoutes({ pages }: { pages: Pages }) {
         <Route path="projetos" element={<pages.Projects />} />
         <Route path="projetos/:slug" element={<pages.ProjectDetail />} />
         <Route path="links" element={<pages.Links />} />
+        <Route path="login" element={<pages.Login />} />
+        <Route path="dashboard" element={<pages.Dashboard />} />
         <Route path="*" element={<pages.NotFound />} />
       </Route>
     </Routes>

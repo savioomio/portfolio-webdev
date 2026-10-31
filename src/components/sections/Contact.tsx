@@ -1,10 +1,11 @@
 import { site } from "@/content/site";
+import { ContactForm } from "./ContactForm";
 
 export function Contact() {
   return (
     <section
       id="contato"
-      className="relative scroll-mt-20 bg-gold px-[var(--gl)] py-[clamp(72px,12svh,120px)] text-[#1D1809]"
+      className="on-gold relative scroll-mt-20 bg-gold px-[var(--gl)] py-[clamp(72px,12svh,120px)] text-[#1D1809]"
     >
       <div className="mx-auto grid w-full max-w-wrap items-start gap-[clamp(24px,5vw,72px)] md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
         <div>
@@ -32,6 +33,7 @@ export function Contact() {
             </div>
           </dl>
         </div>
+        <ContactForm />
       </div>
     </section>
   );

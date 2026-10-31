@@ -114,6 +114,15 @@
 }
 
 @layer components {
+  /* A seção dourada não muda com o tema, então fixa as cores dos campos. */
+  .on-gold {
+    --surface: #ffffff;
+    --ink: #1d1809;
+    --bg: #ffffff;
+    --line: rgba(29, 24, 9, 0.16);
+    --danger: #7e0d0a;
+  }
+
   /* Vidro fosco da vitrine: o objeto 3D passa por trás e fica borrado. */
   .glass {
     background: var(--glass);

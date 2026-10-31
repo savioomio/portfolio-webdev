@@ -2,8 +2,6 @@ import { useEffect, type RefObject } from "react";
 import type { FacaScene } from "@/components/three/faca";
 import { clamp, lerp, prefersReducedMotion } from "@/lib/utils";
 
-const MOBILE_WIDTH = 860;
-
 /**
  * Liga a rolagem das seções de e-commerce à luz da vitrine e à faca 3D.
  * Cada elemento com `data-stage` é uma parada; o 3D carrega depois da primeira pintura.
@@ -95,9 +93,8 @@ export function useFacaStage(
     window.addEventListener("resize", onResize);
     window.addEventListener("pointermove", onPointer, { passive: true });
 
-    // No celular o 3D espera o primeiro gesto: até lá, o desenho da folha ocupa o lugar dele
-    const small = window.innerWidth <= MOBILE_WIDTH;
-    const gestures = ["scroll", "touchstart", "pointerdown", "keydown"];
+    // O 3D espera o primeiro gesto: até lá, o desenho da folha ocupa o lugar dele
+    const gestures = ["scroll", "touchstart", "pointerdown", "pointermove", "keydown"];
     let started = false;
     const start = () => {
       if (started) return;
@@ -105,17 +102,11 @@ export function useFacaStage(
       gestures.forEach((gesture) => window.removeEventListener(gesture, start));
       void loadScene();
     };
-    let idle = 0;
-    if (small) {
-      gestures.forEach((gesture) => window.addEventListener(gesture, start, { passive: true }));
-    } else {
-      idle = window.setTimeout(start, 400);
-    }
+    gestures.forEach((gesture) => window.addEventListener(gesture, start, { passive: true }));
 
     return () => {
       disposed = true;
       cancelAnimationFrame(frameId);
-      window.clearTimeout(idle);
       gestures.forEach((gesture) => window.removeEventListener(gesture, start));
       window.removeEventListener("resize", onResize);
       window.removeEventListener("pointermove", onPointer);

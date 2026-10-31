@@ -1,18 +1,26 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FeaturedPicker } from "@/components/dashboard/FeaturedPicker";
 import { MessageList } from "@/components/dashboard/MessageList";
 import { RequireAuth } from "@/components/layout/RequireAuth";
 import { Seo } from "@/components/layout/Seo";
 import { Button } from "@/components/ui/Button";
+import { useAuth } from "@/hooks/useAuth";
 import { seoForPrivatePage } from "@/lib/seo";
-import { signOut } from "@/services/auth";
 
 function DashboardContent() {
   const navigate = useNavigate();
+  const { signOut } = useAuth();
+  const [failed, setFailed] = useState(false);
 
   const leave = async () => {
-    await signOut();
-    navigate("/login", { replace: true });
+    setFailed(false);
+    try {
+      await signOut();
+      navigate("/login", { replace: true });
+    } catch {
+      setFailed(true);
+    }
   };
 
   return (
@@ -25,6 +33,9 @@ function DashboardContent() {
           Sair
         </Button>
       </div>
+      <p role="status" className="mt-2 font-bold text-danger">
+        {failed && "Não consegui sair. Confira a conexão e tente de novo."}
+      </p>
       <div className="mt-8 grid items-start gap-10 md:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
         <section aria-labelledby="painel-mensagens">
           <h2 id="painel-mensagens" className="mb-3 text-2xl font-black">

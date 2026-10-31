@@ -1,11 +1,11 @@
 import { useRef, useState, type CSSProperties } from "react";
 import type { Project } from "@/content/projects";
 import { clamp, ease, prefersReducedMotion } from "@/lib/utils";
+import { useRailFrame } from "@/hooks/useRailFrame";
 import { PanelCopy } from "./PanelCopy";
 import { RailPanel } from "./RailPanel";
 import { RailVideo } from "./RailVideo";
 import { ScreenTabs } from "./ScreenTabs";
-import { useRailFrame } from "./railContext";
 
 interface PanelProps {
   project: Project;

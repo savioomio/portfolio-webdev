@@ -48,6 +48,11 @@ export function MessageList() {
 
   return (
     <ul className="grid gap-3">
+      {toggleAnswered.isError && (
+        <li role="status" className="font-bold text-danger">
+          Não consegui atualizar a mensagem. Tente de novo.
+        </li>
+      )}
       {messages.data.map((message) => {
         const pending = toggleAnswered.isPending && toggleAnswered.variables?.id === message.id;
 

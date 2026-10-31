@@ -10,10 +10,9 @@ import { Spinner } from "@/components/ui/Spinner";
 import { useAuth } from "@/hooks/useAuth";
 import { seoForPrivatePage } from "@/lib/seo";
 import { loginSchema, type LoginValues } from "@/schemas/loginSchema";
-import { signIn } from "@/services/auth";
 
 export default function Login() {
-  const { status } = useAuth();
+  const { status, signIn } = useAuth();
   const navigate = useNavigate();
   const { state } = useLocation();
   const [failed, setFailed] = useState(false);

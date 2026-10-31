@@ -27,7 +27,8 @@ export function renderPage(url: string, repos: GithubRepo[]) {
   const queryClient = createQueryClient();
   const seo: { current: SeoData | null } = { current: null };
 
-  if (url === "/projetos") queryClient.setQueryData(REPOS_KEY, repos);
+  // Sem repositórios no build, o navegador busca: lista vazia aqui viraria dado válido por 1 hora
+  if (url === "/projetos" && repos.length > 0) queryClient.setQueryData(REPOS_KEY, repos);
   const repo = repos.find((item) => url === `/projetos/${item.name}`);
   if (repo) queryClient.setQueryData(["repos", repo.name], repo);
 

@@ -3,10 +3,10 @@ import type { HandScene } from "@/components/three/hand";
 import { handPoses } from "@/content/handPoses";
 import type { Project } from "@/content/projects";
 import { prefersReducedMotion } from "@/lib/utils";
+import { useRailFrame } from "@/hooks/useRailFrame";
 import { PanelCopy } from "./PanelCopy";
 import { RailPanel } from "./RailPanel";
 import { RailVideo } from "./RailVideo";
-import { useRailFrame } from "./railContext";
 
 const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 const SPELLED_NAME = "SAVIO";
@@ -20,11 +20,13 @@ export function MaoPanel({ project }: { project: Project }) {
   const flow = useRef({ manualAt: -1e9, step: 0, stepAt: 0, loc: 9 });
   const [letter, setLetter] = useState("S");
   const [spelled, setSpelled] = useState("");
+  const [announced, setAnnounced] = useState("");
 
   const press = useCallback((next: string, byHand: boolean) => {
     if (byHand) {
       flow.current.manualAt = performance.now();
       setSpelled("");
+      setAnnounced(`Letra ${next}`);
     }
     setLetter(next);
     scene.current?.set(next);
@@ -111,8 +113,12 @@ export function MaoPanel({ project }: { project: Project }) {
         </PanelCopy>
         <div className="hand-stage">
           <canvas ref={canvasRef} aria-label="Mão robótica em 3D fazendo sinais de Libras" />
-          <span className="hand-letter" aria-live="polite">
+          <span className="hand-letter" aria-hidden="true">
             {letter}
+          </span>
+          {/* Só anuncia a letra escolhida: a soletração automática não pode falar sem parar */}
+          <span className="sr-only" aria-live="polite">
+            {announced}
           </span>
           <span className="hand-spell" aria-hidden="true">
             {spelled}

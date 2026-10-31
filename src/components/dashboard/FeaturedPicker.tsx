@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { Spinner } from "@/components/ui/Spinner";
+import { StatusMessage } from "@/components/ui/StatusMessage";
 import { FEATURED_LIMIT, useFeaturedNames, useSaveFeatured } from "@/hooks/useFeatured";
 import { useRepos } from "@/hooks/useRepos";
 
@@ -14,7 +15,10 @@ export function FeaturedPicker() {
   const save = useSaveFeatured();
   const [picked, setPicked] = useState<string[] | null>(null);
 
-  const selected = picked ?? featured.data ?? [];
+  // Repositório apagado ou renomeado não ocupa vaga
+  const selected = (picked ?? featured.data ?? []).filter((name) =>
+    repos.data?.some((repo) => repo.name === name),
+  );
 
   const toggle = (name: string) => {
     setPicked(
@@ -26,7 +30,22 @@ export function FeaturedPicker() {
     return <RepoError error={repos.error} onRetry={() => repos.refetch()} />;
   }
 
-  if (!repos.data) {
+  if (featured.isError) {
+    return (
+      <StatusMessage
+        title="Não consegui ler os destaques atuais"
+        action={
+          <Button variant="outline" size="sm" onClick={() => featured.refetch()}>
+            Tentar de novo
+          </Button>
+        }
+      >
+        Sem essa leitura, salvar poderia apagar a escolha que já existe.
+      </StatusMessage>
+    );
+  }
+
+  if (!repos.data || featured.isLoading) {
     return (
       <Card role="status" aria-label="Carregando repositórios">
         {[0, 1, 2, 3].map((item) => (

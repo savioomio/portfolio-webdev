@@ -7,7 +7,7 @@ export function Hero() {
       data-stage
       className="relative flex min-h-svh items-start px-[var(--gl)] pb-10 pt-[84px] md:items-center md:pb-14 md:pt-24"
     >
-      <div className="glass w-full p-6 md:w-[min(760px,60%)] md:p-[clamp(24px,3.4vw,46px)]">
+      <div className="glass relative z-[1] w-full p-6 md:w-[min(760px,60%)] md:p-[clamp(24px,3.4vw,46px)]">
         <h1 className="text-[clamp(2.7rem,5.6vw,5.3rem)] font-black leading-[1.1] tracking-[-0.025em]">
           Especialista em <span className="highlight">e-commerce</span> VTEX e Wake
         </h1>
@@ -23,7 +23,7 @@ export function Hero() {
         </div>
       </div>
       <svg
-        className="sheet-poster absolute bottom-6 left-1/2 w-[64%] max-w-[300px] -translate-x-1/2 md:hidden"
+        className="sheet-poster"
         viewBox="0 0 300 330"
         aria-hidden="true"
         fill="#fff"

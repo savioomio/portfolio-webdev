@@ -1,6 +1,6 @@
 import { Suspense } from "react";
-import { Outlet } from "react-router-dom";
-import { ButtonLink } from "@/components/ui/Button";
+import { Outlet, useLocation } from "react-router-dom";
+import { buttonVariants } from "@/components/ui/buttonVariants";
 import { Spinner } from "@/components/ui/Spinner";
 import { StatusMessage } from "@/components/ui/StatusMessage";
 import { ErrorBoundary } from "./ErrorBoundary";
@@ -21,7 +21,12 @@ function PageError() {
     <main className="mx-auto min-h-svh w-full max-w-wrap px-[var(--gl)] pt-32">
       <StatusMessage
         title="Algo deu errado nesta página"
-        action={<ButtonLink to="/">Voltar para o início</ButtonLink>}
+        // Link de verdade: depois de um deploy, só recarregar traz os arquivos novos
+        action={
+          <a href="/" className={buttonVariants()}>
+            Voltar para o início
+          </a>
+        }
       >
         Tente recarregar. Se continuar, me avise pelo LinkedIn.
       </StatusMessage>
@@ -30,11 +35,13 @@ function PageError() {
 }
 
 export function Layout() {
+  const { pathname } = useLocation();
+
   return (
     <>
       <ScrollManager />
       <SiteHeader />
-      <ErrorBoundary fallback={<PageError />}>
+      <ErrorBoundary key={pathname} fallback={<PageError />}>
         <Suspense fallback={<PageFallback />}>
           <Outlet />
         </Suspense>

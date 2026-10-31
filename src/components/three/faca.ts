@@ -234,7 +234,8 @@ function linesMesh(buffer: LineBuffer, material: Material) {
 /** Cria o motor da faca: uma folha plana que dobra em caixa, sacola e envelope. */
 export function createFacaScene(canvas: HTMLCanvasElement, reduced: boolean) {
   const renderer = new WebGLRenderer({ canvas, antialias: true, alpha: true });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  const lowPower = window.innerWidth <= 860;
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, lowPower ? 1.5 : 2));
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = PCFShadowMap;
 
@@ -244,7 +245,7 @@ export function createFacaScene(canvas: HTMLCanvasElement, reduced: boolean) {
   const sun = new DirectionalLight(0xffffff, 2.9);
   sun.position.set(-6, 10, 5);
   sun.castShadow = true;
-  sun.shadow.mapSize.set(2048, 2048);
+  sun.shadow.mapSize.set(lowPower ? 1024 : 2048, lowPower ? 1024 : 2048);
   Object.assign(sun.shadow.camera, { left: -9, right: 9, top: 9, bottom: -9, near: 1, far: 30 });
   sun.shadow.radius = 8;
   sun.shadow.bias = -0.0006;

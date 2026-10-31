@@ -13,6 +13,8 @@ Um ADR registra **uma** decisão: o contexto, as opções comparadas, o critéri
 | [0007](./0007-navegador-no-mac-com-dev-browser.md) | Conferência no navegador do Mac com dev-browser | Aceito |
 | [0008](./0008-identidade-faca-dourada.md) | Identidade visual: Faca Dourada | Aceito |
 | [0009](./0009-rotas-e-dados.md) | React Router declarativo e TanStack Query | Aceito |
+| [0010](./0010-backend-supabase-e-formspree.md) | Backend em Supabase e e-mail pelo Formspree | Aceito |
+| [0011](./0011-formulario-rhf-zod.md) | Formulário com React Hook Form e Zod | Aceito |
 | [0012](./0012-tema-sem-flash.md) | Tema com script no head e Context | Aceito |
 
 ## Modelo

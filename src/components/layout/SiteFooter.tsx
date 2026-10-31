@@ -9,6 +9,7 @@ export function SiteFooter() {
       <Link to="/links">Links</Link>
       <a href={site.github}>GitHub</a>
       <a href={site.linkedin}>LinkedIn</a>
+      <Link to="/login">Área do dono</Link>
     </footer>
   );
 }

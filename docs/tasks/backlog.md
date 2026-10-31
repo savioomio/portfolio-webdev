@@ -44,18 +44,18 @@ Ao terminar: marque aqui no mesmo PR e siga a [definição de pronto](../planeja
 
 ## Fase 2: Contato (25/10 – 27/10)
 
-- [ ] **R02** Research de backend e e-mail: Supabase vs Firebase vs Appwrite vs PocketBase; EmailJS vs Formspree vs Resend. Critérios: auth pronto, regras de acesso no banco, plano gratuito, funcionar com front estático na Cloudflare e na Vercel. Vira ADR.
-- [ ] **R03** Research de formulário: React Hook Form + Zod vs Formik + Yup vs validação manual. Vira ADR.
-- [ ] **T15** Projeto no backend escolhido: tabelas `messages` (nome, e-mail, mensagem, `answered`, `created_at`) e `featured_projects`; regras de acesso (visitante só insere mensagem, só o dono lê); variáveis no `.env.example`. Branch: `feature/backend`. Req 4, 5.
-- [ ] **T16** Formulário de contato com validação por campo e mensagens específicas ("e-mail inválido", "mensagem com no mínimo 20 caracteres"). Branch: `feature/formulario-contato`. Req 4.
-- [ ] **T17** Envio: salva no banco e manda e-mail ao dono; botão bloqueado com spinner durante o envio; feedback de sucesso ou erro. Branch: `feature/formulario-contato`. Req 2, 4.
+- [x] **R02** Research de backend e e-mail ([ADR 0010](../adr/0010-backend-supabase-e-formspree.md)): Supabase vs Firebase vs Appwrite vs PocketBase; EmailJS vs Formspree vs Resend. Critérios: auth pronto, regras de acesso no banco, plano gratuito, funcionar com front estático na Cloudflare e na Vercel. Vira ADR.
+- [x] **R03** Research de formulário ([ADR 0011](../adr/0011-formulario-rhf-zod.md)): React Hook Form + Zod vs Formik + Yup vs validação manual. Vira ADR.
+- [x] **T15** Projeto no backend escolhido: tabelas `messages` (nome, e-mail, mensagem, `answered`, `created_at`) e `featured_projects`; regras de acesso (visitante só insere mensagem, só o dono lê); variáveis no `.env.example`. Branch: `feature/backend`. Req 4, 5.
+- [x] **T16** Formulário de contato com validação por campo e mensagens específicas ("e-mail inválido", "mensagem com no mínimo 20 caracteres"). Branch: `feature/formulario-contato`. Req 4.
+- [x] **T17** Envio: salva no banco e manda e-mail ao dono; botão bloqueado com spinner durante o envio; feedback de sucesso ou erro. Branch: `feature/formulario-contato`. Req 2, 4.
   - Aceite: clicar duas vezes rápido em "Enviar" gera uma mensagem só.
 
 ## Fase 3: Dashboard e tema (28/10 – 29/10)
 
-- [ ] **T18** Login do dono e rota protegida: quem não está logado e acessa `/dashboard` vai para `/login`. Dashboard num chunk separado (`React.lazy`). Branch: `feature/dashboard`. Req 5, 8.
-- [ ] **T19** Dashboard: lista de mensagens com "marcar como respondida". Branch: `feature/dashboard`. Req 5.
-- [ ] **T20** Dashboard: seleção dos projetos em destaque, lida pela Home. Branch: `feature/dashboard`. Req 5.
+- [x] **T18** Login do dono e rota protegida: quem não está logado e acessa `/dashboard` vai para `/login`. Dashboard num chunk separado (`React.lazy`). Branch: `feature/dashboard`. Req 5, 8.
+- [x] **T19** Dashboard: lista de mensagens com "marcar como respondida". Branch: `feature/dashboard`. Req 5.
+- [x] **T20** Dashboard: seleção dos projetos em destaque, lida pela Home. Branch: `feature/dashboard`. Req 5.
 - [x] **R04** Research de tema ([ADR 0012](../adr/0012-tema-sem-flash.md)): `next-themes` (já instalado) vs Context + `localStorage` vs Zustand. Critério principal: sem piscar o tema errado ao abrir a página. Vira ADR.
 - [x] **T21** Tema claro/escuro com alternância no header, persistido entre visitas, sem flash ao carregar. Branch: `feature/tema`. Req 6.
 

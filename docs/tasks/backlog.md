@@ -33,13 +33,13 @@ Ao terminar: marque aqui no mesmo PR e siga a [definição de pronto](../planeja
 - [ ] **T32** Estudo sobre o Savio para levantar projetos e conteúdo: percorrer as pastas de trabalho, separar o que pode ser público e transformar em fichas de projeto. Atenção a dados de clientes e documentos internos da Wicomm. Branch: `docs/estudo-conteudo`.
 - [x] **T33** História no fim da Home: lista de projetos e trilho horizontal com uma seção por projeto (aranha, drones, Callidus Link, mão robótica, JSOM, GasMaster, Synesthesia e Platão), cada uma com a cor do projeto, vídeos, fotos e telas. Branch: `feature/identidade-faca-dourada`. *Sem rostos de colegas nas fotos e com a mão 3D modelada em código.*
 - [x] **T34** Levar a Faca Dourada ao site: tokens, tema base, fontes próprias, motor 3D em Three.js, novo objeto do WordPress, seções da Home, `DESIGN.md` e remoção do visual antigo, do R3F, do Framer Motion e do Helmet. Branch: `feature/identidade-faca-dourada`. Req 7.
-- [ ] **R01** Research de rotas e dados: React Router vs TanStack Router; TanStack Query vs SWR vs `fetch` manual. Critérios: cache entre páginas, estados de loading/erro/vazio, tamanho do bundle, curva de aprendizado. Vira ADR.
+- [x] **R01** Research de rotas e dados ([ADR 0009](../adr/0009-rotas-e-dados.md)): React Router vs TanStack Router; TanStack Query vs SWR vs `fetch` manual. Critérios: cache entre páginas, estados de loading/erro/vazio, tamanho do bundle, curva de aprendizado. Vira ADR.
 - [x] **T10** Reorganizar as pastas conforme a [arquitetura alvo](../planejamento.md#arquitetura-alvo). Branch: `feature/identidade-faca-dourada`. Req 12. *Feita na T34: o código antigo saiu inteiro, então não valia mover antes. Entraram `components/layout/` e `content/`.*
 - [x] **T11** Componentes base em `components/ui/`: `Button`, `Card`, `Skeleton`, `Spinner`, `BrandLogo` e `StatusMessage`. Branch: `feature/identidade-faca-dourada`. Req 7. *O `Input` entra com o formulário (T16).*
-- [ ] **T12** `services/github.ts` e hooks `useRepos` / `useRepo` com cache; tratar o limite da API (403/429) com mensagem própria. Branch: `feature/github-api`. Req 3, 8.
+- [x] **T12** `services/github.ts` e hooks `useRepos` / `useRepo` com cache; tratar o limite da API (403/429) com mensagem própria. Branch: `feature/github-api`. Req 3, 8.
   - Aceite: navegar Home → projeto → Home não gera uma segunda requisição ao GitHub (conferir na aba Network).
-- [ ] **T13** Cards de projeto vindos da API: descrição, linguagem e data da última atualização; skeleton ao carregar, estado de erro e de lista vazia. Branch: `feature/github-api`. Req 2, 3.
-- [ ] **T14** Rotas: `/projetos/:slug` (detalhe do repositório), página 404 para rota inexistente e página de erro de API. Branch: `feature/rotas`. Req 1.
+- [x] **T13** Cards de projeto vindos da API: descrição, linguagem e data da última atualização; skeleton ao carregar, estado de erro e de lista vazia. Branch: `feature/github-api`. Req 2, 3.
+- [x] **T14** Rotas: `/projetos/:slug` (detalhe do repositório), página 404 para rota inexistente e página de erro de API. Branch: `feature/rotas`. Req 1.
   - Aceite: abrir `/projetos/<repo>` direto e dar F5 mostra o projeto; `/qualquer-coisa` mostra o 404.
 
 ## Fase 2: Contato (25/10 – 27/10)

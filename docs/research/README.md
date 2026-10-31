@@ -4,7 +4,7 @@ Uma research compara alternativas **antes** de uma decisão. Ao terminar, ela vi
 
 | ID | Pergunta | Fase | Arquivo |
 | --- | --- | --- | --- |
-| R01 | Rotas e busca de dados: qual roteador e qual camada de cache? | 1 | a criar |
+| R01 | Rotas e busca de dados: qual roteador e qual camada de cache? | 1 | [rotas-e-dados.md](./rotas-e-dados.md) (ADR 0009) |
 | R02 | Backend (auth + banco) e envio de e-mail | 2 | a criar |
 | R03 | Biblioteca de formulário e validação | 2 | a criar |
 | R04 | Tema claro/escuro persistido sem flash | 3 | a criar |

@@ -152,6 +152,7 @@ export function GasMasterPanel({ project }: PanelProps) {
                 alt="GasMaster"
                 width={120}
                 height={44}
+                loading="lazy"
                 className="h-11 w-auto"
               />
             </span>

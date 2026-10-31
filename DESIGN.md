@@ -38,6 +38,7 @@ Plataformas: VTEX `#F71963`, Wake `#C505F2`, WordPress `#21759B`. Cada projeto t
 - A rolagem comanda tudo: a dobra da folha, a luz da vitrine e o trilho horizontal.
 - O trilho dobra cada painel no vinco ao passar.
 - `prefers-reduced-motion` desliga o balanço do 3D, a onda e a dobra do trilho.
+- No celular, o 3D carrega no primeiro gesto; até lá, um desenho estático da folha ocupa o lugar dele.
 
 ## Componentes
 

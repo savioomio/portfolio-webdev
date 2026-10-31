@@ -9,7 +9,7 @@ interface RailVideoProps {
   className?: string;
 }
 
-/** Vídeo mudo: só baixa quando o painel chega perto e pausa quando ele sai. */
+/** Vídeo mudo: poster e arquivo só baixam quando o painel chega perto, e ele pausa ao sair. */
 export function RailVideo({ src, poster, label, className }: RailVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const playing = useRef(false);
@@ -20,7 +20,10 @@ export function RailVideo({ src, poster, label, className }: RailVideoProps) {
     if (!video || near === playing.current) return;
     playing.current = near;
     if (near) {
-      if (!video.getAttribute("src")) video.src = src;
+      if (!video.getAttribute("src")) {
+        video.poster = poster;
+        video.src = src;
+      }
       video.play().catch(() => undefined);
     } else {
       video.pause();
@@ -31,7 +34,6 @@ export function RailVideo({ src, poster, label, className }: RailVideoProps) {
     <video
       ref={videoRef}
       className={cn("panel-video", className)}
-      poster={poster}
       aria-label={label}
       muted
       loop

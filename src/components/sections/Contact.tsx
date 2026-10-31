@@ -1,9 +1,27 @@
+import { lazy, Suspense } from "react";
+import { Spinner } from "@/components/ui/Spinner";
 import { site } from "@/content/site";
-import { ContactForm } from "./ContactForm";
+import { useInView } from "@/hooks/useInView";
+
+const ContactForm = lazy(() =>
+  import("./ContactForm").then((module) => ({ default: module.ContactForm })),
+);
+
+/** Mesma altura do formulário, para a página não pular quando ele entrar. */
+function FormPlaceholder() {
+  return (
+    <div className="flex min-h-[430px] items-center justify-center">
+      <Spinner className="text-2xl" label="Carregando o formulário" />
+    </div>
+  );
+}
 
 export function Contact() {
+  const { ref, inView } = useInView<HTMLElement>("600px 0px");
+
   return (
     <section
+      ref={ref}
       id="contato"
       className="on-gold relative scroll-mt-20 bg-gold px-[var(--gl)] py-[clamp(72px,12svh,120px)] text-[#1D1809]"
     >
@@ -33,7 +51,13 @@ export function Contact() {
             </div>
           </dl>
         </div>
-        <ContactForm />
+        {inView ? (
+          <Suspense fallback={<FormPlaceholder />}>
+            <ContactForm />
+          </Suspense>
+        ) : (
+          <FormPlaceholder />
+        )}
       </div>
     </section>
   );

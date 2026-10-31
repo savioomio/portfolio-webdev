@@ -218,6 +218,11 @@
       );
   }
 
+  /* Desenho da folha no celular, até o 3D carregar. */
+  [data-scene="ready"] .sheet-poster {
+    display: none;
+  }
+
   .stage-canvas {
     position: fixed;
     inset: 0;

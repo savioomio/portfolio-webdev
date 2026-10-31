@@ -51,15 +51,15 @@ export function Experience() {
         </div>
         <figure className="max-w-[260px] md:max-w-none">
           <img
-            src="/media/trofeu.webp"
-            alt="Troféu de primeiro lugar da Competição Nacional de Drones, na minha mão"
-            width={400}
-            height={400}
+            src="/media/wackathon.webp"
+            alt="Anúncio dos vencedores do Wackathon Wicomm: a minha dupla ficou em 2º lugar"
+            width={480}
+            height={480}
             loading="lazy"
             className="h-auto w-full rounded-[14px]"
           />
           <figcaption className="mt-2 text-sm text-mute">
-            Primeiro lugar na Competição Nacional de Drones.
+            Segundo lugar no primeiro Wackathon da Wicomm.
           </figcaption>
         </figure>
       </div>

@@ -94,13 +94,13 @@ export const projects: Project[] = [
     name: "De Guanambi a Bristol",
     period: "2023 e 2024, Drones Guanambi",
     when: "2023 e 2024",
-    summary: "Campeão nacional de drones e Brasil na IMAV.",
+    summary: "Campeão nacional de drones e Brasil na competição internacional IMAV.",
     description:
-      "Equipe Drones Guanambi: campeã da Competição Nacional de Drones e representante do Brasil na IMAV 2024, em Bristol, com modelagem 3D e mecânica de Sávio Pessôa.",
+      "Equipe Drones Guanambi: campeã da Competição Nacional de Drones e representante do Brasil na competição internacional IMAV 2024, em Bristol, com modelagem 3D e mecânica de Sávio Pessôa.",
     color: "#2272D2",
     ink: "#FFFFFF",
     body: [
-      "Fomos campeões na Competição Nacional de Drones, em Florianópolis. Em 2024 representamos o Brasil na IMAV, como única equipe de ensino médio ao lado de pós-graduação, como a USP.",
+      "Fomos campeões na Competição Nacional de Drones, em Florianópolis. Em 2024 representamos o Brasil na IMAV, competição internacional em Bristol, como única equipe de ensino médio ao lado de pós-graduação, como a USP.",
     ],
     facts: [
       "Cuidei da modelagem 3D e da mecânica do drone.",
@@ -128,6 +128,12 @@ export const projects: Project[] = [
         alt: "Drone da equipe na bancada do Bristol Robotics Laboratory",
         width: 640,
         height: 469,
+      },
+      {
+        src: "/media/trofeu.webp",
+        alt: "Troféu de primeiro lugar da Competição Nacional de Drones, na minha mão",
+        width: 400,
+        height: 400,
       },
     ],
   },

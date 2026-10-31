@@ -72,4 +72,4 @@ Ao terminar: marque aqui no mesmo PR e siga a [definição de pronto](../planeja
 - [x] **T25** README final: sobre o projeto, tecnologias, como rodar, variáveis de ambiente, padrões de commits, branches, pastas e nomenclatura, e links das URLs publicadas. Branch: `docs/readme`. Repositório, req 11, 12.
 - [x] **T26** Diagramas para o vídeo: pastas, fluxo de dados e branch até deploy. Branch: `docs/diagramas`.
 - [x] **T27** Roteiro do vídeo em `docs/video-roteiro.md`: três partes, até 8 minutos. Branch: `docs/roteiro-video`.
-- [ ] **T28** Gravar (rosto e tela), subir no YouTube como não listado e entregar os três links no Teams até 03/11.
+- [ ] **T28** *(com o Savio)* Gravar (rosto e tela), subir no YouTube como não listado e entregar os três links no Teams até 03/11.

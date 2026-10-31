@@ -7,7 +7,7 @@ Até 8 minutos, com rosto e tela visíveis o tempo todo, publicado como **não l
 - Deixe abertos: o site publicado, o repositório no GitHub, `docs/diagramas.md`, o PR #15 e o terminal na pasta do projeto.
 - Grave fora da rede do lab, por causa do limite da API do GitHub.
 - Faça login no dashboard antes, em outra aba.
-- Abra o Lighthouse já com o resultado, para não esperar em vídeo.
+- Abra o PageSpeed já com o resultado, pelos links de `docs/qualidade/lighthouse.md`, para não esperar em vídeo.
 - Revise uma mensagem de teste no dashboard para mostrar "marcar como respondida".
 
 ## Abertura (0:00 a 0:25)
@@ -63,9 +63,9 @@ Até 8 minutos, com rosto e tela visíveis o tempo todo, publicado como **não l
 - **Vercel** (ADR 0004)
   > O enunciado pedia Vercel. Comparei manter as duas hospedagens com ficar só na Cloudflare, e escolhi a Cloudflare, que já tinha domínio próprio. O requisito é deploy automático, e isso está cumprido. Foi uma decisão consciente, registrada no repositório.
 
-**Tela:** Lighthouse mobile.
+**Tela:** resultado do PageSpeed, celular e desktop.
 
-> Na performance, a Home marca 93 no celular, no site publicado. O maior ganho foi adiar o 3D até o primeiro gesto da pessoa: no meu teste local, a nota foi de 50 para 95.
+> Na performance, a Home marca 100 no PageSpeed, no celular e no desktop. O maior ganho foi adiar o 3D até o primeiro gesto da pessoa. Mas o PageSpeed não faz gestos, então ele não mede o 3D. Por isso medi à parte, num celular lento simulado: o 3D leva 1,6 segundo para entrar depois do primeiro toque. O resto está em `docs/qualidade`.
 
 ## Parte 3: harness de IA (5:40 a 7:40)
 

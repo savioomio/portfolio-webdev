@@ -11,6 +11,7 @@ export function useMessages() {
     queryFn: listMessages,
     staleTime: 0,
     gcTime: 0,
+    meta: { persist: false },
   });
 
   const toggleAnswered = useMutation({

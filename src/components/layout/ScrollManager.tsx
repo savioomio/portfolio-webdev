@@ -1,14 +1,16 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigationType } from "react-router-dom";
 import { prefersReducedMotion } from "@/lib/utils";
 
 /** Ao trocar de rota volta ao topo; com `#seção` no link, rola até ela. */
 export function ScrollManager() {
-  const { pathname, hash } = useLocation();
+  const { pathname, hash, key } = useLocation();
+  const navigationType = useNavigationType();
 
   useEffect(() => {
     if (!hash) {
-      window.scrollTo({ top: 0 });
+      // Ao voltar pelo navegador, ele mesmo restaura a posição
+      if (navigationType !== "POP") window.scrollTo({ top: 0 });
       return;
     }
     // A Home carrega em um pedaço separado: espera a seção existir antes de rolar
@@ -22,7 +24,8 @@ export function ScrollManager() {
       if (target || attempts > 40) window.clearInterval(timer);
     }, 50);
     return () => window.clearInterval(timer);
-  }, [pathname, hash]);
+    // `key` muda a cada clique, então o mesmo link com # volta a rolar
+  }, [pathname, hash, key, navigationType]);
 
   return null;
 }

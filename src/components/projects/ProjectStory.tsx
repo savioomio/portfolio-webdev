@@ -6,6 +6,13 @@ import { ExternalButton } from "@/components/ui/Button";
 import { projects, type Project } from "@/content/projects";
 import { seoForProject } from "@/lib/seo";
 
+/** Reserva o tamanho da mídia antes de ela carregar, para a página não pular. */
+const fitBox = (width: number, height: number, maxHeight: string): CSSProperties => ({
+  aspectRatio: `${width} / ${height}`,
+  width: `min(100%, calc(${maxHeight} * ${width} / ${height}))`,
+  height: "auto",
+});
+
 /** Página própria de um projeto: as mesmas cores do painel, com o texto e as imagens. */
 export function ProjectStory({ project }: { project: Project }) {
   const index = projects.indexOf(project);
@@ -37,7 +44,8 @@ export function ProjectStory({ project }: { project: Project }) {
             width={project.cover.width}
             height={project.cover.height}
             fetchPriority="high"
-            className="mx-auto max-h-[420px] w-auto rounded-2xl object-contain"
+            className="mx-auto rounded-2xl"
+            style={fitBox(project.cover.width, project.cover.height, "420px")}
           />
         </div>
       </header>
@@ -94,7 +102,8 @@ export function ProjectStory({ project }: { project: Project }) {
             controls
             playsInline
             preload="none"
-            className="mx-auto mt-12 max-h-[70svh] w-auto rounded-2xl bg-black"
+            className="mx-auto mt-12 rounded-2xl bg-black"
+            style={fitBox(project.video.width, project.video.height, "70svh")}
           />
         )}
 

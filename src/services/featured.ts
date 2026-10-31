@@ -11,10 +11,15 @@ export async function listFeatured(signal?: AbortSignal) {
 
 export async function saveFeatured(names: string[]) {
   const supabase = await getSupabase();
-  const removed = await supabase.from("featured_projects").delete().neq("repo_name", "");
+  // Grava antes de remover: se algo falhar no meio, a seleção antiga não se perde
+  if (names.length > 0) {
+    const rows = names.map((repo_name, position) => ({ repo_name, position }));
+    const saved = await supabase.from("featured_projects").upsert(rows);
+    if (saved.error) throw saved.error;
+  }
+  const kept = names.map((name) => `"${name}"`).join(",");
+  const removed = names.length
+    ? await supabase.from("featured_projects").delete().not("repo_name", "in", `(${kept})`)
+    : await supabase.from("featured_projects").delete().neq("repo_name", "");
   if (removed.error) throw removed.error;
-  if (names.length === 0) return;
-  const rows = names.map((repo_name, position) => ({ repo_name, position }));
-  const { error } = await supabase.from("featured_projects").insert(rows);
-  if (error) throw error;
 }

@@ -38,6 +38,8 @@ O ciclo completo de uma tarefa, do backlog ao deploy conferido, está na skill `
   │   ├── ui/       # Button, Card, Input, Skeleton, Spinner: só apresentação
   │   ├── layout/   # Header, Footer e o que envolve todas as páginas
   │   ├── sections/ # blocos da Home
+  │   ├── projects/ # cartões e páginas de projeto
+  │   ├── dashboard/ # blocos do painel
   │   └── three/    # cenas 3D, sempre carregadas sob demanda
   ├── content/      # textos e dados fixos do site
   ├── hooks/        # useRepos, useContactForm, useAuth...

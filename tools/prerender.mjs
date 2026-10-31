@@ -26,7 +26,11 @@ async function fetchRepos() {
   }
 }
 
-const template = await readFile(path.join(dist, "index.html"), "utf8");
+// O CSS vai dentro do HTML: a primeira pintura não espera mais um arquivo
+const builtHtml = await readFile(path.join(dist, "index.html"), "utf8");
+const cssHref = builtHtml.match(/<link rel="stylesheet"[^>]*href="([^"]+)"[^>]*>/);
+const css = await readFile(path.join(dist, cssHref[1]), "utf8");
+const template = builtHtml.replace(cssHref[0], () => `<style>${css}</style>`);
 
 function fillHead(seo) {
   return template.replace(

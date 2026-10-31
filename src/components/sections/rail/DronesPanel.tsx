@@ -2,10 +2,10 @@ import { useEffect, useRef } from "react";
 import type { WinchScene } from "@/components/three/winch";
 import type { Project } from "@/content/projects";
 import { prefersReducedMotion } from "@/lib/utils";
+import { useRailFrame } from "@/hooks/useRailFrame";
 import { PanelCopy } from "./PanelCopy";
 import { RailPanel } from "./RailPanel";
 import { RailVideo } from "./RailVideo";
-import { useRailFrame } from "./railContext";
 
 export function DronesPanel({ project }: { project: Project }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);

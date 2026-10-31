@@ -1,6 +1,6 @@
 import { useRef } from "react";
-import { cn } from "@/lib/utils";
-import { useRailFrame } from "./railContext";
+import { cn, prefersReducedMotion } from "@/lib/utils";
+import { useRailFrame } from "@/hooks/useRailFrame";
 
 interface RailVideoProps {
   src: string;
@@ -20,10 +20,10 @@ export function RailVideo({ src, poster, label, className }: RailVideoProps) {
     if (!video || near === playing.current) return;
     playing.current = near;
     if (near) {
-      if (!video.getAttribute("src")) {
-        video.poster = poster;
-        video.src = src;
-      }
+      video.poster = poster;
+      // Com movimento reduzido, fica só a imagem parada
+      if (prefersReducedMotion()) return;
+      if (!video.getAttribute("src")) video.src = src;
       video.play().catch(() => undefined);
     } else {
       video.pause();

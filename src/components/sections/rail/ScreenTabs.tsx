@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
-import { useRailFrame } from "./railContext";
+import { prefersReducedMotion } from "@/lib/utils";
+import { useRailFrame } from "@/hooks/useRailFrame";
 
 export interface Screen {
   label: string;
@@ -14,7 +15,8 @@ export function ScreenTabs({ title, screens }: { title: string; screens: Screen[
   const lastTurn = useRef(0);
 
   useRailFrame((loc, time) => {
-    if (touched.current || Math.abs(loc) >= 0.3 || time - lastTurn.current < 3.2) return;
+    if (touched.current || prefersReducedMotion()) return;
+    if (Math.abs(loc) >= 0.3 || time - lastTurn.current < 3.2) return;
     lastTurn.current = time;
     setActive((current) => (current + 1) % screens.length);
   });

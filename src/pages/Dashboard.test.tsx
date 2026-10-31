@@ -11,6 +11,7 @@ import Dashboard from "./Dashboard";
 vi.mock("@/services/auth", () => ({
   getSession: vi.fn(),
   onAuthChange: vi.fn(),
+  signIn: vi.fn(),
   signOut: vi.fn(),
 }));
 vi.mock("@/services/messages", () => ({

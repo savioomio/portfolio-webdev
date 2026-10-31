@@ -219,8 +219,25 @@
   }
 
   /* Desenho da folha no celular, até o 3D carregar. */
+  .sheet-poster {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    width: min(64%, 300px);
+    transform: translateX(-50%);
+  }
   [data-scene="ready"] .sheet-poster {
     display: none;
+  }
+  @media (min-width: 861px) {
+    .sheet-poster {
+      top: 50%;
+      right: 5vw;
+      bottom: auto;
+      left: auto;
+      width: min(34vw, 62svh);
+      transform: translateY(-50%) rotate(-90deg);
+    }
   }
 
   .stage-canvas {

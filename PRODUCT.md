@@ -36,7 +36,9 @@ Especialista em front-end para e-commerce, com loja de verdade em produção: VT
 
 - Nome público: Sávio Pessôa. Título usado no site: "Especialista E-commerce VTEX & Wake".
 - O Sávio prefere visual claro, com branco presente.
-- E-commerce é o foco do site. Robótica, drones e a mão robótica aparecem no fim, como a origem: alguém apaixonado por tecnologia e doido para ganhar. Cada época da vida tem uma página própria, com os detalhes.
+- Tipografia: Nunito nos títulos e Lato no texto. Na parte de e-commerce, fundo claro, blur e dourado de destaque; cada plataforma usa o logo e a cor oficial.
+- E-commerce é o foco do site. O site fala só de VTEX (FastStore e Store Framework), de Wake e de 2 projetos reais em WordPress, e não cita as marcas das lojas.
+- Robótica, drones e os outros projetos aparecem no fim, como a origem: alguém apaixonado por tecnologia e doido para ganhar. Primeiro uma lista; depois um trilho horizontal, com uma seção por projeto, cada uma com fundo e letras na cor do projeto.
 - A foto dele sai do hero: o objeto 3D assume o primeiro impacto, e a foto aparece numa seção seguinte.
 - O site precisa ter objetos 3D que mudam com a rolagem.
 
@@ -45,18 +47,21 @@ Especialista em front-end para e-commerce, com loja de verdade em produção: VT
 Dados publicados no LinkedIn (`linkedin.com/in/savioomio`, lidos em 30/10/2026) e no site atual.
 
 - **Experiência:** Desenvolvedor Front-End Pleno na Wicomm, remoto, desde out/2024: referência técnica em VTEX FastStore e dev lead em projetos FastStore, reportando ao tech lead. Estágio bolsista no IF Baiano, set/2023 a ago/2024, no projeto Callidus Link (automação e monitoramento de consumo hídrico com IoT em perímetros irrigados, 352 h).
-- **Lojas:** 36 lojas em FastStore (11), Store Framework (11), Wake (10), Wake + Deco (1), Eitri + VTEX (1) e WordPress (2), pela lista do Sávio de 30/10/2026. Os nomes das marcas só entram no repositório depois que ele confirmar que podem ser públicos.
+- **Lojas:** 33 lojas no site: FastStore (11), Store Framework (11) e Wake (11, uma delas com Deco), mais 2 projetos em WordPress. A loja com Eitri + VTEX fica fora das contas do site. Os nomes das marcas não entram no site nem no repositório.
 - **Formação:** Bacharelado em Computer Software Engineering na FIAP, fev/2026 a dez/2029. Técnico em Informática para Internet no IF Baiano, ago/2021 a out/2024.
 - **Destaques:** 2º lugar no primeiro Wackathon da Wicomm, em dupla com Rafael Gomes de Oliveira, construindo uma loja completa só com prompts. Equipe campeã na Competição Nacional de Drones (Florianópolis, 2023). IMAV 2024 em Bristol, Inglaterra, de 16 a 20/09/2024, representando o Brasil como única equipe de ensino médio ao lado de pós-graduação, como a USP: modelagem 3D e mecânica do drone da equipe Drones Guanambi e apresentação em inglês do artigo "Comparative Analysis of Cameras for ArUco Marker Recognition in Unmanned Aerial Vehicles".
 - **Certificados:** Python Development e Design Thinking (FIAP, 2026), Competição de Drones (IFSC, 2023), IV Vila da Ciência, VIMAD e Tenda da Ciência com Premiação 2 (Even3, 2023).
 - **Competências:** Vtex, Vtex Store Framework, Vtex FastStore, Vtex IO, Wake, Scriban, Deco, WordPress, React.js, TypeScript, JavaScript, Tailwind CSS, SASS, Bootstrap, PHP, Django, Claude Code, Python, Web Scraping, Automação de processos, Arduino, Robótica, Drones, C, C++.
 - **Projetos no site:** Gas Master (sistema desktop para postos, repositório `sistema-notas-posto`), E-commerce Platform, Task Management App, 3D Portfolio Website. Capas em `public/projects/`.
-- **Números:** +2 anos de experiência e 36 lojas. Os "+22 projetos" e "+15 com participação ativa" do site atual estão defasados em relação à lista de lojas.
-- **Mídia:** vídeo da aranha robô em `public/videos/`. Fora do repositório: mão robótica em Libras (`~/Videos/sinais ‐ Feito com o Clipchamp.mp4`), fotos da IMAV (`~/Drone Guanambi`) e da competição do IFSC (`~/Portfólio`).
+- **Números:** 3 anos de experiência, sendo 1 de estágio e 2 em e-commerce, e 33 lojas. Os "+22 projetos" e "+15 com participação ativa" do site atual estão defasados em relação à lista de lojas.
+- **Mídia:** vídeo da aranha robô em `public/videos/`. Fora do repositório: outro vídeo da aranha (`~/Videos/A melhor aranha.mp4`), mão robótica em Libras (`~/Videos/sinais ‐ Feito com o Clipchamp.mp4`), fotos da IMAV e guincho do drone em 3D (`~/Drone Guanambi`) e fotos da competição do IFSC (`~/Portfólio`).
 - **Origem:** aranha robô e sistema de detecção de vazamento de gás no segundo ano do ensino médio (Projeto Integrador I), mão robótica em Libras em 2024 (`~/Escola IF📖✍️/Mão Robotica`).
+- **Mão robótica:** artigo na Mostra Nacional de Robótica 2024, em equipe de três alunos e um orientador. Reproduziu 16 letras do alfabeto em Libras; F, H, J, K, M, N, P, Q, R e Z falharam e dependem de um novo pulso.
+- **JSOM:** Projeto de Conclusão de Curso em grupo, sistema de gestão de alunos de academia em Django (`~/PCC(JSOM)`).
+- **GasMaster:** usado por 2 postos de gasolina. Electron e SQLite, com um computador servindo os outros na rede local.
 - **Fontes:** LinkedIn, currículo em `docs/research/Curriculo_Savio_Pessoa_Afonso.pdf`, perfil no portal de carreiras da FIAP e lista enviada pelo Sávio.
 - **Não existem e não podem ser inventados:** depoimentos, preços, métricas de resultado de lojas e idiomas (o LinkedIn não lista nenhum). Os números "+40%", "-60%" e "95+" do site atual são lorem ipsum.
-- **Não usar:** telas do Gas Master com nomes e valores de clientes, documentos internos da Wicomm e fotos de colegas no site público sem a autorização deles.
+- **Não usar:** telas do Gas Master com nomes e valores de clientes, documentos internos da Wicomm, fotos de colegas no site público sem a autorização deles e, sem resolver a licença, o modelo 3D da mão: a base é da BBProjects (Brian Brocken), sob CC BY-NC-ND 4.0, que não permite distribuir versão modificada.
 
 ## Product Principles
 

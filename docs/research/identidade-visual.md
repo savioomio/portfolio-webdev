@@ -1,7 +1,7 @@
 # R07. Identidade visual: o que representa a área de e-commerce?
 
 - **Data:** 2026-10-21, atualizada em 2026-10-31
-- **Status:** em aberto, aguardando a decisão do Savio entre as duas prévias
+- **Status:** em aberto; a Faca foi escolhida como base e a terceira rodada aguarda o retorno do Savio
 - **Requisitos atendidos:** 7, 8
 
 ## Contexto
@@ -74,6 +74,20 @@ Duas prévias, no mesmo artefato:
 
 - **Jornada:** a rolagem é o caminho de uma compra (vitrine, lojas, carrinho, pagamento, entrega, confirmado). Uma cor por seção, e as peças do objeto se soltam e remontam o seguinte.
 - **Faca:** a versão clara, em branco e magenta, com o mesmo conteúdo.
+
+O Savio descartou a Jornada e pediu para seguir com a Faca.
+
+## Terceira rodada (31/10)
+
+Uma prévia, a **Faca Dourada**, a partir do pedido do Savio:
+
+- **Tipografia:** Nunito nos títulos e Lato no texto.
+- **Parte de cima:** estado atual em e-commerce, com fundo claro, blur e dourado de destaque. O blur é o vidro de uma vitrine: a embalagem 3D passa por trás dele.
+- **Plataformas:** só VTEX (FastStore e Store Framework) e Wake, mais 2 projetos reais em WordPress. Cada uma tem o logo e a cor oficial, e a folha dobra em caixa, sacola e envelope.
+- **Marcas:** o site não cita as lojas, só as contagens por plataforma.
+- **Experiência:** 3 anos, sendo 1 de estágio e 2 em e-commerce.
+- **História:** primeiro uma lista de projetos; depois um trilho horizontal, com uma seção por projeto, cada uma com fundo e letras na cor do projeto.
+- **Algo próprio em cada projeto:** vídeos da aranha; guincho do drone em 3D; água subindo no Callidus Link; mão 3D que faz os sinais pelo teclado; telas reais da JSOM e do GasMaster, com dados fictícios.
 
 ## Fontes
 

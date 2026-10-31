@@ -22,7 +22,7 @@ O ciclo completo de uma tarefa, do backlog ao deploy conferido, está na skill `
 - **PRs e merge:** o Claude abre o PR e faz o merge sozinho assim que o CI passar (`gh pr merge --merge --delete-branch`), sem esperar revisão; o Savio só confere o resultado. Relatório final curto: o que mudou e o link.
 - **Deploy** ([ADR 0005](docs/adr/0005-deploy-automatico-github-actions.md)): automático, pelo job **Deploy na Cloudflare** do CI, a cada merge na `main`. Depois do merge, confira a mudança em `https://webdev.savioomiodev.com.br`. Deploy manual só em emergência (`docs/runbooks/deploy-cloudflare.md`). Nunca publicar no Worker `savioomiodev`, que é o site pessoal.
 - **Credenciais:** tokens e segredos (Cloudflare, GitHub, backend) são criados pelo Savio. A IA não cria token, não grava segredo e não digita senha; ela prepara o passo a passo e espera.
-- **Logins por navegador** (Wrangler etc.): gerar o link sem abrir o navegador e abrir no Chrome.
+- **Logins por navegador** (Wrangler etc.): gerar o link sem abrir o navegador e abrir no navegador da máquina (Chrome no lab, Comet no Mac).
 - **Ao terminar uma tarefa:** siga a definição de pronto em `docs/planejamento.md` e marque `[x]` no backlog no mesmo PR.
 - **Antes de sair do lab:** tudo enviado ao GitHub e os logins encerrados (passo 5 do setup).
 
@@ -58,8 +58,9 @@ O ciclo completo de uma tarefa, do backlog ao deploy conferido, está na skill `
 | `.claude/settings.json` | Libera comandos de verificação e liga os hooks |
 | `.claude/hooks/guard-bash.mjs` | Bloqueia pular os hooks do Git, config global do Git e deploy no Worker do site pessoal |
 | `.claude/hooks/lab-check.mjs` | No PC do lab, diz no início da sessão o que falta do setup |
-| `.claude/skills/` | `tarefa`, `decisao`, `conferir-no-navegador` |
+| `.claude/skills/` | `tarefa`, `decisao`, `conferir-no-navegador`, `impeccable` (design, instalada em `.agents/`) |
+| `PRODUCT.md` | Público, posicionamento e conteúdo real, lidos pela skill `impeccable` |
 | `.claude/agents/` | `revisor` (diff contra estas regras), `pesquisador` (research com fontes oficiais) |
 | `.mcp.json` | Documentação da Cloudflare |
 
-O MCP do Chrome (`chrome-devtools`) fica no escopo de usuário de cada máquina (passo 4 do setup do lab).
+No PC do lab, o navegador é controlado pelo MCP do Chrome (`chrome-devtools`), no escopo de usuário (passo 4 do setup). No Mac, que usa o Comet, é pelo CLI `dev-browser` ([ADR 0007](docs/adr/0007-navegador-no-mac-com-dev-browser.md)).

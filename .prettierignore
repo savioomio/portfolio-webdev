@@ -2,6 +2,8 @@ dist
 .wrangler
 public
 package-lock.json
+.agents
+.impeccable
 
 # A documentação é escrita à mão; o Prettier realinharia as tabelas e trocaria a ênfase.
 *.md

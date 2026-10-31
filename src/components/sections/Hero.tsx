@@ -22,6 +22,21 @@ export function Hero() {
           </ButtonLink>
         </div>
       </div>
+      <svg
+        className="sheet-poster absolute bottom-6 left-1/2 w-[64%] max-w-[300px] -translate-x-1/2 md:hidden"
+        viewBox="0 0 300 330"
+        aria-hidden="true"
+        fill="#fff"
+        stroke="#D9A000"
+        strokeWidth="2.5"
+      >
+        <path d="M98 4h104v100h94v102h-94v120H98V206H4V104h94z" />
+        <path
+          d="M98 104h104M98 206h104M98 104v102M202 104v102"
+          strokeDasharray="10 7"
+          fill="none"
+        />
+      </svg>
       <div
         aria-hidden="true"
         className="absolute bottom-[26px] right-[var(--gr)] hidden gap-5 text-sm font-bold text-gold-ink md:flex"

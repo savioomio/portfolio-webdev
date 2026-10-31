@@ -1,7 +1,7 @@
 # R07. Identidade visual: o que representa a área de e-commerce?
 
-- **Data:** 2026-10-21
-- **Status:** em aberto, aguardando a decisão do Savio
+- **Data:** 2026-10-21, atualizada em 2026-10-31
+- **Status:** em aberto, aguardando a decisão do Savio entre as duas prévias
 - **Requisitos atendidos:** 7, 8
 
 ## Contexto
@@ -57,6 +57,23 @@ Igual à B, com um único objeto interativo no hero (caixa de produto ou carrinh
 ## Recomendação
 
 B ou C; A está descartada porque não representa a área. A escolha entre B e C fica com o Savio e vira o ADR seguinte.
+
+## Primeira rodada de prévias (30/10)
+
+Três modelos publicados num artefato, todos com objetos 3D que mudam com a rolagem:
+
+- **Cupom** (preto e branco, 3D em caracteres de impressora): descartado pelo Savio.
+- **Faca** (branco e magenta, folha que dobra em embalagem): aprovado porque é tematizado.
+- **Montagem** (peças de montar que viram cada objeto, uma cor por seção): a interação e a cor por seção foram aprovadas, o tema de peças de montar não, porque não tem relação com e-commerce. O conteúdo também ficou focado demais em robótica e drones.
+
+A opção C acima é o caminho: loja com 3D. O foco do site passa a ser e-commerce, e a história pessoal fica no fim, com uma página por época.
+
+## Segunda rodada
+
+Duas prévias, no mesmo artefato:
+
+- **Jornada:** a rolagem é o caminho de uma compra (vitrine, lojas, carrinho, pagamento, entrega, confirmado). Uma cor por seção, e as peças do objeto se soltam e remontam o seguinte.
+- **Faca:** a versão clara, em branco e magenta, com o mesmo conteúdo.
 
 ## Fontes
 

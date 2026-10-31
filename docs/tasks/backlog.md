@@ -56,8 +56,8 @@ Ao terminar: marque aqui no mesmo PR e siga a [definição de pronto](../planeja
 - [ ] **T18** Login do dono e rota protegida: quem não está logado e acessa `/dashboard` vai para `/login`. Dashboard num chunk separado (`React.lazy`). Branch: `feature/dashboard`. Req 5, 8.
 - [ ] **T19** Dashboard: lista de mensagens com "marcar como respondida". Branch: `feature/dashboard`. Req 5.
 - [ ] **T20** Dashboard: seleção dos projetos em destaque, lida pela Home. Branch: `feature/dashboard`. Req 5.
-- [ ] **R04** Research de tema: `next-themes` (já instalado) vs Context + `localStorage` vs Zustand. Critério principal: sem piscar o tema errado ao abrir a página. Vira ADR.
-- [ ] **T21** Tema claro/escuro com alternância no header, persistido entre visitas, sem flash ao carregar. Branch: `feature/tema`. Req 6.
+- [x] **R04** Research de tema ([ADR 0012](../adr/0012-tema-sem-flash.md)): `next-themes` (já instalado) vs Context + `localStorage` vs Zustand. Critério principal: sem piscar o tema errado ao abrir a página. Vira ADR.
+- [x] **T21** Tema claro/escuro com alternância no header, persistido entre visitas, sem flash ao carregar. Branch: `feature/tema`. Req 6.
 
 ## Fase 4: Qualidade (30/10 – 31/10)
 

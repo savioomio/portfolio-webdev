@@ -6,6 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import { AppRoutes } from "@/app/AppRoutes";
 import { lazyPages } from "@/app/pages";
 import { CACHE_MAX_AGE, createQueryClient } from "@/app/queryClient";
+import { ThemeProvider } from "@/app/ThemeProvider";
 import "./index.css";
 
 const root = document.getElementById("root") as HTMLElement;
@@ -22,9 +23,11 @@ const app = (
       client={queryClient}
       persistOptions={{ persister, maxAge: CACHE_MAX_AGE, buster: __BUILD_ID__ }}
     >
-      <BrowserRouter>
-        <AppRoutes pages={lazyPages} />
-      </BrowserRouter>
+      <ThemeProvider>
+        <BrowserRouter>
+          <AppRoutes pages={lazyPages} />
+        </BrowserRouter>
+      </ThemeProvider>
     </PersistQueryClientProvider>
   </StrictMode>
 );

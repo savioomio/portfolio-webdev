@@ -80,7 +80,10 @@ export function Storefront() {
       </Platform>
 
       <Platform brandClass="brand-wp">
-        <BrandLogo brand="wordpress" className="mb-[18px] h-[46px] w-auto text-wp md:h-16" />
+        <BrandLogo
+          brand="wordpress"
+          className="mb-[18px] h-[46px] w-auto text-wp dark:text-wp-ink md:h-16"
+        />
         <h2 className={headingClass}>{stores.wordpress} projetos reais em WordPress</h2>
         <p className="mt-3">
           Fora das plataformas de loja, também entrego em WordPress e PHP. O site da mão robótica,

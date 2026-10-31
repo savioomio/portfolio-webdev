@@ -7,7 +7,7 @@ Uma research compara alternativas **antes** de uma decisão. Ao terminar, ela vi
 | R01 | Rotas e busca de dados: qual roteador e qual camada de cache? | 1 | [rotas-e-dados.md](./rotas-e-dados.md) (ADR 0009) |
 | R02 | Backend (auth + banco) e envio de e-mail | 2 | a criar |
 | R03 | Biblioteca de formulário e validação | 2 | a criar |
-| R04 | Tema claro/escuro persistido sem flash | 3 | a criar |
+| R04 | Tema claro/escuro persistido sem flash | 3 | [tema.md](./tema.md) (ADR 0012) |
 | R05 | Ferramentas de teste | 4 | a criar |
 | R06 | Harness de IA: ferramenta, modelo, instruções, skills, agents, MCPs | 0 | [harness-ia.md](./harness-ia.md) (ADR 0006) |
 | R07 | Identidade visual: o que representa a área de e-commerce? | 1 | [identidade-visual.md](./identidade-visual.md) (ADR 0008) |

@@ -5,7 +5,7 @@ Trabalho da faculdade com entrega em **03/11/2026**: portfólio em React publica
 ## Antes de qualquer tarefa
 
 1. **PC do laboratório** (Windows, usuário `labsfiap`): o hook de início de sessão diz o que falta configurar. Se faltar algo, rode o [setup do PC do lab](docs/runbooks/setup-pc-do-lab.md) antes de tudo. No Mac (máquina principal) nada se perde e o setup não se aplica.
-2. Leia `docs/planejamento.md` (cronograma, stack proposta, arquitetura alvo, fluxo de entrega).
+2. Leia `docs/planejamento.md` (cronograma, arquitetura, fluxo de entrega).
 3. Pegue a próxima tarefa aberta em `docs/tasks/backlog.md` e use a branch indicada nela.
 4. Decisões tomadas estão em `docs/adr/`. Não reabra uma decisão sem um motivo novo; se mudar, escreva um ADR que substitui o anterior.
 5. Escolha de tecnologia passa por uma research em `docs/research/` e vira ADR antes do código (skill `decisao`).

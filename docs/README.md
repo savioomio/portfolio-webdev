@@ -5,7 +5,7 @@ Tudo o que não é código, mas guia o código: o que precisa ser feito, por que
 | Pasta / arquivo | O que tem | Quando mexer |
 | --- | --- | --- |
 | [`requisitos.md`](./requisitos.md) | Enunciado do trabalho e diagnóstico do código herdado | Só se o professor mudar o enunciado |
-| [`planejamento.md`](./planejamento.md) | Cronograma até 03/11, stack proposta, arquitetura alvo e fluxo de entrega | Quando o plano mudar |
+| [`planejamento.md`](./planejamento.md) | Cronograma até 03/11, arquitetura e fluxo de entrega | Quando o plano mudar |
 | [`tasks/backlog.md`](./tasks/backlog.md) | Lista de tarefas com branch, requisito e critério de aceite | Ao começar e ao terminar cada tarefa |
 | [`research/`](./research/) | Comparação de alternativas antes de uma decisão | Antes de escolher uma tecnologia |
 | [`adr/`](./adr/) | Decisões de arquitetura (ADRs): o que foi escolhido, contra o quê e o que aceitamos perder | Depois de cada research concluída |

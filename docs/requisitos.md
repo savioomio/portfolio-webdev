@@ -172,3 +172,23 @@ O projeto partiu do portfólio pessoal ([ADR 0001](./adr/0001-reaproveitar-portf
 - **E-mail errado no rodapé:** `Contact.tsx` usa `mailto:saviopessaafonso@gmail.com` (falta um "o").
 - **Google Analytics do site pessoal:** `index.html` carrega o `G-D95NTX6SGZ`, então as visitas deste projeto caem nas estatísticas do portfólio pessoal.
 - **CI procurava `_redirects`:** corrigido em `54ceb4f`.
+
+---
+
+## Situação na entrega (31/10/2026)
+
+| # | Requisito | Onde está |
+| --- | --- | --- |
+| 1 | Rotas | `src/app/AppRoutes.tsx`; `/projetos/:slug` em `src/pages/ProjectDetail.tsx`; 404 em `src/pages/NotFound.tsx`; erro de API em `RepoError`; F5 servido por HTML gerado ([ADR 0014](./adr/0014-seo-pre-renderizacao.md)) |
+| 2 | Estados de carregamento | `src/components/projects/RepoGrid.tsx`, `src/components/ui/Skeleton.tsx`, `src/components/sections/ContactForm.tsx` |
+| 3 | GitHub | `src/services/github.ts`, `src/hooks/useRepos.ts`, `src/components/projects/RepoCard.tsx` |
+| 4 | Formulário | `src/schemas/contactSchema.ts`, `src/hooks/useContactForm.ts`, `src/services/messages.ts` |
+| 5 | Dashboard | `src/pages/Dashboard.tsx`, `src/components/layout/RequireAuth.tsx`, `src/components/dashboard/`, `supabase/schema.sql` |
+| 6 | Tema | `index.html`, `src/app/ThemeProvider.tsx`, `src/components/layout/ThemeToggle.tsx` |
+| 7 | Interface | `DESIGN.md`, `src/components/ui/`, `src/components/three/`; conferido em 390 e 1440 px |
+| 8 | Performance | [`docs/qualidade/lighthouse.md`](./qualidade/lighthouse.md), `src/app/pages.ts`, `src/hooks/useFacaStage.ts` |
+| 9 | Testes | `src/**/*.test.ts(x)`, passo **Testes** do CI |
+| 10 | Deploy | `.github/workflows/deploy.yml`, em Cloudflare ([ADR 0004](./adr/0004-entrega-sem-vercel.md)) |
+| 11 | Versionamento | `commitlint.config.js`, `.husky/`, proteção da `main`, README e `CLAUDE.md` |
+| 12 | Arquitetura | Estrutura descrita no README e no `CLAUDE.md`; ESLint, Prettier, Husky e lint-staged |
+| — | Repositório | Público, `.env.example` e README |

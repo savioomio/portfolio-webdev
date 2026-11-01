@@ -38,7 +38,7 @@ export interface Project {
   tech: string[];
   links: ProjectLink[];
   /** Logo da equipe ou do produto, acima do título. */
-  logo?: ProjectImage;
+  logo?: ProjectImage & { chip?: boolean };
   cover: ProjectImage;
   video?: ProjectVideo;
   /** Vídeos que aparecem na página do projeto, depois do principal. */
@@ -133,6 +133,7 @@ export const projects: Project[] = [
       alt: "Logo da equipe Drones Guanambi",
       width: 480,
       height: 521,
+      chip: true,
     },
     cover: {
       src: "/media/voo-bristol.webp",
@@ -354,6 +355,13 @@ export const projects: Project[] = [
     facts: ["Django 5 e Bootstrap 5.", "Tema claro e escuro, e versão para celular."],
     tech: ["Django", "Python", "Bootstrap"],
     links: [{ label: "Ver o repositório", href: "https://github.com/savioomio/PCC" }],
+    logo: {
+      src: "/media/jsom-logo.webp",
+      alt: "Logo do JSOM",
+      width: 480,
+      height: 186,
+      chip: true,
+    },
     cover: {
       src: "/media/jsom-alunos.webp",
       alt: "Lista de alunos do JSOM, com dados fictícios",
@@ -409,6 +417,13 @@ export const projects: Project[] = [
     ],
     tech: ["Electron", "SQLite", "JavaScript"],
     links: [],
+    logo: {
+      src: "/media/gasmaster.svg",
+      alt: "Logo do GasMaster",
+      width: 240,
+      height: 117,
+      chip: true,
+    },
     cover: {
       src: "/media/gm-painel.webp",
       alt: "Painel de controle do GasMaster, com dados fictícios",
@@ -472,6 +487,12 @@ export const projects: Project[] = [
         href: "https://github.com/SAVAC-Challenge-FIAP/synesthesia-app/releases/latest",
       },
     ],
+    logo: {
+      src: "/media/synesthesia-logo.webp",
+      alt: "Logo do Synesthesia",
+      width: 540,
+      height: 120,
+    },
     cover: {
       src: "/media/syn-captura.webp",
       alt: "Tela de captura do Synesthesia, com a vibe lida pela IA e os looks sugeridos",
@@ -552,6 +573,12 @@ export const projects: Project[] = [
     ],
     tech: ["Tauri", "Rust", "React", "SQLite"],
     links: [{ label: "Conhecer o Platão", href: "https://platao.savioomiodev.com.br" }],
+    logo: {
+      src: "/media/platao-logo.webp",
+      alt: "Logo do Platão",
+      width: 180,
+      height: 180,
+    },
     cover: {
       src: "/media/platao-inicio-vtex.webp",
       alt: "Tela inicial do Platão no modo VTEX",

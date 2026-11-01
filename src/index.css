@@ -651,6 +651,19 @@
     color: #fff;
     pointer-events: none;
   }
+  .panel-logo {
+    margin-bottom: 12px;
+    font-size: 3rem;
+    line-height: 1;
+  }
+  @media (max-height: 760px) {
+    .panel-logo {
+      font-size: 2rem;
+    }
+    .panel-glass .panel-facts {
+      display: none;
+    }
+  }
   .hand-keys {
     display: grid;
     grid-template-columns: repeat(9, minmax(0, 1fr));
@@ -1037,6 +1050,13 @@
       font-size: 13px;
       padding: 10px 12px;
       width: 88%;
+    }
+  }
+
+  @media (max-width: 860px) {
+    .panel-logo {
+      margin-bottom: 8px;
+      font-size: 1.75rem;
     }
   }
 

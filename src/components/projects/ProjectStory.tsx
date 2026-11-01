@@ -2,6 +2,7 @@ import type { CSSProperties } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Seo } from "@/components/layout/Seo";
+import { ProjectLogo } from "@/components/projects/ProjectLogo";
 import { ProjectMosaic } from "@/components/projects/ProjectMosaic";
 import { ExternalButton } from "@/components/ui/Button";
 import { projects, type Project } from "@/content/projects";
@@ -36,17 +37,10 @@ export function ProjectStory({ project }: { project: Project }) {
                 Projetos
               </Link>
             </nav>
-            {project.logo && (
-              <span className="mt-4 inline-block rounded-xl bg-white p-2">
-                <img
-                  src={project.logo.src}
-                  alt={project.logo.alt}
-                  width={project.logo.width}
-                  height={project.logo.height}
-                  className="h-20 w-auto"
-                />
-              </span>
-            )}
+            <ProjectLogo
+              logo={project.logo}
+              className="mt-4 text-[4.5rem] leading-none max-md:text-[3.5rem]"
+            />
             <h1 className="mt-4 text-[clamp(2.6rem,6vw,4.8rem)] font-black leading-[1.04] tracking-[-0.025em]">
               {project.headline ?? project.name}
             </h1>

@@ -166,21 +166,7 @@ export function GasMasterPanel({ project }: PanelProps) {
   return (
     <RailPanel project={project}>
       <div className="panel-inner">
-        <PanelCopy
-          project={project}
-          top={
-            <span className="mb-3 inline-block rounded-xl bg-[#F7FFF4] px-3.5 py-2">
-              <img
-                src="/media/gasmaster.svg"
-                alt="GasMaster"
-                width={120}
-                height={44}
-                loading="lazy"
-                className="h-11 w-auto"
-              />
-            </span>
-          }
-        />
+        <PanelCopy project={project} />
         <ScreenTabs
           title="Telas do GasMaster"
           screens={[

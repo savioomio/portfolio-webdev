@@ -38,6 +38,12 @@ export function Contact() {
               </dd>
             </div>
             <div>
+              <dt className="text-sm font-bold">WhatsApp</dt>
+              <dd className="font-display text-[clamp(1.02rem,1.6vw,1.24rem)] font-extrabold leading-tight">
+                <a href={site.whatsapp}>{site.whatsappLabel}</a>
+              </dd>
+            </div>
+            <div>
               <dt className="text-sm font-bold">LinkedIn</dt>
               <dd className="font-display text-[clamp(1.02rem,1.6vw,1.24rem)] font-extrabold leading-tight">
                 <a href={site.linkedin}>linkedin.com/in/savioomio</a>

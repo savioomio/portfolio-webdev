@@ -11,7 +11,8 @@ import { GithubApiError } from "@/services/github";
 import NotFound from "@/pages/NotFound";
 import { RepoError } from "./RepoGrid";
 
-const wrapperClass = "mx-auto min-h-[70svh] w-full max-w-wrap px-[var(--gl)] pb-20 pt-28 md:pt-32";
+const wrapperClass =
+  "mx-auto min-h-[70svh] w-full max-w-page-box px-[var(--gl)] pb-20 pt-28 md:pt-32";
 
 /** Página de um repositório: os dados vêm da API do GitHub. */
 export function RepoDetail({ name }: { name: string }) {

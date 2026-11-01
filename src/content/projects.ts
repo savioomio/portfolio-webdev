@@ -37,6 +37,8 @@ export interface Project {
   facts: string[];
   tech: string[];
   links: ProjectLink[];
+  /** Logo da equipe ou do produto, acima do título. */
+  logo?: ProjectImage;
   cover: ProjectImage;
   video?: ProjectVideo;
   /** Vídeos que aparecem na página do projeto, depois do principal. */
@@ -97,19 +99,13 @@ export const projects: Project[] = [
         width: 400,
         height: 400,
       },
-      {
-        src: "/media/aranha-gas.webp",
-        alt: "Maquete do sistema de detecção de vazamento de gás",
-        width: 400,
-        height: 400,
-      },
     ],
   },
   {
     slug: "drones-guanambi",
     label: "Drones",
-    name: "De Guanambi a Bristol",
-    period: "2023 e 2024, Drones Guanambi",
+    name: "Drones Guanambi",
+    period: "2023 e 2024, de Guanambi a Bristol",
     when: "2023 e 2024",
     summary: "Campeão nacional de drones e Brasil na competição internacional IMAV.",
     description:
@@ -126,6 +122,12 @@ export const projects: Project[] = [
     ],
     tech: ["Modelagem 3D", "Mecânica", "Drones"],
     links: [],
+    logo: {
+      src: "/media/drones-guanambi-logo.webp",
+      alt: "Logo da equipe Drones Guanambi",
+      width: 236,
+      height: 244,
+    },
     cover: {
       src: "/media/voo-bristol.webp",
       alt: "Drone da equipe em voo na IMAV 2024, em Bristol",
@@ -140,6 +142,30 @@ export const projects: Project[] = [
       height: 640,
     },
     gallery: [
+      {
+        src: "/media/imav-equipe.webp",
+        alt: "Equipe Drones Guanambi com o drone na prova externa da IMAV 2024",
+        width: 900,
+        height: 599,
+      },
+      {
+        src: "/media/imav-apresentacao.webp",
+        alt: "Apresentação na prova indoor da IMAV 2024, em Bristol",
+        width: 900,
+        height: 599,
+      },
+      {
+        src: "/media/imav-cracha.webp",
+        alt: "Meu crachá e a garrafa da IMAV 2024, em Bristol",
+        width: 900,
+        height: 1200,
+      },
+      {
+        src: "/media/imav-certificado.webp",
+        alt: "Certificado de participação na IMAV 2024",
+        width: 900,
+        height: 692,
+      },
       {
         src: "/media/drone-bristol.webp",
         alt: "Drone da equipe na bancada do Bristol Robotics Laboratory",
@@ -175,24 +201,6 @@ export const projects: Project[] = [
         alt: "Vista explodida do guincho, com o carretel separado",
         width: 900,
         height: 900,
-      },
-      {
-        src: "/media/imav-voo-a.webp",
-        alt: "Drone em voo na arena indoor da IMAV 2024",
-        width: 900,
-        height: 599,
-      },
-      {
-        src: "/media/imav-voo-b.webp",
-        alt: "Drone passando pela porta da arena indoor da IMAV 2024",
-        width: 900,
-        height: 599,
-      },
-      {
-        src: "/media/imav-arena.webp",
-        alt: "Arena indoor da IMAV 2024, em Bristol",
-        width: 900,
-        height: 599,
       },
     ],
   },

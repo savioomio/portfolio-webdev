@@ -34,7 +34,7 @@ Especialista em front-end para e-commerce, com loja de verdade em produção: VT
 
 ## Brand Commitments
 
-- Nome público: Sávio Pessôa. Título usado no site: "Especialista E-commerce VTEX". VTEX é o forte, com lojas do começo ao fim; em Wake ele foi dev de apoio, não responsável.
+- Nome público: Sávio Pessôa. Título usado no site: "Especialista E-commerce VTEX e Wake". VTEX é o forte, com lojas do começo ao fim; em Wake ele foi dev de apoio, não responsável.
 - O Sávio prefere visual claro, com branco presente.
 - Tipografia: Nunito nos títulos e Lato no texto. Na parte de e-commerce, fundo claro, blur e dourado de destaque; cada plataforma usa o logo e a cor oficial.
 - E-commerce é o foco do site. O site fala só de VTEX (FastStore e Store Framework), de Wake e de 2 projetos reais em WordPress, e não cita as marcas das lojas.
@@ -53,7 +53,7 @@ Dados publicados no LinkedIn (`linkedin.com/in/savioomio`, lidos em 30/10/2026) 
 - **Certificados:** Python Development e Design Thinking (FIAP, 2026), Competição de Drones (IFSC, 2023), IV Vila da Ciência, VIMAD e Tenda da Ciência com Premiação 2 (Even3, 2023).
 - **Competências:** Vtex, Vtex Store Framework, Vtex FastStore, Vtex IO, Wake, Scriban, WordPress, React.js, TypeScript, JavaScript, Tailwind CSS, SASS, Bootstrap, PHP, Django, Claude Code, Python, Web Scraping, Automação de processos, Arduino, Robótica, Drones, C, C++.
 - **Projetos no site:** Gas Master (sistema desktop para postos, repositório `sistema-notas-posto`), E-commerce Platform, Task Management App, 3D Portfolio Website. Capas em `public/projects/`.
-- **Números:** 3 anos de experiência, sendo 1 de estágio e 2 em e-commerce, e 33 lojas. Os "+22 projetos" e "+15 com participação ativa" do site atual estão defasados em relação à lista de lojas.
+- **Números:** 2 anos de experiência no mercado, mais 1 de estágio; 22 participações em lojas VTEX, 11 em Wake e 2 projetos em WordPress para blogs de e-commerce. Os "+22 projetos" e "+15 com participação ativa" do site atual estão defasados em relação à lista de lojas.
 - **Mídia:** vídeo da aranha robô em `public/videos/`. Fora do repositório: outro vídeo da aranha (`~/Videos/A melhor aranha.mp4`), mão robótica em Libras (`~/Videos/sinais ‐ Feito com o Clipchamp.mp4`), fotos da IMAV e guincho do drone em 3D (`~/Drone Guanambi`) e fotos da competição do IFSC (`~/Portfólio`).
 - **Origem:** aranha robô e sistema de detecção de vazamento de gás no segundo ano do ensino médio (Projeto Integrador I), mão robótica em Libras em 2024 (`~/Escola IF📖✍️/Mão Robotica`).
 - **Mão robótica:** artigo na Mostra Nacional de Robótica 2024, em equipe de três alunos e um orientador. Reproduziu 16 letras do alfabeto em Libras; F, H, J, K, M, N, P, Q, R e Z falharam e dependem de um novo pulso.

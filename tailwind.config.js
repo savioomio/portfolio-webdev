@@ -32,6 +32,8 @@ export default {
       },
       maxWidth: {
         wrap: "none",
+        page: "1440px",
+        "page-box": "calc(1440px + var(--gl) + var(--gr))",
       },
       padding: {
         gl: "var(--gl)",

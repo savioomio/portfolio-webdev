@@ -28,7 +28,7 @@ export function ProjectStory({ project }: { project: Project }) {
         className="bg-[var(--c)] px-[var(--gl)] pb-14 pt-28 text-[var(--k)] md:pt-32"
         style={{ "--c": project.color, "--k": project.ink } as CSSProperties}
       >
-        <div className="mx-auto grid w-full max-w-wrap items-center gap-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+        <div className="mx-auto grid w-full max-w-page items-center gap-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
           <div>
             <nav aria-label="Caminho" className="text-sm font-bold">
               <Link to="/projetos" className="inline-flex items-center gap-1.5">
@@ -36,6 +36,17 @@ export function ProjectStory({ project }: { project: Project }) {
                 Projetos
               </Link>
             </nav>
+            {project.logo && (
+              <span className="mt-4 inline-block rounded-xl bg-white p-2">
+                <img
+                  src={project.logo.src}
+                  alt={project.logo.alt}
+                  width={project.logo.width}
+                  height={project.logo.height}
+                  className="h-20 w-auto"
+                />
+              </span>
+            )}
             <h1 className="mt-4 text-[clamp(2.6rem,6vw,4.8rem)] font-black leading-[1.04] tracking-[-0.025em]">
               {project.headline ?? project.name}
             </h1>
@@ -54,7 +65,7 @@ export function ProjectStory({ project }: { project: Project }) {
         </div>
       </header>
 
-      <div className="mx-auto w-full max-w-wrap px-[var(--gl)] py-12">
+      <div className="mx-auto w-full max-w-page-box px-[var(--gl)] py-12">
         <div className="grid gap-10 md:grid-cols-[minmax(0,1.3fr)_minmax(0,0.7fr)]">
           <div className="text-lg leading-relaxed">
             {project.body.map((paragraph) => (

@@ -9,12 +9,12 @@ export function Hero() {
     >
       <div className="glass relative z-[1] w-full p-6 md:w-[min(760px,60%)] md:p-[clamp(24px,3.4vw,46px)]">
         <h1 className="text-[clamp(2.7rem,5.6vw,5.3rem)] font-black leading-[1.1] tracking-[-0.025em]">
-          Especialista em <span className="highlight">e-commerce</span> VTEX
+          Especialista em <span className="highlight">e-commerce</span> VTEX e Wake
         </h1>
         <p className="mt-5 max-w-[40em] text-[clamp(1.06rem,1.45vw,1.28rem)] leading-normal">
-          Sou desenvolvedor front-end. São {stores.vtex} lojas em VTEX, {stores.wake} em Wake como
-          apoio ao time, {stores.wordpress} projetos reais em WordPress e 3 anos de experiência, 1
-          deles de estágio.
+          Sou desenvolvedor front-end. São {stores.vtex} participações em lojas VTEX, {stores.wake}{" "}
+          em Wake e {stores.wordpress} projetos em WordPress para blogs de e-commerce, tudo em 2
+          anos de experiência no mercado.
         </p>
         <div className="mt-[26px] flex flex-wrap gap-2.5">
           <ButtonLink to="/#lojas">Ver as lojas</ButtonLink>

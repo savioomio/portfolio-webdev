@@ -47,8 +47,8 @@ function breadcrumbs(items: { name: string; path?: string }[]) {
 
 export function seoForHome(): SeoData {
   return {
-    title: `${site.name} | Especialista E-commerce VTEX`,
-    description: `Desenvolvedor front-end especialista em e-commerce: ${stores.total} lojas em VTEX e Wake, ${stores.wordpress} projetos reais em WordPress e 3 anos de experiência.`,
+    title: `${site.name} | Especialista E-commerce VTEX e Wake`,
+    description: `Desenvolvedor front-end especialista em e-commerce: ${stores.vtex} participações em lojas VTEX, ${stores.wake} em Wake, ${stores.wordpress} projetos em WordPress para blogs de e-commerce e 2 anos de experiência no mercado.`,
     path: "/",
     type: "profile",
     jsonLd: [

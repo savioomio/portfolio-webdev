@@ -7,7 +7,7 @@ import { createQueryClient } from "@/app/queryClient";
 import { SeoContext } from "@/app/seoContext";
 import { ThemeProvider } from "@/app/ThemeProvider";
 import { projects } from "@/content/projects";
-import { site } from "@/content/site";
+import { site, stores } from "@/content/site";
 import { REPOS_KEY } from "@/hooks/useRepos";
 import { cleanRepos } from "@/lib/repos";
 import { renderSeoTags, seoForNotFound, type SeoData } from "@/lib/seo";
@@ -59,4 +59,4 @@ export const staticPaths = [
   ...projects.map((project) => `/projetos/${project.slug}`),
 ];
 
-export { cleanRepos, renderSeoTags, seoForNotFound, site };
+export { cleanRepos, renderSeoTags, seoForNotFound, site, stores };

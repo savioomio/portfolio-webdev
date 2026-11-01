@@ -1,6 +1,6 @@
 # Sávio Pessôa
 
-> Desenvolvedor front-end especialista em e-commerce: 22 participações em lojas VTEX (FastStore e Store Framework), 11 entregas de lojas Wake de alta performance, 2 projetos em WordPress para blogs de e-commerce e 2 anos de experiência no mercado.
+> Desenvolvedor front-end especialista em e-commerce: {vtex} participações em lojas VTEX (FastStore e Store Framework), {wake} entregas de lojas Wake de alta performance, {wordpress} projetos em WordPress para blogs de e-commerce e 2 anos de experiência no mercado.
 
 ## Páginas
 

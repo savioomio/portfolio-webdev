@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FeaturedPicker } from "@/components/dashboard/FeaturedPicker";
 import { MessageList } from "@/components/dashboard/MessageList";
+import { StoreCountsForm } from "@/components/dashboard/StoreCountsForm";
 import { RequireAuth } from "@/components/layout/RequireAuth";
 import { Seo } from "@/components/layout/Seo";
 import { Button } from "@/components/ui/Button";
@@ -43,12 +44,20 @@ function DashboardContent() {
           </h2>
           <MessageList />
         </section>
-        <section aria-labelledby="painel-destaques">
-          <h2 id="painel-destaques" className="mb-3 text-2xl font-black">
-            Destaques da Home
-          </h2>
-          <FeaturedPicker />
-        </section>
+        <div className="grid gap-10">
+          <section aria-labelledby="painel-destaques">
+            <h2 id="painel-destaques" className="mb-3 text-2xl font-black">
+              Destaques da Home
+            </h2>
+            <FeaturedPicker />
+          </section>
+          <section aria-labelledby="painel-contagens">
+            <h2 id="painel-contagens" className="mb-3 text-2xl font-black">
+              Contagens do site
+            </h2>
+            <StoreCountsForm />
+          </section>
+        </div>
       </div>
     </main>
   );

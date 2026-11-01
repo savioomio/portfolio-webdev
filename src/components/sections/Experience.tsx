@@ -58,7 +58,7 @@ export function Experience() {
             ))}
           </ul>
         </div>
-        <figure className="max-w-[260px] md:max-w-none">
+        <figure>
           <img
             src={wackathon.src}
             alt={wackathon.alt}

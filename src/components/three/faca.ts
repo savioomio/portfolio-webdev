@@ -33,6 +33,7 @@ import {
   type Object3D,
 } from "three";
 import { brandLogos, type Brand } from "@/content/brandLogos";
+import { stores } from "@/content/site";
 import { clamp, ease, lerp } from "@/lib/utils";
 
 type Point = [number, number];
@@ -136,7 +137,7 @@ function sitePageTexture() {
   ctx.restore();
   ctx.fillStyle = "#FFFFFF";
   ctx.font = "900 84px Nunito, system-ui, sans-serif";
-  ctx.fillText("2 projetos", 268, 160);
+  ctx.fillText(`${stores.wordpress} projetos`, 268, 160);
   ctx.fillText("reais", 268, 244);
 
   ctx.fillStyle = "#F5B800";
@@ -421,7 +422,7 @@ export function createFacaScene(canvas: HTMLCanvasElement, reduced: boolean) {
       angle: Q,
       from: 0.1,
       to: 0.55,
-      print: printedTexture("vtex", "22 LOJAS"),
+      print: printedTexture("vtex", `${stores.vtex} LOJAS`),
     });
     const back = addPanel(sheet, sheet.root, {
       at: [0, -d / 2],
@@ -472,7 +473,7 @@ export function createFacaScene(canvas: HTMLCanvasElement, reduced: boolean) {
       angle: Q,
       from: 0,
       to: 0.55,
-      print: printedTexture("wake", "11 LOJAS"),
+      print: printedTexture("wake", `${stores.wake} LOJAS`),
     });
     const back = addPanel(sheet, sheet.root, {
       at: [0, -d / 2],

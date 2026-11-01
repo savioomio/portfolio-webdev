@@ -18,6 +18,7 @@ Um ADR registra **uma** decisão: o contexto, as opções comparadas, o critéri
 | [0012](./0012-tema-sem-flash.md) | Tema com script no head e Context | Aceito |
 | [0013](./0013-testes-vitest.md) | Testes com Vitest e Testing Library | Aceito |
 | [0014](./0014-seo-pre-renderizacao.md) | SEO com pré-renderização no build e 404 real | Aceito |
+| [0015](./0015-contagens-no-painel.md) | Contagens de lojas editadas no painel e publicadas no build | Aceito |
 
 ## Modelo
 

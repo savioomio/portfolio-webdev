@@ -23,6 +23,7 @@ vi.mock("@/services/github", async (importOriginal) => ({
   listRepos: vi.fn(),
 }));
 vi.mock("@/services/featured", () => ({ listFeatured: vi.fn(), saveFeatured: vi.fn() }));
+vi.mock("@/services/storeCounts", () => ({ getStoreCounts: vi.fn(), saveStoreCounts: vi.fn() }));
 
 function renderDashboard() {
   const client = new QueryClient({ defaultOptions: { queries: { retry: false } } });

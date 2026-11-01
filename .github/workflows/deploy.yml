@@ -11,6 +11,10 @@ on:
   pull_request:
     branches:
       - main
+  # Publica as contagens salvas no painel (ADR 0015): todo dia, ou no botao Run workflow
+  schedule:
+    - cron: "0 9 * * *"
+  workflow_dispatch:
 
 jobs:
   build:
@@ -66,7 +70,7 @@ jobs:
     name: Deploy na Cloudflare
     # So depois do build passar, e so na main: PR nunca publica
     needs: build
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     # Um deploy por vez; um merge novo espera o anterior terminar
     concurrency:

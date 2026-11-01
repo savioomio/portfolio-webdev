@@ -7,9 +7,8 @@ const root = process.cwd();
 const dist = path.join(root, "dist");
 const ssrBundle = path.join(root, "dist-ssr", "entry-server.js");
 
-const { cleanRepos, renderPage, renderSeoTags, seoForNotFound, site, staticPaths } = await import(
-  pathToFileURL(ssrBundle).href
-);
+const { cleanRepos, renderPage, renderSeoTags, seoForNotFound, site, staticPaths, stores } =
+  await import(pathToFileURL(ssrBundle).href);
 
 async function fetchRepos() {
   const headers = { Accept: "application/vnd.github+json" };
@@ -87,3 +86,14 @@ await writeFile(
 
 await rm(path.join(root, "dist-ssr"), { recursive: true, force: true });
 console.log(`Pré-renderização: ${routes.length} páginas, ${sitemap.length} no sitemap.`);
+
+// O llms.txt também mostra as contagens do painel
+const llmsFile = path.join(dist, "llms.txt");
+const llms = await readFile(llmsFile, "utf8");
+await writeFile(
+  llmsFile,
+  llms
+    .replaceAll("{vtex}", stores.vtex)
+    .replaceAll("{wake}", stores.wake)
+    .replaceAll("{wordpress}", stores.wordpress),
+);

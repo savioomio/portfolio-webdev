@@ -99,6 +99,12 @@ export const projects: Project[] = [
         width: 400,
         height: 400,
       },
+      {
+        src: "/media/aranha-gas.webp",
+        alt: "Maquete do sistema de detecção de vazamento de gás",
+        width: 400,
+        height: 400,
+      },
     ],
   },
   {

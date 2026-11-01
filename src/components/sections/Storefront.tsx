@@ -76,10 +76,10 @@ export function Storefront() {
 
       <Platform brandClass="brand-wake" align="right">
         <BrandLogo brand="wake" className="mb-[18px] h-[34px] w-auto text-ink md:h-[50px]" />
-        <h2 className={headingClass}>{stores.wake} lojas em Wake</h2>
+        <h2 className={headingClass}>{stores.wake} participações em lojas Wake</h2>
         <p className="mt-3">
-          Lojas de grande porte, feitas com Scriban. Aqui entrei como dev de apoio, ajudando o time
-          nas entregas.
+          Participei de {stores.wake} entregas de lojas Wake de alta performance, feitas com
+          Scriban.
         </p>
       </Platform>
 

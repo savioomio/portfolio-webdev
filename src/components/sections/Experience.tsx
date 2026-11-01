@@ -23,7 +23,7 @@ const timeline: Milestone[] = [
     roles: ["Desenvolvedor Web", "Desenvolvedor Web Pleno"],
     text: "Remoto. Atuo como referência técnica em VTEX nos projetos da empresa.",
     achievement:
-      "Segundo lugar no primeiro Wackathon, em dupla: uma loja completa feita só com prompts.",
+      "Segundo lugar no primeiro Wackathon, em dupla: uma loja completa feita só com prompts em 24 horas.",
   },
   {
     when: "2026 a 2029",

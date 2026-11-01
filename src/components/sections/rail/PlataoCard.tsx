@@ -34,7 +34,7 @@ const seconds = (ms: number) => (ms / 1000).toFixed(1).replace(".", ",");
 /** O balão do Platão: os degradês acompanham a cor do modo. */
 function PlataoLogo() {
   return (
-    <svg viewBox="128 248 768 768" className="pj__logo" aria-hidden="true">
+    <svg viewBox="128 248 768 768" className="logo" aria-hidden="true">
       <defs>
         <linearGradient id="pj-marca" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0" className="pj-marca-1" />

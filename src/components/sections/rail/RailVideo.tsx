@@ -34,14 +34,12 @@ export function RailVideo({ src, poster, label, className }: RailVideoProps) {
   });
 
   return (
-    <video
-      ref={videoRef}
-      className={cn("panel-video", className)}
+    <button
+      type="button"
+      className={cn("rail-video", className)}
       {...zoom({ src, alt: label, poster })}
-      muted
-      loop
-      playsInline
-      preload="none"
-    />
+    >
+      <video ref={videoRef} className="panel-video" muted loop playsInline preload="none" />
+    </button>
   );
 }

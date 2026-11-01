@@ -31,7 +31,7 @@ export default {
         danger: "var(--danger)",
       },
       maxWidth: {
-        wrap: "1240px",
+        wrap: "none",
       },
       padding: {
         gl: "var(--gl)",

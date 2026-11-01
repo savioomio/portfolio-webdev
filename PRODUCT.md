@@ -34,7 +34,7 @@ Especialista em front-end para e-commerce, com loja de verdade em produção: VT
 
 ## Brand Commitments
 
-- Nome público: Sávio Pessôa. Título usado no site: "Especialista E-commerce VTEX & Wake".
+- Nome público: Sávio Pessôa. Título usado no site: "Especialista E-commerce VTEX". VTEX é o forte, com lojas do começo ao fim; em Wake ele foi dev de apoio, não responsável.
 - O Sávio prefere visual claro, com branco presente.
 - Tipografia: Nunito nos títulos e Lato no texto. Na parte de e-commerce, fundo claro, blur e dourado de destaque; cada plataforma usa o logo e a cor oficial.
 - E-commerce é o foco do site. O site fala só de VTEX (FastStore e Store Framework), de Wake e de 2 projetos reais em WordPress, e não cita as marcas das lojas.

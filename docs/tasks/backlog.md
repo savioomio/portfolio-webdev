@@ -66,6 +66,7 @@ Ao terminar: marque aqui no mesmo PR e siga a [definição de pronto](../planeja
 - [x] **T22** Testes da validação do formulário e do bloqueio do dashboard sem login; o CI roda os testes e bloqueia o merge se falharem. Branch: `test/formulario-e-dashboard`. Req 9.
 - [x] **T23** Performance: Lighthouse mobile ≥ 80 (print salvo em `docs/`); imagens com `srcset`/`sizes` e AVIF/WebP; `.jfif` convertidos; cena 3D fora do bundle inicial; CLS próximo de 0; análise do bundle com `rollup-plugin-visualizer`. Branch: `perf/lighthouse`. Req 8.
 - [x] **T24** Revisão responsiva em celular (390 px) e desktop (1440 px), com prints de cada página. Branch: `fix/responsivo`. Req 7.
+- [x] **T39** Polimento: caixa fechada sem frestas, troca entre plataformas sem sobreposição, trilho com deslize no celular, marca no cabeçalho, conteúdo alinhado ao cabeçalho, imagem de abertura igual à peça 3D e vídeo com botão válido. Branch: `fix/polimento-faca`.
 - [x] **T38** Versões em alta das mídias com original disponível: o navegador escolhe pela densidade da tela e o visor sempre abre em alta. Branch: `feature/midias-hd`.
 - [x] **T37** Clicar num vídeo ou foto real amplia na tela, e toda mídia real dos painéis aparece na página do projeto, em mosaico. Branch: `feature/zoom-midias`.
 - [x] **T36** Synesthesia só com a gravação da tela, editada, e nomes novos nas mídias trocadas, para o cache não servir o vídeo antigo; hover da letra ativa da mão legível. Branch: `fix/video-synesthesia`.

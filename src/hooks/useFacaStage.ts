@@ -33,9 +33,15 @@ export function useFacaStage(
         return { top: rect.top + window.scrollY, height: rect.height };
       });
       if (!stops.length) return;
-      centers = stops.map((stop, i) =>
-        i === 0 ? 0 : stop.top + stop.height / 2 - window.innerHeight / 2,
-      );
+      // No celular o texto fica no fim da seção: a parada é quando ele está inteiro na tela
+      const small = window.innerWidth <= 860;
+      centers = stops.map((stop, i) => {
+        if (i === 0) return 0;
+        const rest = small
+          ? stop.height - window.innerHeight
+          : (stop.height - window.innerHeight) / 2;
+        return stop.top + rest;
+      });
       const last = stops[stops.length - 1];
       stageEnd = last.top + last.height;
     };

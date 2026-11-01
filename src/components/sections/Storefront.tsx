@@ -53,6 +53,7 @@ export function Storefront() {
       <Platform id="lojas" brandClass="brand-vtex">
         <BrandLogo brand="vtex" className="mb-[18px] h-[46px] w-auto text-vtex md:h-16" />
         <h2 className={headingClass}>{stores.vtex} lojas em VTEX</h2>
+        <p className="mt-3">Meu forte: participei de lojas do começo ao fim.</p>
         <ul className="mt-[18px] border-t-2 border-dashed border-[var(--c)]">
           <StoreRow count={stores.faststore} title="FastStore">
             Referência técnica na empresa e dev lead em projetos FastStore, reportando ao tech lead.
@@ -76,7 +77,10 @@ export function Storefront() {
       <Platform brandClass="brand-wake" align="right">
         <BrandLogo brand="wake" className="mb-[18px] h-[34px] w-auto text-ink md:h-[50px]" />
         <h2 className={headingClass}>{stores.wake} lojas em Wake</h2>
-        <p className="mt-3">Lojas de grande porte, feitas com Scriban.</p>
+        <p className="mt-3">
+          Lojas de grande porte, feitas com Scriban. Aqui entrei como dev de apoio, ajudando o time
+          nas entregas.
+        </p>
       </Platform>
 
       <Platform brandClass="brand-wp">

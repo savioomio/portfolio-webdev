@@ -12,20 +12,20 @@ export interface ZoomItem extends ZoomMedia {
   ratio: number;
 }
 
-type ZoomElement = HTMLImageElement | HTMLVideoElement;
+type ZoomElement = HTMLImageElement | HTMLButtonElement;
 
 export const ZoomContext = createContext<(item: ZoomItem) => void>(() => undefined);
 
 /** Proporção do arquivo, porque no painel a mídia costuma aparecer recortada. */
 function ratioOf(element: ZoomElement) {
-  const [width, height] =
-    element instanceof HTMLVideoElement
-      ? [element.videoWidth, element.videoHeight]
-      : [element.naturalWidth, element.naturalHeight];
+  const video = element.querySelector("video");
+  const [width, height] = video
+    ? [video.videoWidth, video.videoHeight]
+    : [(element as HTMLImageElement).naturalWidth, (element as HTMLImageElement).naturalHeight];
   return width && height ? width / height : element.clientWidth / element.clientHeight;
 }
 
-/** Devolve as propriedades que tornam uma imagem ou vídeo clicável para ampliar. */
+/** Propriedades que tornam clicável uma imagem, ou o botão que envolve um vídeo. */
 export function useZoom() {
   const open = useContext(ZoomContext);
 

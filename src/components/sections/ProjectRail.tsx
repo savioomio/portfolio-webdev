@@ -9,6 +9,7 @@ import {
   type Ref,
 } from "react";
 import { projects, type Project } from "@/content/projects";
+import { isRailSwipe, useRailSwipe } from "@/hooks/useRailSwipe";
 import { clamp, ease, lerp, prefersReducedMotion } from "@/lib/utils";
 import { DronesPanel } from "./rail/DronesPanel";
 import { MaoPanel } from "./rail/MaoPanel";
@@ -31,13 +32,14 @@ export interface RailHandle {
   goTo: (index: number) => void;
 }
 
-/** Trilho horizontal: a rolagem vertical passa os painéis, um por projeto. */
+/** Trilho horizontal: a rolagem vertical passa os painéis e, no celular, o dedo desliza. */
 export function ProjectRail({ ref }: { ref?: Ref<RailHandle> }) {
   const sectionRef = useRef<HTMLElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const dockRef = useRef<HTMLElement>(null);
   const frames = useRef(new Map<number, Set<RailFrame>>());
   const count = projects.length;
+  useRailSwipe(sectionRef, trackRef);
 
   const rail = useMemo(
     () => ({
@@ -57,11 +59,15 @@ export function ProjectRail({ ref }: { ref?: Ref<RailHandle> }) {
     const section = sectionRef.current;
     if (!section) return;
     const rect = section.getBoundingClientRect();
+    const behavior = prefersReducedMotion() ? "auto" : "smooth";
+    const track = trackRef.current;
+    if (isRailSwipe() && track) {
+      track.scrollTo({ left: index * track.clientWidth, behavior });
+      window.scrollTo({ top: rect.top + window.scrollY, behavior });
+      return;
+    }
     const span = Math.max(1, rect.height - window.innerHeight);
-    window.scrollTo({
-      top: rect.top + window.scrollY + (index / (count - 1)) * span,
-      behavior: prefersReducedMotion() ? "auto" : "smooth",
-    });
+    window.scrollTo({ top: rect.top + window.scrollY + (index / (count - 1)) * span, behavior });
   };
 
   useImperativeHandle(ref, () => ({ goTo }));
@@ -89,20 +95,26 @@ export function ProjectRail({ ref }: { ref?: Ref<RailHandle> }) {
       const delta = Math.min(0.05, (now - lastFrame) / 1000);
       lastFrame = now;
 
-      const rect = section.getBoundingClientRect();
-      const span = Math.max(1, rect.height - window.innerHeight);
-      const raw = clamp(-rect.top / span) * (count - 1);
-      const step = Math.min(count - 2, Math.floor(raw));
-      const target = step + ease(clamp((raw - step - 0.1) / 0.8));
-      offset = reduced ? target : lerp(offset, target, 1 - Math.exp(-delta * 9));
-      if (Math.abs(offset - target) < 0.0004) offset = target;
-      track.style.transform = `translate3d(${(-offset * 100) / count}%,0,0)`;
+      const swipe = isRailSwipe();
+      if (swipe) {
+        offset = track.scrollLeft / track.clientWidth;
+        track.style.transform = "";
+      } else {
+        const rect = section.getBoundingClientRect();
+        const span = Math.max(1, rect.height - window.innerHeight);
+        const raw = clamp(-rect.top / span) * (count - 1);
+        const step = Math.min(count - 2, Math.floor(raw));
+        const target = step + ease(clamp((raw - step - 0.1) / 0.8));
+        offset = reduced ? target : lerp(offset, target, 1 - Math.exp(-delta * 9));
+        if (Math.abs(offset - target) < 0.0004) offset = target;
+        track.style.transform = `translate3d(${(-offset * 100) / count}%,0,0)`;
+      }
 
       panels.forEach((panel, i) => {
         const loc = i - offset;
         const near = Math.abs(loc) < 1.05;
-        const folding = loc > 0 && loc < 1;
-        panel.style.visibility = near ? "visible" : "hidden";
+        const folding = !swipe && loc > 0 && loc < 1;
+        panel.style.visibility = near || swipe ? "visible" : "hidden";
         panel.style.setProperty("--crease", folding ? "1" : "0");
         const inner = inners[i];
         if (inner) inner.style.transform = !reduced && folding ? `rotateY(${loc * 46}deg)` : "none";
@@ -153,7 +165,7 @@ export function ProjectRail({ ref }: { ref?: Ref<RailHandle> }) {
     const panel = (event.target as HTMLElement).closest<HTMLElement>("[data-panel]");
     const panels = [...(trackRef.current?.querySelectorAll("[data-panel]") ?? [])];
     const index = panel ? panels.indexOf(panel) : -1;
-    if (index >= 0 && !event.target.matches(":hover")) goTo(index);
+    if (index >= 0 && !isRailSwipe() && !event.target.matches(":hover")) goTo(index);
   };
 
   return (

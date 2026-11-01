@@ -1,9 +1,9 @@
-import { useEffect, useRef } from "react";
-import type { WinchScene } from "@/components/three/winch";
+import { useEffect } from "react";
 import type { Project } from "@/content/projects";
 import { hdSrcSet } from "@/lib/media";
 import { prefersReducedMotion } from "@/lib/utils";
 import { useRailFrame } from "@/hooks/useRailFrame";
+import { useRailScene } from "@/hooks/useRailScene";
 import { useZoom } from "@/hooks/useZoom";
 import { PanelCopy } from "./PanelCopy";
 import { RailPanel } from "./RailPanel";
@@ -15,36 +15,23 @@ const trophy = {
 };
 
 export function DronesPanel({ project }: { project: Project }) {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const scene = useRef<WinchScene | null>(null);
-  const started = useRef(false);
+  const { canvasRef, canvasKey, scene, ensure } = useRailScene(async (canvas) => {
+    const { createWinchScene } = await import("@/components/three/winch");
+    return createWinchScene(canvas, prefersReducedMotion());
+  });
   const zoom = useZoom();
 
   useRailFrame((loc) => {
     if (Math.abs(loc) >= 1.05) return;
-    if (!started.current && canvasRef.current) {
-      started.current = true;
-      const canvas = canvasRef.current;
-      import("@/components/three/winch")
-        .then(({ createWinchScene }) => createWinchScene(canvas, prefersReducedMotion()))
-        .then((created) => {
-          scene.current = created;
-        })
-        .catch(() => undefined);
-    }
+    ensure();
     scene.current?.draw();
   });
 
   useEffect(() => {
     const onResize = () => scene.current?.size();
     window.addEventListener("resize", onResize);
-    return () => {
-      window.removeEventListener("resize", onResize);
-      scene.current?.dispose();
-      scene.current = null;
-      started.current = false;
-    };
-  }, []);
+    return () => window.removeEventListener("resize", onResize);
+  }, [scene]);
 
   return (
     <RailPanel project={project}>
@@ -61,7 +48,7 @@ export function DronesPanel({ project }: { project: Project }) {
         <PanelCopy project={project} className="panel-glass" />
         <div className="media-drones">
           <figure className="winch">
-            <canvas ref={canvasRef} aria-label="Guincho do drone em 3D" />
+            <canvas key={canvasKey} ref={canvasRef} aria-label="Guincho do drone em 3D" />
             <figcaption className="pointer-events-none absolute inset-x-2.5 bottom-2 text-[13px] leading-tight">
               O guincho que modelei. Arraste para girar.
             </figcaption>

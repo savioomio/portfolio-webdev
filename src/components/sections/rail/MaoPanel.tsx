@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import type { HandScene } from "@/components/three/hand";
 import { handPoses } from "@/content/handPoses";
 import type { Project } from "@/content/projects";
 import { prefersReducedMotion } from "@/lib/utils";
 import { useRailFrame } from "@/hooks/useRailFrame";
+import { useRailScene } from "@/hooks/useRailScene";
 import { PanelCopy } from "./PanelCopy";
 import { RailPanel } from "./RailPanel";
 import { RailVideo } from "./RailVideo";
@@ -14,36 +14,36 @@ const SPELLED_NAME = "SAVIO";
 const RESUME_AFTER_MS = 7000;
 
 export function MaoPanel({ project }: { project: Project }) {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const scene = useRef<HandScene | null>(null);
-  const started = useRef(false);
+  const currentLetter = useRef("S");
+  const { canvasRef, canvasKey, scene, ensure } = useRailScene(async (canvas) => {
+    const { createHandScene } = await import("@/components/three/hand");
+    const created = createHandScene(canvas, prefersReducedMotion());
+    created.set(currentLetter.current);
+    return created;
+  });
   const flow = useRef({ manualAt: -1e9, step: 0, stepAt: 0, loc: 9 });
   const [letter, setLetter] = useState("S");
   const [spelled, setSpelled] = useState("");
   const [announced, setAnnounced] = useState("");
 
-  const press = useCallback((next: string, byHand: boolean) => {
-    if (byHand) {
-      flow.current.manualAt = performance.now();
-      setSpelled("");
-      setAnnounced(`Letra ${next}`);
-    }
-    setLetter(next);
-    scene.current?.set(next);
-  }, []);
+  const press = useCallback(
+    (next: string, byHand: boolean) => {
+      if (byHand) {
+        flow.current.manualAt = performance.now();
+        setSpelled("");
+        setAnnounced(`Letra ${next}`);
+      }
+      currentLetter.current = next;
+      setLetter(next);
+      scene.current?.set(next);
+    },
+    [scene],
+  );
 
   useRailFrame((loc, time, pointerX) => {
     flow.current.loc = loc;
     if (Math.abs(loc) >= 1.05) return;
-    if (!started.current && canvasRef.current) {
-      started.current = true;
-      const canvas = canvasRef.current;
-      import("@/components/three/hand")
-        .then(({ createHandScene }) => {
-          scene.current = createHandScene(canvas, prefersReducedMotion());
-        })
-        .catch(() => undefined);
-    }
+    ensure();
     const state = flow.current;
     const idle = performance.now() - state.manualAt > RESUME_AFTER_MS;
     if (Math.abs(loc) < 0.3 && !prefersReducedMotion() && idle && time - state.stepAt > 1.35) {
@@ -73,11 +73,8 @@ export function MaoPanel({ project }: { project: Project }) {
     return () => {
       window.removeEventListener("keydown", onKey);
       window.removeEventListener("resize", onResize);
-      scene.current?.dispose();
-      scene.current = null;
-      started.current = false;
     };
-  }, [press]);
+  }, [press, scene]);
 
   return (
     <RailPanel project={project}>
@@ -108,7 +105,11 @@ export function MaoPanel({ project }: { project: Project }) {
           </p>
         </PanelCopy>
         <div className="hand-stage">
-          <canvas ref={canvasRef} aria-label="Mão robótica em 3D fazendo sinais de Libras" />
+          <canvas
+            key={canvasKey}
+            ref={canvasRef}
+            aria-label="Mão robótica em 3D fazendo sinais de Libras"
+          />
           <span className="hand-letter" aria-hidden="true">
             {letter}
           </span>

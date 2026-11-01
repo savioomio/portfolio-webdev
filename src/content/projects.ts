@@ -305,9 +305,9 @@ export const projects: Project[] = [
       height: 360,
     },
     video: {
-      src: "/media/mao.mp4",
+      src: "/media/mao-completo.mp4",
       poster: "/media/mao-poster.webp",
-      label: "A mão real fazendo os sinais",
+      label: "Vídeo completo da mão real fazendo todas as letras",
       width: 640,
       height: 360,
     },

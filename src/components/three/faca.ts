@@ -760,6 +760,7 @@ export function createFacaScene(canvas: HTMLCanvasElement, reduced: boolean) {
     },
     dispose() {
       renderer.dispose();
+      renderer.forceContextLoss();
     },
   };
 }

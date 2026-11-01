@@ -2,8 +2,10 @@ import type { CSSProperties } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Seo } from "@/components/layout/Seo";
+import { ProjectMosaic } from "@/components/projects/ProjectMosaic";
 import { ExternalButton } from "@/components/ui/Button";
 import { projects, type Project } from "@/content/projects";
+import { useZoom } from "@/hooks/useZoom";
 import { seoForProject } from "@/lib/seo";
 
 /** Reserva o tamanho da mídia antes de ela carregar, para a página não pular. */
@@ -17,6 +19,7 @@ const fitBox = (width: number, height: number, maxHeight: string): CSSProperties
 export function ProjectStory({ project }: { project: Project }) {
   const index = projects.indexOf(project);
   const next = projects[(index + 1) % projects.length];
+  const zoom = useZoom();
 
   return (
     <main>
@@ -44,6 +47,7 @@ export function ProjectStory({ project }: { project: Project }) {
             width={project.cover.width}
             height={project.cover.height}
             fetchPriority="high"
+            {...zoom(project.cover)}
             className="mx-auto rounded-2xl"
             style={fitBox(project.cover.width, project.cover.height, "420px")}
           />
@@ -92,39 +96,7 @@ export function ProjectStory({ project }: { project: Project }) {
           </aside>
         </div>
 
-        {project.video && (
-          <video
-            src={project.video.src}
-            poster={project.video.poster}
-            width={project.video.width}
-            height={project.video.height}
-            aria-label={project.video.label}
-            controls
-            playsInline
-            preload="none"
-            className="mx-auto mt-12 rounded-2xl bg-black"
-            style={fitBox(project.video.width, project.video.height, "70svh")}
-          />
-        )}
-
-        {project.gallery.length > 0 && (
-          <section aria-label="Imagens do projeto" className="mt-12">
-            <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {project.gallery.map((image) => (
-                <li key={image.src}>
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    width={image.width}
-                    height={image.height}
-                    loading="lazy"
-                    className="h-auto w-full rounded-2xl"
-                  />
-                </li>
-              ))}
-            </ul>
-          </section>
-        )}
+        <ProjectMosaic project={project} />
 
         <Link
           to={`/projetos/${next.slug}`}

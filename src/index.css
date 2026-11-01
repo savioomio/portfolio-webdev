@@ -1009,15 +1009,20 @@
       display: none;
     }
     .hand-keys {
-      grid-template-columns: repeat(8, minmax(0, 1fr));
+      grid-template-columns: repeat(9, minmax(0, 1fr));
+      gap: 4px;
       margin-top: 8px;
       max-width: none;
     }
     .hand-keys button {
-      height: 36px;
+      height: 34px;
+      font-size: 15px;
     }
-    .hand-keys button:disabled {
-      display: none;
+    /* Aqui o 3D não pode cobrir as letras nem o link */
+    .hand-stage canvas {
+      top: 0;
+      height: 100%;
+      pointer-events: none;
     }
     .hand-video {
       width: min(60%, 260px);

@@ -63,7 +63,7 @@ export function DronesPanel({ project }: { project: Project }) {
           <figure className="winch">
             <canvas ref={canvasRef} aria-label="Guincho do drone em 3D" />
             <figcaption className="pointer-events-none absolute inset-x-2.5 bottom-2 text-[13px] leading-tight">
-              O guincho que modelei. Arraste para girar.
+              O guincho que modelei.<span className="winch-drag"> Arraste para girar.</span>
             </figcaption>
           </figure>
           {project.video && (

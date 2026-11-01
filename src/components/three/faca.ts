@@ -436,22 +436,23 @@ export function createFacaScene(canvas: HTMLCanvasElement, reduced: boolean) {
     const lid = addPanel(sheet, back, {
       at: [0, -h],
       dir: "z-",
-      len: d - 0.04,
+      len: d,
       wid: w,
       angle: Q,
-      from: 0.55,
-      to: 0.88,
+      from: 0.62,
+      to: 1,
       joined: true,
       print: printedTexture("vtex", "FASTSTORE"),
     });
+    // A aba dobra antes de a tampa fechar e passa a mais de 90° para entrar por dentro da frente
     addPanel(sheet, lid, {
-      at: [0, -(d - 0.04)],
+      at: [0, -d],
       dir: "z-",
       len: 0.42,
       wid: w * 0.94,
-      angle: Q * 1.04,
-      from: 0.75,
-      to: 1,
+      angle: Q * 1.12,
+      from: 0.5,
+      to: 0.72,
     });
     return sheet;
   }
@@ -712,7 +713,7 @@ export function createFacaScene(canvas: HTMLCanvasElement, reduced: boolean) {
       const small = window.innerWidth <= 860;
       const hero = small ? groundAt(0.1, -0.6) : groundAt(0.25, -0.03);
       const holds = small
-        ? [groundAt(0, 0.56), groundAt(0, 0.44), groundAt(0, 0.5)]
+        ? [groundAt(0, 0.56), groundAt(0, 0.44), groundAt(0, 0.36)]
         : [groundAt(0.29, -0.2), groundAt(-0.2, -0.26), groundAt(0.36, -0.24)];
       const heroScale = small ? 0.5 : 0.8;
       const holdScale = small ? 0.58 : 1.2;
@@ -722,15 +723,16 @@ export function createFacaScene(canvas: HTMLCanvasElement, reduced: boolean) {
       sheets.forEach((sheet, i) => {
         const step = i + 1;
         const last = i === sheets.length - 1;
-        const foldIn = i === 0 ? ease(clamp(s / 0.82)) : ease(clamp((s - (step - 0.52)) / 0.46));
-        const foldOut = last ? 0 : ease(clamp((s - (step + 0.22)) / 0.28));
+        // Uma peça abre por inteiro, as duas deslizam juntas e só então a nova dobra
+        const foldIn = i === 0 ? ease(clamp(s / 0.82)) : ease(clamp((s - (step - 0.4)) / 0.38));
+        const foldOut = last ? 0 : ease(clamp((s - (step + 0.1)) / 0.3));
         const fold = foldIn * (1 - foldOut);
         setFold(sheet, fold);
 
-        const slideIn = i === 0 ? 0 : 1 - ease(clamp((s - (step - 0.72)) / 0.24));
+        const slideIn = i === 0 ? 0 : 1 - ease(clamp((s - (step - 0.6)) / 0.22));
         const slideOut = last
           ? ease(clamp((s - (step + 0.4)) / 0.34))
-          : ease(clamp((s - (step + 0.4)) / 0.24));
+          : ease(clamp((s - (step + 0.4)) / 0.22));
         sheet.root.visible = slideIn < 0.999 && slideOut < 0.999;
 
         const settled = i === 0 ? ease(clamp(s / 0.7)) : 1;

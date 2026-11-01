@@ -14,7 +14,7 @@ Até 8 minutos, com rosto e tela visíveis o tempo todo, publicado como **não l
 
 **Tela:** site aberto no topo.
 
-> Oi, eu sou o Sávio, desenvolvedor front-end especialista em e-commerce. Trabalho com VTEX e Wake e estudo Engenharia de Software na FIAP. Este é o meu portfólio. Vou mostrar a stack, por que escolhi cada peça, e o harness de IA que montei para desenvolver.
+> Oi, eu sou o Sávio, desenvolvedor front-end especialista em e-commerce. Meu forte é VTEX, também apoio lojas em Wake, e estudo Engenharia de Software na FIAP. Este é o meu portfólio. Vou mostrar a stack, por que escolhi cada peça, e o harness de IA que montei para desenvolver.
 
 **Tela:** role devagar até a caixa dobrar.
 

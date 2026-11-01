@@ -64,7 +64,7 @@ export function MaoPanel({ project }: { project: Project }) {
     const onKey = (event: KeyboardEvent) => {
       if (event.metaKey || event.ctrlKey || event.altKey) return;
       if (/INPUT|TEXTAREA/.test(document.activeElement?.tagName ?? "")) return;
-      const key = event.key.toUpperCase();
+      const key = event.key?.toUpperCase();
       if (handPoses[key] && Math.abs(flow.current.loc) < 0.5) press(key, true);
     };
     const onResize = () => scene.current?.size();
@@ -105,10 +105,6 @@ export function MaoPanel({ project }: { project: Project }) {
           <p className="panel-note panel-wide">
             Riscadas, as 10 letras que a mão real não fez: elas pedem um novo pulso. Esta mão 3D foi
             modelada para o site e as poses são uma aproximação.
-          </p>
-          <p className="panel-note">
-            A mão real partiu do modelo Bionic Hand Prosthesis, de BBProjects (Brian Brocken), CC
-            BY-NC-ND 4.0.
           </p>
         </PanelCopy>
         <div className="hand-stage">

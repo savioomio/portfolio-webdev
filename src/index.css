@@ -979,7 +979,7 @@
       display: none;
     }
     .hand-video {
-      width: 128px;
+      width: min(60%, 260px);
     }
     .hand-letter {
       font-size: 3.6rem;
@@ -999,32 +999,32 @@
     .screens {
       align-content: start;
     }
-    .screen-frame {
-      aspect-ratio: 1 / 1;
-    }
-    .screen-frame img {
-      object-position: left top;
-    }
     .media-syn {
-      grid-template-columns: auto minmax(0, 1fr);
-      gap: 10px;
-      align-items: start;
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-rows: auto minmax(0, 1fr);
+      gap: 8px;
+      justify-items: center;
     }
     .syn-tabs {
-      gap: 2px;
+      order: -1;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 3px;
     }
     .syn-tabs button {
-      padding: 7px 9px;
+      padding: 5px 9px;
+      border-radius: 8px;
     }
     .syn-tabs b {
-      font-size: 14.5px;
+      font-size: 13.5px;
     }
     .syn-tabs span {
       display: none;
     }
     .phone {
       height: 100%;
-      max-height: 46svh;
+      min-height: 0;
       border-radius: 22px;
       padding: 5px;
     }
@@ -1057,6 +1057,16 @@
     .panel-logo {
       margin-bottom: 8px;
       font-size: 1.75rem;
+    }
+  }
+  @media (max-width: 860px) {
+    .panel-inner:has(.media-syn) .panel-text {
+      display: none;
+    }
+  }
+  @media (max-width: 860px) and (max-height: 700px) {
+    .panel-logo {
+      display: none !important;
     }
   }
 

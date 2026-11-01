@@ -38,7 +38,7 @@ Especialista em front-end para e-commerce, com loja de verdade em produção: VT
 - O Sávio prefere visual claro, com branco presente.
 - Tipografia: Nunito nos títulos e Lato no texto. Na parte de e-commerce, fundo claro, blur e dourado de destaque; cada plataforma usa o logo e a cor oficial.
 - E-commerce é o foco do site. O site fala só de VTEX (FastStore e Store Framework), de Wake e de 2 projetos reais em WordPress, e não cita as marcas das lojas.
-- Robótica, drones e os outros projetos aparecem no fim, como a origem: alguém apaixonado por tecnologia e doido para ganhar. Primeiro uma lista; depois um trilho horizontal, com uma seção por projeto, cada uma com fundo e letras na cor do projeto.
+- Robótica, drones e os outros projetos aparecem no fim, como a origem: a trajetória em tecnologia, da robótica ao software. Primeiro uma lista; depois um trilho horizontal, com uma seção por projeto, cada uma com fundo e letras na cor do projeto.
 - A foto dele sai do hero: o objeto 3D assume o primeiro impacto, e a foto aparece numa seção seguinte.
 - O site precisa ter objetos 3D que mudam com a rolagem.
 

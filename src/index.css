@@ -698,7 +698,9 @@
     animation-delay: -3.5s;
   }
   .link-glass {
-    background: color-mix(in srgb, var(--surface) 42%, transparent);
+    border: 0 !important;
+    box-shadow: 0 10px 28px -14px rgba(29, 24, 9, 0.35) !important;
+    background: color-mix(in srgb, var(--ink) 7%, transparent);
     -webkit-backdrop-filter: blur(14px) saturate(1.7);
     backdrop-filter: blur(14px) saturate(1.7);
   }

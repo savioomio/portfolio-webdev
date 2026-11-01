@@ -18,6 +18,17 @@ const HD_MEDIA = new Set([
   "/media/synesthesia-app-hd.mp4",
   "/media/synesthesia-app-poster-hd.webp",
   "/media/voo-bristol-hd.webp",
+  "/media/drone-notebook-hd.webp",
+  "/media/imav-ajuste-hd.webp",
+  "/media/imav-voo-a-hd.webp",
+  "/media/imav-voo-b-hd.webp",
+  "/media/imav-arena-hd.webp",
+  "/media/callidus-bancada-hd.webp",
+  "/media/mao-pecas-hd.webp",
+  "/media/gm-gestao-b-hd.webp",
+  "/media/trofeu-hd.webp",
+  "/media/platao-inicio-vtex-hd.webp",
+  "/media/platao-historico-hd.webp",
 ]);
 
 /** Endereço da versão em alta, ou o próprio arquivo quando ela não existe. */

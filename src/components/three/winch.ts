@@ -97,7 +97,7 @@ export async function createWinchScene(canvas: HTMLCanvasElement, reduced: boole
       box.removeEventListener("pointermove", onMove);
       box.removeEventListener("pointerup", onUp);
       box.removeEventListener("pointercancel", onUp);
-      stage.renderer.dispose();
+      stage.release();
     },
   };
 }

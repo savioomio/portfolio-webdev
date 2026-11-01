@@ -16,5 +16,12 @@ export function createMiniScene(canvas: HTMLCanvasElement, fov: number) {
   };
   size();
 
-  return { renderer, scene, camera, size };
+  // Sem isso, cada volta à página deixa um contexto preso até o limite do navegador
+  const release = () => {
+    const lost = renderer.getContext().isContextLost();
+    renderer.dispose();
+    if (!lost) renderer.forceContextLoss();
+  };
+
+  return { renderer, scene, camera, size, release };
 }

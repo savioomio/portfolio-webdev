@@ -170,7 +170,7 @@ export function createHandScene(canvas: HTMLCanvasElement, reduced: boolean) {
       stage.renderer.render(stage.scene, stage.camera);
     },
     dispose() {
-      stage.renderer.dispose();
+      stage.release();
     },
   };
 }

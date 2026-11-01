@@ -1,6 +1,7 @@
 import { Play } from "lucide-react";
 import type { Project } from "@/content/projects";
 import { useZoom } from "@/hooks/useZoom";
+import { hdSrcSet } from "@/lib/media";
 import { mosaicRows } from "@/lib/mosaic";
 
 interface Tile {
@@ -52,6 +53,7 @@ export function ProjectMosaic({ project }: { project: Project }) {
                 alt={tile.alt}
                 loading="lazy"
                 {...zoom({ src: tile.src, alt: tile.alt, poster: tile.poster })}
+                srcSet={hdSrcSet(tile.image)}
               />
               {tile.poster && (
                 <span className="mosaic-play" aria-hidden="true">

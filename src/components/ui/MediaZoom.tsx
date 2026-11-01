@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { X } from "lucide-react";
 import { ZoomContext, type ZoomItem } from "@/hooks/useZoom";
+import { hdSrc } from "@/lib/media";
 import { prefersReducedMotion } from "@/lib/utils";
 
 /** Visor único do site: o `<dialog>` nativo cuida do Esc, do foco e do fundo. */
@@ -41,8 +42,8 @@ export function MediaZoom({ children }: { children: ReactNode }) {
           </button>
           {item.poster ? (
             <video
-              src={item.src}
-              poster={item.poster}
+              src={hdSrc(item.src)}
+              poster={hdSrc(item.poster)}
               aria-label={item.alt}
               style={fit}
               controls
@@ -52,7 +53,7 @@ export function MediaZoom({ children }: { children: ReactNode }) {
               autoPlay={!prefersReducedMotion()}
             />
           ) : (
-            <img src={item.src} alt={item.alt} style={fit} />
+            <img src={hdSrc(item.src)} alt={item.alt} style={fit} />
           )}
         </dialog>
       )}

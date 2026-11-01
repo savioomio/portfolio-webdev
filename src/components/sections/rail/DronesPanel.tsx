@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import type { WinchScene } from "@/components/three/winch";
 import type { Project } from "@/content/projects";
+import { hdSrcSet } from "@/lib/media";
 import { prefersReducedMotion } from "@/lib/utils";
 import { useRailFrame } from "@/hooks/useRailFrame";
 import { useZoom } from "@/hooks/useZoom";
@@ -50,6 +51,7 @@ export function DronesPanel({ project }: { project: Project }) {
       <img
         className="absolute inset-0 size-full object-cover"
         src="/media/voo-bristol.webp"
+        srcSet={hdSrcSet("/media/voo-bristol.webp")}
         alt="Drone da equipe em voo na IMAV 2024, em Bristol"
         width={960}
         height={638}

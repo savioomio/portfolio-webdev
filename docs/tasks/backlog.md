@@ -66,7 +66,7 @@ Ao terminar: marque aqui no mesmo PR e siga a [definição de pronto](../planeja
 - [x] **T22** Testes da validação do formulário e do bloqueio do dashboard sem login; o CI roda os testes e bloqueia o merge se falharem. Branch: `test/formulario-e-dashboard`. Req 9.
 - [x] **T23** Performance: Lighthouse mobile ≥ 80 (print salvo em `docs/`); imagens com `srcset`/`sizes` e AVIF/WebP; `.jfif` convertidos; cena 3D fora do bundle inicial; CLS próximo de 0; análise do bundle com `rollup-plugin-visualizer`. Branch: `perf/lighthouse`. Req 8.
 - [x] **T24** Revisão responsiva em celular (390 px) e desktop (1440 px), com prints de cada página. Branch: `fix/responsivo`. Req 7.
-- [x] **T54** Título da história na Home mais profissional: "Da robótica ao software, sempre movido por tecnologia", no lugar do tom informal anterior. Branch: `fix/titulo-historia`. *Feita na branch designada da sessão.*
+- [x] **T54** Título da história na Home mais profissional: "Minha trajetória em tecnologia, da robótica ao software", no lugar do tom informal anterior. Branch: `fix/titulo-historia`. *Feita na branch designada da sessão.*
 - [x] **T53** Painel do Platão com a janelinha animada em 3D, portada do site do app, e ajustes de altura em telas baixas. Branch: `fix/texto-experiencia`.
 - [x] **T52** GasMaster: aba com o assistente de IA (MCP) e texto sobre a conexão do dono do posto. Branch: `fix/texto-experiencia`.
 - [x] **T51** Experiência em ordem cronológica, com os cargos da Wicomm e o Wackathon como conquista do período. Sem o termo dev lead. Branch: `fix/experiencia-cronologica`.

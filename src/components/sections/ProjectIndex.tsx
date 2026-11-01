@@ -18,7 +18,7 @@ export function ProjectIndex({ onSelect }: { onSelect: (index: number) => void }
     >
       <div className="mx-auto w-full max-w-wrap">
         <h2 className="max-w-[18em] text-[clamp(2.2rem,4.4vw,4rem)] font-black leading-[1.04] tracking-[-0.022em]">
-          Da robótica ao software, sempre movido por tecnologia
+          Minha trajetória em tecnologia, da robótica ao software
         </h2>
         <p className="mt-3.5 text-[1.1rem] text-mute">
           Fora das lojas, do ensino médio até hoje. Escolha um projeto ou continue rolando.

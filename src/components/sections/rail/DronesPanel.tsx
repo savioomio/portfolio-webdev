@@ -3,14 +3,21 @@ import type { WinchScene } from "@/components/three/winch";
 import type { Project } from "@/content/projects";
 import { prefersReducedMotion } from "@/lib/utils";
 import { useRailFrame } from "@/hooks/useRailFrame";
+import { useZoom } from "@/hooks/useZoom";
 import { PanelCopy } from "./PanelCopy";
 import { RailPanel } from "./RailPanel";
 import { RailVideo } from "./RailVideo";
+
+const trophy = {
+  src: "/media/trofeu.webp",
+  alt: "Troféu de primeiro lugar da Competição Nacional de Drones, em Florianópolis",
+};
 
 export function DronesPanel({ project }: { project: Project }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const scene = useRef<WinchScene | null>(null);
   const started = useRef(false);
+  const zoom = useZoom();
 
   useRailFrame((loc) => {
     if (Math.abs(loc) >= 1.05) return;
@@ -66,11 +73,12 @@ export function DronesPanel({ project }: { project: Project }) {
           )}
           <img
             className="h-full w-full rounded-[14px] object-cover"
-            src="/media/trofeu.webp"
-            alt="Troféu de primeiro lugar da Competição Nacional de Drones, em Florianópolis"
+            src={trophy.src}
+            alt={trophy.alt}
             width={400}
             height={400}
             loading="lazy"
+            {...zoom(trophy)}
           />
         </div>
       </div>

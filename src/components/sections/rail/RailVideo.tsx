@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { cn, prefersReducedMotion } from "@/lib/utils";
 import { useRailFrame } from "@/hooks/useRailFrame";
+import { useZoom } from "@/hooks/useZoom";
 
 interface RailVideoProps {
   src: string;
@@ -13,6 +14,7 @@ interface RailVideoProps {
 export function RailVideo({ src, poster, label, className }: RailVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const playing = useRef(false);
+  const zoom = useZoom();
 
   useRailFrame((loc) => {
     const video = videoRef.current;
@@ -34,7 +36,7 @@ export function RailVideo({ src, poster, label, className }: RailVideoProps) {
     <video
       ref={videoRef}
       className={cn("panel-video", className)}
-      aria-label={label}
+      {...zoom({ src, alt: label, poster })}
       muted
       loop
       playsInline

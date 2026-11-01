@@ -39,6 +39,8 @@ export interface Project {
   links: ProjectLink[];
   cover: ProjectImage;
   video?: ProjectVideo;
+  /** Vídeos que aparecem na página do projeto, depois do principal. */
+  moreVideos?: ProjectVideo[];
   gallery: ProjectImage[];
 }
 
@@ -79,6 +81,15 @@ export const projects: Project[] = [
       width: 640,
       height: 360,
     },
+    moreVideos: [
+      {
+        src: "/media/aranha-perto.mp4",
+        poster: "/media/aranha-perto.webp",
+        label: "A aranha robô vista de perto",
+        width: 540,
+        height: 960,
+      },
+    ],
     gallery: [
       {
         src: "/media/aranha-app.webp",

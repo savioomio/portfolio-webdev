@@ -548,6 +548,91 @@
     overflow: hidden;
     box-shadow: 0 18px 40px -18px rgba(23, 11, 69, 0.6);
   }
+  [data-zoom] {
+    cursor: zoom-in;
+  }
+  html:has(.zoom[open]) {
+    overflow: hidden;
+  }
+  .zoom {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100svh;
+    max-width: none;
+    max-height: none;
+    padding: 24px;
+    border: 0;
+    background: rgba(10, 6, 20, 0.9);
+  }
+  .zoom[open] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: zoom-in 0.18s ease-out;
+  }
+  .zoom::backdrop {
+    background: transparent;
+  }
+  .zoom img,
+  .zoom video {
+    height: auto;
+    border-radius: 12px;
+    background: #000;
+  }
+  .zoom-close {
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.92);
+    color: #170b45;
+  }
+  .mosaic {
+    display: grid;
+    gap: clamp(6px, 1vw, 12px);
+    margin-top: 3rem;
+  }
+  .mosaic-row {
+    display: flex;
+    gap: clamp(6px, 1vw, 12px);
+  }
+  .mosaic-tile {
+    position: relative;
+    min-width: 0;
+    max-height: 72svh;
+    overflow: hidden;
+    border-radius: clamp(8px, 1.2vw, 16px);
+    background: var(--gold-soft, #f3e7c4);
+  }
+  .mosaic-tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  .mosaic-tile:hover img {
+    transform: scale(1.03);
+  }
+  .mosaic-play {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    translate: -50% -50%;
+    border-radius: 50%;
+    background: rgba(10, 6, 20, 0.72);
+    color: #fff;
+    pointer-events: none;
+  }
   .hand-keys {
     display: grid;
     grid-template-columns: repeat(9, minmax(0, 1fr));
@@ -950,9 +1035,22 @@
   }
 }
 
+@keyframes zoom-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .wave {
     animation: none;
+  }
+  .zoom[open] {
+    animation: none;
+  }
+  .mosaic-tile img {
+    transition: none;
   }
   html {
     scroll-behavior: auto;

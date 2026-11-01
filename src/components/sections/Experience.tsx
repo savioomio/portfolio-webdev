@@ -1,3 +1,5 @@
+import { useZoom } from "@/hooks/useZoom";
+
 const timeline = [
   {
     when: "out/2024 até hoje",
@@ -21,7 +23,14 @@ const timeline = [
   },
 ];
 
+const wackathon = {
+  src: "/media/wackathon.webp",
+  alt: "Anúncio dos vencedores do Wackathon Wicomm: a minha dupla ficou em 2º lugar",
+};
+
 export function Experience() {
+  const zoom = useZoom();
+
   return (
     <section
       id="hoje"
@@ -51,11 +60,12 @@ export function Experience() {
         </div>
         <figure className="max-w-[260px] md:max-w-none">
           <img
-            src="/media/wackathon.webp"
-            alt="Anúncio dos vencedores do Wackathon Wicomm: a minha dupla ficou em 2º lugar"
+            src={wackathon.src}
+            alt={wackathon.alt}
             width={480}
             height={480}
             loading="lazy"
+            {...zoom(wackathon)}
             className="h-auto w-full rounded-[14px]"
           />
           <figcaption className="mt-2 text-sm text-mute">

@@ -1,5 +1,6 @@
 import { useState, type CSSProperties } from "react";
 import type { Project } from "@/content/projects";
+import { useZoom } from "@/hooks/useZoom";
 import { PanelCopy } from "./PanelCopy";
 import { RailPanel } from "./RailPanel";
 import { RailVideo } from "./RailVideo";
@@ -54,6 +55,7 @@ const screens: AppScreen[] = [
 export function SynesthesiaPanel({ project }: { project: Project }) {
   const [active, setActive] = useState(0);
   const screen = screens[active];
+  const zoom = useZoom();
 
   return (
     <RailPanel
@@ -73,7 +75,14 @@ export function SynesthesiaPanel({ project }: { project: Project }) {
               />
             )}
             {screen.src && (
-              <img src={screen.src} alt={screen.alt} width={360} height={800} loading="lazy" />
+              <img
+                src={screen.src}
+                alt={screen.alt}
+                width={360}
+                height={800}
+                loading="lazy"
+                {...zoom({ src: screen.src, alt: screen.alt ?? screen.label })}
+              />
             )}
           </div>
           <div className="syn-tabs" role="tablist" aria-label="Telas do Synesthesia">

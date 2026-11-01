@@ -2,6 +2,7 @@ import { useRef, useState, type CSSProperties } from "react";
 import type { Project } from "@/content/projects";
 import { clamp, ease, prefersReducedMotion } from "@/lib/utils";
 import { useRailFrame } from "@/hooks/useRailFrame";
+import { useZoom } from "@/hooks/useZoom";
 import { PanelCopy } from "./PanelCopy";
 import { RailPanel } from "./RailPanel";
 import { RailVideo } from "./RailVideo";
@@ -11,7 +12,14 @@ interface PanelProps {
   project: Project;
 }
 
+const aranhaApp = {
+  src: "/media/aranha-app.webp",
+  alt: "Tela do controle da aranha no celular",
+};
+
 export function AranhaPanel({ project }: PanelProps) {
+  const zoom = useZoom();
+
   return (
     <RailPanel project={project}>
       <div className="panel-inner">
@@ -29,11 +37,12 @@ export function AranhaPanel({ project }: PanelProps) {
           />
           <img
             className="aranha-app h-full w-full rounded-[14px] object-cover"
-            src="/media/aranha-app.webp"
-            alt="Tela do controle da aranha no celular"
+            src={aranhaApp.src}
+            alt={aranhaApp.alt}
             width={400}
             height={400}
             loading="lazy"
+            {...zoom(aranhaApp)}
           />
         </div>
       </div>
@@ -41,7 +50,19 @@ export function AranhaPanel({ project }: PanelProps) {
   );
 }
 
+const tendaPhotos = {
+  medals: {
+    src: "/media/medalhas-tenda.webp",
+    alt: "As 2 medalhas de honra ao mérito científico da Tenda da Ciência, na minha mão",
+  },
+  stand: {
+    src: "/media/tenda.webp",
+    alt: "Sávio apresentando o projeto na Tenda da Ciência",
+  },
+};
+
 export function CallidusPanel({ project }: PanelProps) {
+  const zoom = useZoom();
   const panelRef = useRef<HTMLDivElement>(null);
   const hoursRef = useRef<HTMLSpanElement>(null);
   const reduced = useRef(false);
@@ -78,11 +99,12 @@ export function CallidusPanel({ project }: PanelProps) {
             <figure>
               <img
                 className="aspect-square h-auto w-full rounded-[14px] object-cover"
-                src="/media/medalhas-tenda.webp"
-                alt="As 2 medalhas de honra ao mérito científico da Tenda da Ciência, na minha mão"
+                src={tendaPhotos.medals.src}
+                alt={tendaPhotos.medals.alt}
                 width={456}
                 height={456}
                 loading="lazy"
+                {...zoom(tendaPhotos.medals)}
               />
               <figcaption className="mt-1.5 text-sm font-bold">
                 2 medalhas na feira: Callidus Link e mão robótica.
@@ -91,11 +113,12 @@ export function CallidusPanel({ project }: PanelProps) {
             <figure>
               <img
                 className="aspect-square h-auto w-full rounded-[14px] object-cover"
-                src="/media/tenda.webp"
-                alt="Sávio apresentando o projeto na Tenda da Ciência"
+                src={tendaPhotos.stand.src}
+                alt={tendaPhotos.stand.alt}
                 width={400}
                 height={400}
                 loading="lazy"
+                {...zoom(tendaPhotos.stand)}
               />
               <figcaption className="mt-1.5 text-sm font-bold">
                 Apresentando na Tenda da Ciência.
@@ -205,6 +228,7 @@ type PlataoMode = keyof typeof plataoModes;
 export function PlataoPanel({ project }: PanelProps) {
   const [mode, setMode] = useState<PlataoMode>("vtex");
   const current = plataoModes[mode];
+  const zoom = useZoom();
 
   return (
     <RailPanel
@@ -240,6 +264,7 @@ export function PlataoPanel({ project }: PanelProps) {
             width={1200}
             height={786}
             loading="lazy"
+            {...zoom({ src: current.image, alt: current.alt })}
           />
           <figcaption className="answer-card">
             <p className="text-white/70">Cliente: {current.question}</p>

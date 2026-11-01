@@ -9,4 +9,4 @@
 - [Platão](https://webdev.savioomiodev.com.br/projetos/platao): app de ajuda em call para quem atende VTEX e Wake
 - [Synesthesia](https://webdev.savioomiodev.com.br/projetos/synesthesia): app Android que transforma a cena em filtro e trilha sonora
 - [GasMaster](https://webdev.savioomiodev.com.br/projetos/gasmaster): sistema usado por 2 postos de gasolina
-- [Drones Guanambi](https://webdev.savioomiodev.com.br/projetos/drones-guanambi): drones na competição nacional e na IMAV 2024
+- [Drones Guanambi](https://webdev.savioomiodev.com.br/projetos/drones-guanambi): vitória na DronesIFSC 2023 e participação na IMAV 2024

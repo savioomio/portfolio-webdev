@@ -113,18 +113,18 @@ export const projects: Project[] = [
     name: "Drones Guanambi",
     period: "2023 e 2024, de Guanambi a Bristol",
     when: "2023 e 2024",
-    summary: "Campeão nacional de drones e Brasil na competição internacional IMAV.",
+    summary: "Vencemos a DronesIFSC em 2023 e fomos à competição internacional IMAV em 2024.",
     description:
-      "Equipe Drones Guanambi: campeã da Competição Nacional de Drones e representante do Brasil na competição internacional IMAV 2024, em Bristol, com modelagem 3D e mecânica de Sávio Pessôa.",
+      "Equipe Drones Guanambi: venceu a DronesIFSC 2023, em Florianópolis, e foi à competição internacional IMAV 2024, em Bristol, com mecânica e modelagem 3D de Sávio Pessôa.",
     color: "#2272D2",
     ink: "#FFFFFF",
     body: [
-      "Fomos campeões na Competição Nacional de Drones, em Florianópolis. Em 2024 representamos o Brasil na IMAV, competição internacional em Bristol, como única equipe de ensino médio ao lado de pós-graduação, como a USP.",
+      "Em 2023 vencemos a DronesIFSC, competição de drones do IFSC, em Florianópolis. Em 2024 nos inscrevemos e conseguimos ir à IMAV, competição internacional em Bristol, como única equipe de ensino médio ao lado de pós-graduação, como a USP.",
     ],
     facts: [
-      "Cuidei da modelagem 3D e da mecânica do drone.",
+      "Meu papel principal foi a mecânica e a modelagem 3D do drone.",
       "Fiz o guincho, o mecanismo de coleta da prova.",
-      "Apresentei nosso artigo em inglês.",
+      "Ajudei a equipe em várias outras frentes.",
     ],
     tech: ["Modelagem 3D", "Mecânica", "Drones"],
     links: [],
@@ -156,7 +156,7 @@ export const projects: Project[] = [
       },
       {
         src: "/media/drone-ajuste-campo.webp",
-        alt: "Ajustes no drone no campo, durante a Competição Nacional de Drones",
+        alt: "Ajustes no drone no campo, durante a DronesIFSC 2023",
         width: 872,
         height: 872,
       },
@@ -192,13 +192,13 @@ export const projects: Project[] = [
       },
       {
         src: "/media/trofeu.webp",
-        alt: "Troféu de primeiro lugar da Competição Nacional de Drones, na minha mão",
+        alt: "Troféu de primeiro lugar da DronesIFSC 2023, na minha mão",
         width: 400,
         height: 400,
       },
       {
         src: "/media/drone-notebook.webp",
-        alt: "Drone na bancada, com o notebook ao lado, na Competição Nacional de Drones",
+        alt: "Drone na bancada, com o notebook ao lado, na DronesIFSC 2023",
         width: 900,
         height: 900,
       },

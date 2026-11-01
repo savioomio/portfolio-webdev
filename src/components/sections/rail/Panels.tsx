@@ -23,7 +23,7 @@ export function AranhaPanel({ project }: PanelProps) {
   return (
     <RailPanel project={project}>
       <div className="panel-inner">
-        <PanelCopy project={project} />
+        <PanelCopy project={project} hideFacts />
         <div className="media-aranha">
           <RailVideo
             src="/media/aranha-perto.mp4"

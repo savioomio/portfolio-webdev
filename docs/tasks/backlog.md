@@ -66,6 +66,7 @@ Ao terminar: marque aqui no mesmo PR e siga a [definição de pronto](../planeja
 - [x] **T22** Testes da validação do formulário e do bloqueio do dashboard sem login; o CI roda os testes e bloqueia o merge se falharem. Branch: `test/formulario-e-dashboard`. Req 9.
 - [x] **T23** Performance: Lighthouse mobile ≥ 80 (print salvo em `docs/`); imagens com `srcset`/`sizes` e AVIF/WebP; `.jfif` convertidos; cena 3D fora do bundle inicial; CLS próximo de 0; análise do bundle com `rollup-plugin-visualizer`. Branch: `perf/lighthouse`. Req 8.
 - [x] **T24** Revisão responsiva em celular (390 px) e desktop (1440 px), com prints de cada página. Branch: `fix/responsivo`. Req 7.
+- [x] **T49** Painel da mão no celular: toque nas letras e no link, 26 letras visíveis e mão menor. Branch: `fix/mao-celular`.
 - [x] **T48** Página de links com a caixa e a sacola, botões de vidro e ícone oficial do WhatsApp. Branch: `feature/links-marcas`.
 - [x] **T47** Trilho volta à rolagem clássica também no celular e aceita gesto lateral enquanto está na tela. Branch: `refactor/trilho-rolagem`.
 - [x] **T46** Celular: telas do JSOM e GasMaster sem corte, vídeo da mão maior e Synesthesia com a tela no lugar das abas. Branch: `fix/midias-celular`.

@@ -131,7 +131,7 @@ export function createHandScene(canvas: HTMLCanvasElement, reduced: boolean) {
 
   const frameCamera = () => {
     const small = canvas.clientWidth < 420;
-    stage.camera.position.set(0, 0.42, small ? 11 : 9.4);
+    stage.camera.position.set(0, 0.42, small ? 14 : 9.4);
     stage.camera.lookAt(0, 0.42, 0);
   };
   frameCamera();

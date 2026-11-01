@@ -56,7 +56,7 @@ export function Storefront() {
         <p className="mt-3">Meu forte: participei de lojas do começo ao fim.</p>
         <ul className="mt-[18px] border-t-2 border-dashed border-[var(--c)]">
           <StoreRow count={stores.faststore} title="FastStore">
-            Referência técnica na empresa e dev lead em projetos FastStore, reportando ao tech lead.
+            Atuo como referência técnica em VTEX nos projetos da empresa, não só nos de FastStore.
           </StoreRow>
           <StoreRow count={stores.storeFramework} title="Store Framework">
             Desenvolvimento e manutenção de lojas em VTEX IO.

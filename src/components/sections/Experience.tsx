@@ -1,20 +1,29 @@
 import { useZoom } from "@/hooks/useZoom";
 
-const timeline = [
-  {
-    when: "out/2024 até hoje",
-    title: "Front-End Pleno na Wicomm",
-    text: "Remoto. Referência técnica em VTEX FastStore e dev lead em projetos FastStore.",
-  },
+interface Milestone {
+  when: string;
+  title: string;
+  text: string;
+  /** Cargos em ordem: o traço entre eles mostra a evolução. */
+  roles?: string[];
+  /** Conquista dentro do período. */
+  achievement?: string;
+}
+
+/** Do mais antigo ao mais recente. */
+const timeline: Milestone[] = [
   {
     when: "set/2023 a ago/2024",
     title: "Estágio bolsista no IF Baiano",
     text: "Callidus Link: automação e monitoramento de consumo hídrico com IoT.",
   },
   {
-    when: "Wackathon da Wicomm",
-    title: "Segundo lugar, em dupla",
-    text: "Uma loja completa construída só com prompts.",
+    when: "out/2024 até hoje",
+    title: "Wicomm",
+    roles: ["Desenvolvedor Web", "Desenvolvedor Web Pleno"],
+    text: "Remoto. Atuo como referência técnica em VTEX nos projetos da empresa, não só nos de FastStore.",
+    achievement:
+      "Segundo lugar no primeiro Wackathon, em dupla: uma loja completa feita só com prompts.",
   },
   {
     when: "2026 a 2029",
@@ -52,7 +61,28 @@ export function Experience() {
                 </span>
                 <div>
                   <h3 className="text-[1.26rem] font-extrabold leading-tight">{item.title}</h3>
+                  {item.roles && (
+                    <p className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-0.5 font-display font-extrabold text-gold-ink">
+                      {item.roles.map((role, index) => (
+                        <span key={role} className="inline-flex items-center gap-2">
+                          {index > 0 && (
+                            <i aria-hidden="true" className="w-8 border-t-[3px] border-gold" />
+                          )}
+                          {role}
+                        </span>
+                      ))}
+                    </p>
+                  )}
                   <p className="mt-[3px] text-mute">{item.text}</p>
+                  {item.achievement && (
+                    <p className="mt-2.5 flex gap-2 font-bold">
+                      <span
+                        aria-hidden="true"
+                        className="mt-[0.55em] size-2 shrink-0 rounded-full bg-gold"
+                      />
+                      {item.achievement}
+                    </p>
+                  )}
                 </div>
               </li>
             ))}

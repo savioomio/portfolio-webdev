@@ -666,6 +666,45 @@
       display: none;
     }
   }
+  .links-page {
+    --column: 14rem;
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100svh;
+    overflow-x: clip;
+    padding: 7rem max(var(--gr), calc(50% - var(--column))) 15rem
+      max(var(--gl), calc(50% - var(--column)));
+  }
+  .links-bag,
+  .links-box {
+    position: absolute;
+    z-index: -1;
+    height: auto;
+    pointer-events: none;
+    animation: links-float 7s ease-in-out infinite alternate;
+  }
+  .links-bag {
+    top: 4.75rem;
+    left: calc(50% + 3.25rem);
+    width: 15rem;
+  }
+  .links-box {
+    bottom: 1.5rem;
+    right: calc(50% - 8rem);
+    width: 22rem;
+    animation-delay: -3.5s;
+  }
+  .link-glass {
+    background: color-mix(in srgb, var(--surface) 42%, transparent);
+    -webkit-backdrop-filter: blur(14px) saturate(1.7);
+    backdrop-filter: blur(14px) saturate(1.7);
+  }
+  a.link-glass:first-of-type[href="/"] {
+    background: color-mix(in srgb, var(--gold) 78%, transparent);
+  }
   .hand-keys {
     display: grid;
     grid-template-columns: repeat(9, minmax(0, 1fr));
@@ -1092,6 +1131,12 @@
   animation: page-in 0.34s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 
+@keyframes links-float {
+  to {
+    transform: translateY(-10px) rotate(-1deg);
+  }
+}
+
 @keyframes page-out {
   to {
     opacity: 0;
@@ -1122,6 +1167,10 @@
   }
   .mosaic-tile img {
     transition: none;
+  }
+  .links-bag,
+  .links-box {
+    animation: none;
   }
   html {
     scroll-behavior: auto;

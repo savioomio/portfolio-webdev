@@ -17,7 +17,13 @@ export function SiteHeader() {
         to="/"
         className="mr-auto inline-flex items-center gap-2 whitespace-nowrap font-display text-[19px] font-black leading-none tracking-[-0.01em] no-underline"
       >
-        <img src="/favicon.png" alt="" width={28} height={28} className="size-7 rounded-lg" />
+        <img
+          src="/favicon.png"
+          alt=""
+          width={28}
+          height={28}
+          className="size-7 rounded-lg max-[379px]:hidden"
+        />
         {site.name}
       </Link>
       <nav aria-label="Principal" className="hidden gap-0.5 md:flex">

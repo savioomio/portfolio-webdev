@@ -1,4 +1,5 @@
 import { createContext, useContext, type KeyboardEvent, type SyntheticEvent } from "react";
+import { hdSrcSet } from "@/lib/media";
 
 export interface ZoomMedia {
   src: string;
@@ -37,6 +38,7 @@ export function useZoom() {
       tabIndex: 0,
       "aria-label": `Ampliar: ${media.alt}`,
       "data-zoom": true,
+      srcSet: media.poster ? undefined : hdSrcSet(media.src),
       onClick: show,
       onKeyDown: (event: KeyboardEvent<ZoomElement>) => {
         if (event.key !== "Enter" && event.key !== " ") return;

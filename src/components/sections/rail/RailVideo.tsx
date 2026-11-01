@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { hdSrc } from "@/lib/media";
 import { cn, prefersReducedMotion } from "@/lib/utils";
 import { useRailFrame } from "@/hooks/useRailFrame";
 import { useZoom } from "@/hooks/useZoom";
@@ -22,7 +23,7 @@ export function RailVideo({ src, poster, label, className }: RailVideoProps) {
     if (!video || near === playing.current) return;
     playing.current = near;
     if (near) {
-      video.poster = poster;
+      video.poster = window.devicePixelRatio > 1 ? hdSrc(poster) : poster;
       // Com movimento reduzido, fica só a imagem parada
       if (prefersReducedMotion()) return;
       if (!video.getAttribute("src")) video.src = src;

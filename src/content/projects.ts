@@ -124,7 +124,6 @@ export const projects: Project[] = [
     facts: [
       "Meu papel principal foi a mecânica e a modelagem 3D do drone.",
       "Fiz o guincho, o mecanismo de coleta da prova.",
-      "Ajudei a equipe em várias outras frentes.",
     ],
     tech: ["Modelagem 3D", "Mecânica", "Drones"],
     links: [],
@@ -404,7 +403,7 @@ export const projects: Project[] = [
     when: "2025 até hoje",
     summary: "Sistema real, usado por 2 postos de gasolina.",
     description:
-      "GasMaster: sistema desktop em Electron e SQLite que 2 postos de gasolina usam para controlar clientes, notas de venda e pagamentos.",
+      "GasMaster: sistema desktop em Electron e SQLite que 2 postos de gasolina usam para controlar clientes, notas de venda e pagamentos, com um assistente de IA ligado aos dados por MCP.",
     color: "#046C4E",
     ink: "#FFFFFF",
     body: [
@@ -413,9 +412,10 @@ export const projects: Project[] = [
     facts: [
       "Desktop em Electron, com SQLite.",
       "Um computador vira servidor e os outros entram pela rede do posto.",
+      "Servidor MCP só de leitura: o dono conecta uma IA aos dados do posto para consultar e administrar melhor.",
       "Versão 1.3.2, com atualização automática.",
     ],
-    tech: ["Electron", "SQLite", "JavaScript"],
+    tech: ["Electron", "SQLite", "JavaScript", "MCP"],
     links: [],
     logo: {
       src: "/media/gasmaster.svg",
@@ -446,6 +446,12 @@ export const projects: Project[] = [
       {
         src: "/media/gm-notas.webp",
         alt: "Notas de venda do GasMaster, com dados fictícios",
+        width: 1200,
+        height: 750,
+      },
+      {
+        src: "/media/gm-assistente.webp",
+        alt: "Cartão Assistente de IA do GasMaster, com o aviso Pronto para conectar",
         width: 1200,
         height: 750,
       },

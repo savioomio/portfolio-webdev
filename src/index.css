@@ -371,7 +371,7 @@
   }
   .panel-title {
     font-weight: 900;
-    font-size: clamp(2.5rem, 5.7vw, 5.4rem);
+    font-size: clamp(2.5rem, min(5.7vw, 9.6svh), 5.4rem);
     line-height: 1;
     letter-spacing: -0.025em;
     color: var(--t, var(--k));
@@ -658,11 +658,32 @@
     font-size: 3rem;
     line-height: 1;
   }
+  @media (max-height: 800px) {
+    .panel-facts {
+      margin-top: 10px;
+      gap: 4px;
+    }
+  }
   @media (max-height: 760px) {
     .panel-logo {
-      font-size: 2rem;
+      display: none;
+    }
+    .panel-title {
+      font-size: clamp(2.2rem, min(5.7vw, 8svh), 5.4rem);
+    }
+    .panel-text {
+      margin-top: 10px;
+    }
+    .panel-facts {
+      margin-top: 8px;
+      gap: 3px;
     }
     .panel-glass .panel-facts {
+      display: none;
+    }
+  }
+  @media (max-height: 680px) {
+    .panel-facts {
       display: none;
     }
   }
@@ -874,22 +895,6 @@
     box-shadow: none;
   }
 
-  .answer-card {
-    position: absolute;
-    left: clamp(10px, 2.4vw, 28px);
-    bottom: clamp(10px, 2.4vw, 28px);
-    width: min(340px, 74%);
-    padding: 14px 16px;
-    border-radius: 14px;
-    background: rgba(20, 20, 26, 0.74);
-    color: #fff;
-    font-size: 14.5px;
-    line-height: 1.4;
-    -webkit-backdrop-filter: blur(14px) saturate(1.3);
-    backdrop-filter: blur(14px) saturate(1.3);
-    box-shadow: 0 20px 44px -18px rgba(0, 0, 0, 0.8);
-  }
-
   .rail-dock {
     position: absolute;
     z-index: 6;
@@ -1094,11 +1099,6 @@
       font-size: 12.5px;
       flex: 1 0 auto;
     }
-    .answer-card {
-      font-size: 13px;
-      padding: 10px 12px;
-      width: 88%;
-    }
   }
 
   @media (max-width: 860px) {
@@ -1115,6 +1115,857 @@
   @media (max-width: 860px) and (max-height: 700px) {
     .panel-logo {
       display: none !important;
+    }
+  }
+
+  /* Janelinha do Platão em 3D, portada do site do app (platao.savioomiodev.com.br) */
+  .pj {
+    --fg: #eceff6;
+    --fg-2: #b4bbca;
+    --fg-3: #8a93a6;
+    --ok: #34cf83;
+    --err: #ff6555;
+    --realce: #fff;
+    --brand: #f71963;
+    --brand-2: #ff7a45;
+    --brand-ink: #142032;
+    --brand-grad: linear-gradient(135deg, var(--brand), var(--brand-2));
+    --brand-forte: color-mix(in oklab, var(--brand) 80%, var(--brand-ink));
+    --brand-2-forte: color-mix(in oklab, var(--brand-2) 62%, var(--brand-ink));
+    --brand-grad-texto: linear-gradient(135deg, var(--brand-forte), var(--brand-2-forte));
+    --brand-text: color-mix(in oklab, var(--brand) 70%, var(--fg));
+    --brand-soft: color-mix(in oklab, var(--brand) 14%, transparent);
+    --mola: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --suave: cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .pj[data-mode="wake"] {
+    --brand: #c505f2;
+    --brand-2: #6b3cf6;
+    --brand-ink: #1a1a1a;
+  }
+  .pj-marca-1 {
+    stop-color: var(--brand);
+  }
+  .pj-marca-2 {
+    stop-color: var(--brand-2);
+  }
+  @keyframes pj-parte {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+  }
+  @keyframes pj-pulso {
+    0% {
+      box-shadow: 0 0 0 0 color-mix(in oklab, var(--brand) 60%, transparent);
+    }
+    100% {
+      box-shadow: 0 0 0 7px color-mix(in oklab, var(--brand) 0%, transparent);
+    }
+  }
+  .rosto.falando {
+    box-shadow:
+      inset 0 0 0 2px var(--ok),
+      0 0 0 1px rgb(255 255 255 / 0.12);
+  }
+
+  /* Barrinhas de voz: paradas até alguém falar. */
+  .pj-ondas {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    height: 12px;
+  }
+
+  .pj-ondas i {
+    display: block;
+    width: 2.5px;
+    height: 100%;
+    border-radius: 2px;
+    background: currentColor;
+    transform: scaleY(0.3);
+  }
+
+  .falando .pj-ondas i,
+  .pj-ondas--sempre i {
+    animation: pj-onda 0.9s ease-in-out infinite;
+  }
+
+  .pj-ondas i:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+
+  .pj-ondas i:nth-child(3) {
+    animation-delay: -0.6s;
+  }
+
+  .pj-ondas i:nth-child(4) {
+    animation-delay: -0.15s;
+  }
+
+  @keyframes pj-onda {
+    0%,
+    100% {
+      transform: scaleY(0.3);
+    }
+    50% {
+      transform: scaleY(1);
+    }
+  }
+
+  /* ── A janelinha do Platão, refeita em HTML com os tokens do app (stealth-overlay.css) ──
+     Medidas em px: ela é um objeto de tamanho fixo, como a janela de verdade (400 × 640). */
+  .pj {
+    --ov-tinta: color-mix(in oklab, var(--brand-ink), var(--fg) 7%);
+    --ov-cartao: color-mix(in oklab, var(--ov-tinta) 90%, transparent);
+    --ov-item: color-mix(in oklab, var(--ov-tinta) 64%, transparent);
+    --ov-campo: color-mix(in oklab, var(--brand-ink) 78%, transparent);
+    --ov-borda: color-mix(in oklab, var(--fg) 11%, transparent);
+    --ov-brilho: color-mix(in oklab, var(--realce) 12%, transparent);
+
+    display: flex;
+    flex-direction: column;
+    min-height: 600px;
+    padding: 10px 12px 12px;
+    border-radius: 20px;
+    background:
+      radial-gradient(
+        130% 60% at 0% 0%,
+        color-mix(in oklab, var(--brand) 16%, transparent),
+        transparent 64%
+      ),
+      radial-gradient(
+        90% 50% at 100% 100%,
+        color-mix(in oklab, var(--brand-2) 9%, transparent),
+        transparent 70%
+      ),
+      color-mix(in oklab, var(--brand-ink) 95%, transparent);
+    box-shadow:
+      inset 0 1px 0 var(--ov-brilho),
+      inset 0 0 0 1px var(--ov-borda),
+      0 0 0 1px rgb(0 0 0 / 0.5),
+      0 50px 100px -30px rgb(0 0 0 / 0.85),
+      0 30px 80px -40px color-mix(in oklab, var(--brand) 60%, transparent);
+    color: var(--fg);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+    text-align: left;
+  }
+
+  .pj .i {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* O "display" das peças não pode ganhar do atributo hidden (a conta da loja some no modo Wake). */
+  .pj [hidden] {
+    display: none !important;
+  }
+
+  .pj__topo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 38px;
+    margin-bottom: 10px;
+  }
+
+  .pj__marca {
+    position: relative;
+    display: inline-flex;
+    margin-right: 8px;
+  }
+
+  .pj__marca .logo {
+    width: 28px;
+    height: 28px;
+  }
+
+  .pj__ponto {
+    position: absolute;
+    right: -2px;
+    bottom: -1px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--ok);
+    box-shadow: 0 0 0 2px var(--brand-ink);
+  }
+
+  .pj__modos {
+    display: inline-flex;
+    padding: 3px;
+    border-radius: 999px;
+    background: rgb(255 255 255 / 0.06);
+    box-shadow: inset 0 0 0 1px var(--ov-borda);
+  }
+
+  .pj__modos b {
+    display: grid;
+    place-items: center;
+    min-width: 62px;
+    height: 32px;
+    padding: 0 12px;
+    border-radius: 999px;
+    color: var(--fg-2);
+    font-size: 13px;
+    font-weight: 900;
+  }
+
+  .pj__modos b.ativo {
+    background: var(--brand-grad-texto);
+    color: var(--realce);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.28);
+  }
+
+  .pj__livre {
+    flex: 1;
+  }
+
+  .pj__acoes {
+    display: inline-flex;
+    gap: 2px;
+    padding: 3px;
+    border-radius: 999px;
+    background: rgb(255 255 255 / 0.06);
+    box-shadow: inset 0 0 0 1px var(--ov-borda);
+  }
+
+  .pj__acoes span {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    color: var(--fg-2);
+  }
+
+  .pj__acoes span:first-child {
+    color: var(--ok);
+  }
+
+  .pj__card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 10px;
+    padding: 12px;
+    border-radius: 20px;
+    background: var(--ov-cartao);
+    box-shadow:
+      inset 0 1px 0 var(--ov-brilho),
+      inset 0 0 0 1px var(--ov-borda),
+      0 12px 32px rgb(0 0 0 / 0.4);
+    /* O card muda de altura aos poucos quando o estado troca: o que ainda não cabe fica cortado. */
+    overflow: clip;
+  }
+
+  .pj__linha {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .pj__conta {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    height: 32px;
+    padding: 0 12px;
+    border-radius: 999px;
+    background: var(--ov-campo);
+    box-shadow: inset 0 0 0 1px var(--ov-borda);
+    color: var(--fg-3);
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .pj__pilula {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 32px;
+    padding: 0 12px;
+    border-radius: 999px;
+    background: rgb(255 255 255 / 0.07);
+    box-shadow:
+      inset 0 0 0 1px var(--ov-borda),
+      inset 0 1px 0 rgb(255 255 255 / 0.1);
+    font-size: 13px;
+    font-weight: 800;
+    white-space: nowrap;
+  }
+
+  .pj__perguntar .i {
+    color: var(--brand-text);
+  }
+
+  .pj__redondo {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    flex: none;
+    border-radius: 50%;
+    background: rgb(255 255 255 / 0.07);
+    box-shadow: inset 0 0 0 1px var(--ov-borda);
+    color: var(--fg-2);
+  }
+
+  .pj__redondo--g {
+    width: 40px;
+    height: 40px;
+  }
+
+  .pj__redondo--fim {
+    color: var(--err);
+  }
+
+  /* Os três estados do card. Só um aparece; o que entra sobe de leve. */
+  .pj__pane {
+    display: none;
+  }
+
+  .pj[data-estado="ouvindo"] .pj__pane[data-pane="ouvindo"],
+  .pj[data-estado="buscando"] .pj__pane[data-pane="buscando"],
+  .pj[data-estado="resposta"] .pj__pane[data-pane="resposta"] {
+    display: grid;
+    gap: 10px;
+    animation: pj-entra 0.36s var(--suave) both;
+  }
+
+  @keyframes pj-entra {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+  }
+
+  .pj__estado {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .pj__estado-icone {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    flex: none;
+    border-radius: 50%;
+    background: var(--brand-soft);
+    color: var(--brand);
+  }
+
+  .pj__estado-icone .pj-ondas {
+    height: 16px;
+  }
+
+  .pj__estado-icone .pj-ondas i {
+    width: 3px;
+  }
+
+  .pj__titulo {
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1.3;
+  }
+
+  .pj__suave {
+    margin-top: 4px;
+    color: var(--fg-2);
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .pj__prog-topo {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    font-size: 14px;
+    line-height: 1.3;
+  }
+
+  .pj__prog-topo strong {
+    font-weight: 800;
+  }
+
+  .pj__prog-tempo {
+    margin-left: auto;
+    color: var(--brand-text);
+    font-weight: 900;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .pj__prog-barra {
+    position: relative;
+    display: block;
+    height: 3px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: color-mix(in oklab, var(--fg) 10%, transparent);
+  }
+
+  .pj__prog-barra::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 40%;
+    border-radius: inherit;
+    background: var(--brand-grad);
+    animation: pj-barra 1.4s var(--suave) infinite;
+  }
+
+  @keyframes pj-barra {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(260%);
+    }
+  }
+
+  .pj__passos {
+    display: grid;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 13px;
+  }
+
+  .pj__passos li {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.35;
+    color: var(--fg-2);
+    transition: opacity 0.2s;
+  }
+
+  .pj__passos li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 8.25px;
+    top: 21px;
+    bottom: -7px;
+    width: 1.5px;
+    border-radius: 1px;
+    background: color-mix(in oklab, var(--fg) 14%, transparent);
+  }
+
+  .pj__passos li.futuro {
+    opacity: 0;
+  }
+
+  .pj__passos li.atual {
+    color: var(--fg);
+    font-weight: 800;
+  }
+
+  .pj__marca-passo {
+    display: grid;
+    place-items: center;
+    width: 18px;
+    height: 18px;
+    flex: none;
+    border-radius: 50%;
+  }
+
+  .pj__marca-passo .i {
+    width: 11px;
+    height: 11px;
+    stroke-width: 3;
+  }
+
+  .pj__passos li.feito .pj__marca-passo {
+    background: color-mix(in oklab, var(--ok) 18%, transparent);
+    color: var(--ok);
+  }
+
+  .pj__passos li.atual .pj__marca-passo .i {
+    display: none;
+  }
+
+  .pj__passos li.atual .pj__marca-passo::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--brand);
+    animation: pj-pulso 1.2s ease-out infinite;
+  }
+
+  .pj__frase {
+    display: grid;
+    gap: 6px;
+    padding: 12px 14px;
+    border-radius: 14px;
+    background:
+      linear-gradient(
+        135deg,
+        color-mix(in oklab, var(--brand) 20%, transparent),
+        color-mix(in oklab, var(--brand-2) 9%, transparent)
+      ),
+      color-mix(in oklab, var(--brand-ink) 92%, transparent);
+    box-shadow:
+      inset 0 1px 0 color-mix(in oklab, var(--realce) 14%, transparent),
+      inset 0 0 0 1px color-mix(in oklab, var(--brand) 30%, transparent);
+  }
+
+  .pj__pergunta {
+    color: var(--fg-2);
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 1.35;
+  }
+
+  .pj__curta {
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 1.28;
+    letter-spacing: -0.012em;
+    text-wrap: pretty;
+  }
+
+  .pj__lista {
+    display: grid;
+    gap: 3px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 1.3;
+  }
+
+  .pj__lista li {
+    display: flex;
+    gap: 9px;
+  }
+
+  .pj__lista li::before {
+    content: "";
+    flex: none;
+    width: 6px;
+    height: 6px;
+    margin-top: 8px;
+    border-radius: 50%;
+    background: var(--brand-grad);
+  }
+
+  .pj__fontes {
+    display: grid;
+    gap: 8px;
+  }
+
+  .pj__fonte {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 9px 9px 12px;
+    border-radius: 14px;
+    background: var(--ov-item);
+    box-shadow: inset 0 0 0 1px var(--ov-borda);
+  }
+
+  .pj__fonte-ic {
+    flex: none;
+    color: var(--brand-text);
+  }
+
+  .pj__fonte-txt {
+    flex: 1;
+    display: grid;
+    gap: 1px;
+    min-width: 0;
+    text-decoration: none;
+  }
+
+  .pj__fonte-txt b {
+    overflow: hidden;
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+
+  .pj__fonte-txt:hover b {
+    text-decoration: underline;
+  }
+
+  .pj__fonte-txt small {
+    color: var(--fg-3);
+    font-size: 12px;
+  }
+
+  .pj__copiar {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    flex: none;
+    height: 30px;
+    padding: 0 11px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--brand-grad-texto);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.28);
+    color: var(--realce);
+    font-size: 12px;
+    font-weight: 800;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: transform 0.16s var(--mola);
+  }
+
+  .pj__copiar:active {
+    transform: scale(0.94);
+  }
+
+  .pj__copiar .i {
+    width: 13px;
+    height: 13px;
+  }
+
+  /* Quantas fontes a resposta trouxe além das duas que cabem aqui. */
+  .pj__mais {
+    margin-left: auto;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: rgb(255 255 255 / 0.07);
+    color: var(--fg-2);
+    font-size: 11px;
+    white-space: nowrap;
+  }
+
+  .pj__mais:not([hidden]) + .pj__refazer {
+    margin-left: 6px;
+  }
+
+  .pj__rodape {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    min-height: 24px;
+    color: var(--fg-3);
+    font-size: 12px;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .pj__rodape .i {
+    width: 13px;
+    height: 13px;
+  }
+
+  .pj__refazer {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: auto;
+    color: var(--fg-2);
+  }
+
+  /* Cada parte da resposta entra na sua vez (--n, posta pelo app.js). */
+  .pj[data-estado="resposta"] [data-parte] {
+    animation: pj-parte 0.5s var(--suave) both;
+    animation-delay: calc(var(--n, 0) * 110ms + 140ms);
+  }
+
+  /* Já respondida e sem movimento: é como a cópia escondida mede a altura, e o "Reduzir movimento". */
+  .pj--pronta .pj__pane,
+  .pj--pronta [data-parte],
+  .pj--pronta .pj-fala {
+    animation: none !important;
+  }
+
+  /* Entre um exemplo e o outro, o conteúdo some e volta. */
+  .pj__card,
+  .pj__transcricao {
+    transition: opacity 0.32s var(--suave);
+  }
+
+  .pj--saindo .pj__card,
+  .pj--saindo .pj__transcricao {
+    opacity: 0;
+  }
+
+  .pj__transcricao {
+    flex: 1 0 104px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-height: 0;
+    margin-bottom: 10px;
+    padding: 12px;
+    border-radius: 20px;
+    background: color-mix(in oklab, var(--ov-tinta) 55%, transparent);
+    box-shadow: inset 0 0 0 1px var(--ov-borda);
+    overflow: hidden;
+  }
+
+  .pj__rotulo {
+    color: var(--fg-3);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .pj__vazio {
+    color: var(--fg-3);
+    font-size: 13px;
+  }
+
+  .pj__rolo {
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .pj__rolo--rolado {
+    -webkit-mask-image: linear-gradient(transparent, #000 22px);
+    mask-image: linear-gradient(transparent, #000 22px);
+  }
+
+  .pj__falas {
+    display: grid;
+    gap: 8px;
+  }
+
+  .pj-fala {
+    display: grid;
+    gap: 2px;
+    padding: 8px 10px;
+    border-radius: 12px;
+    background: var(--ov-item);
+    /* A fala chega inteira à transcrição, como no app. */
+    animation: pj-entra 0.4s var(--suave) both;
+  }
+
+  .pj-fala[hidden] {
+    display: none;
+  }
+
+  .pj-fala__quem {
+    color: var(--fg-3);
+    font-size: 11px;
+    font-weight: 800;
+  }
+
+  .pj-fala--voce .pj-fala__quem {
+    color: var(--brand-text);
+  }
+
+  .pj-fala__texto {
+    min-height: 1.4em;
+    font-size: 14px;
+  }
+
+  /* A frase que acorda o Platão. */
+  .pj-fala__texto mark {
+    border-radius: 6px;
+    background: none;
+    color: inherit;
+    transition:
+      background 0.3s,
+      box-shadow 0.3s;
+  }
+
+  .pj-fala__texto mark.pj-marcada {
+    background: color-mix(in oklab, var(--brand) 34%, transparent);
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--brand) 34%, transparent);
+  }
+
+  .pj__barra {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .pj__barra .pj__pilula {
+    height: 40px;
+    padding: 0 16px;
+    font-size: 14px;
+  }
+
+  /* Toque (QA do celular, 2026-10-19): todo alvo tem pelo menos 40 px para o dedo. A área a mais é
+     invisível (::after), então o desenho não muda, nem no computador. */
+  .marca,
+  .modos button,
+  .pj__copiar,
+  .rodape__credito a {
+    position: relative;
+  }
+
+  /* Janelinha estreita (celular de 320 a 360 px): a conta da loja ganha "…" em vez de passar por
+     baixo do Perguntar, e o "Transcrição" da barra vira só o ícone, como cabe. */
+  .pj__conta-texto {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .pj {
+    flex: none;
+    width: 384px;
+    height: 690px;
+    min-height: 0;
+  }
+
+  .plt-stage {
+    position: relative;
+    min-width: 0;
+    height: clamp(300px, min(78svh, 100svh - 170px), 720px);
+  }
+  .plt-shot {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 74%;
+    height: auto;
+    transform: translateY(-50%);
+    border-radius: 14px;
+    box-shadow: 0 30px 60px -28px rgba(0, 0, 0, 0.8);
+  }
+  .plt-card {
+    position: absolute;
+    right: clamp(8px, 2.2vw, 32px);
+    top: 50%;
+    transform-origin: 100% 50%;
+    transform: translateY(-50%) scale(0.8);
+    will-change: transform;
+    pointer-events: none;
+  }
+  @media (max-width: 860px) {
+    .plt-stage {
+      height: auto;
+      min-height: 0;
+    }
+    .plt-shot {
+      display: none;
+    }
+    .plt-card {
+      right: auto;
+      left: 50%;
+      transform-origin: 50% 50%;
+      transform: translate(-50%, -50%) scale(0.7);
+    }
+    .pj {
+      height: 520px;
+    }
+    .pj__transcricao,
+    .pj__barra {
+      display: none;
     }
   }
 }

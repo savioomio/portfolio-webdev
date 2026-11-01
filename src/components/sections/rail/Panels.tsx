@@ -2,6 +2,8 @@ import { useRef, useState, type CSSProperties } from "react";
 import type { Project } from "@/content/projects";
 import { clamp, ease, prefersReducedMotion } from "@/lib/utils";
 import { useRailFrame } from "@/hooks/useRailFrame";
+import { plataoExamples, type PlataoMode } from "@/lib/platao";
+import { PlataoCard } from "./PlataoCard";
 import { useZoom } from "@/hooks/useZoom";
 import { PanelCopy } from "./PanelCopy";
 import { RailPanel } from "./RailPanel";
@@ -174,6 +176,7 @@ export function GasMasterPanel({ project }: PanelProps) {
             { label: "Gestão", src: "/media/gm-graficos.webp", alt: project.gallery[0].alt },
             { label: "Clientes", src: "/media/gm-clientes.webp", alt: project.gallery[1].alt },
             { label: "Notas", src: "/media/gm-notas.webp", alt: project.gallery[2].alt },
+            { label: "IA", src: "/media/gm-assistente.webp", alt: project.gallery[3].alt },
           ]}
         />
       </div>
@@ -181,39 +184,26 @@ export function GasMasterPanel({ project }: PanelProps) {
   );
 }
 
-/** Os dois exemplos saem do banco de testes do app, com o tempo que levaram de verdade. */
+/** O card e as respostas vêm dos testes do app (`lib/platao.ts`); aqui ficam só as cores e o print. */
 const plataoModes = {
   vtex: {
-    label: "VTEX",
     background: "#142032",
     accent: "#C20C4A",
     image: "/media/platao-inicio-vtex.webp",
     alt: "Tela inicial do Platão no modo VTEX",
-    question: "Dá para ter um preço diferente para cada canal de venda?",
-    trigger: "Hmm, não me lembro bem.",
-    answer:
-      "Sim, é possível: dá para ter preços diferentes por política comercial (canal de venda) e também por tabelas de preços associadas a clientes específicos.",
-    time: "1,6 s",
   },
   wake: {
-    label: "Wake",
     background: "#1A1A1A",
     accent: "#C505F2",
     image: "/media/platao-inicio-wake.webp",
     alt: "Tela inicial do Platão no modo Wake",
-    question: "Dá para vender por assinatura com cobrança recorrente?",
-    trigger: "Deixa eu confirmar isso.",
-    answer:
-      "Sim, dá para vender por assinatura com cobrança recorrente, configurando Grupos de Assinatura em Assinaturas > Grupo de Assinaturas.",
-    time: "2,0 s",
   },
 };
-
-type PlataoMode = keyof typeof plataoModes;
 
 export function PlataoPanel({ project }: PanelProps) {
   const [mode, setMode] = useState<PlataoMode>("vtex");
   const current = plataoModes[mode];
+  const example = plataoExamples[mode];
   const zoom = useZoom();
 
   return (
@@ -237,14 +227,14 @@ export function PlataoPanel({ project }: PanelProps) {
                 aria-pressed={key === mode}
                 onClick={() => setMode(key)}
               >
-                {plataoModes[key].label}
+                {plataoExamples[key].label}
               </button>
             ))}
           </div>
         </PanelCopy>
-        <figure className="relative min-w-0">
+        <figure className="plt-stage">
           <img
-            className="h-auto w-full rounded-[14px] shadow-[0_30px_60px_-28px_rgba(0,0,0,0.8)]"
+            className="plt-shot"
             src={current.image}
             alt={current.alt}
             width={1200}
@@ -252,11 +242,11 @@ export function PlataoPanel({ project }: PanelProps) {
             loading="lazy"
             {...zoom({ src: current.image, alt: current.alt })}
           />
-          <figcaption className="answer-card">
-            <p className="text-white/70">Cliente: {current.question}</p>
-            <p className="mt-1 text-white/70">Você: {current.trigger}</p>
-            <p className="mt-2 font-bold">{current.answer}</p>
-            <p className="mt-1 text-[13px] text-white/70">Respondido em {current.time}</p>
+          <PlataoCard key={mode} mode={mode} />
+          <figcaption className="sr-only">
+            Demonstração da janelinha do Platão no modo {example.label}: o cliente pergunta “
+            {example.question}”, você diz “{example.said}” e o Platão responde em{" "}
+            {(example.ms / 1000).toFixed(1).replace(".", ",")} segundos: {example.answer}
           </figcaption>
         </figure>
       </div>

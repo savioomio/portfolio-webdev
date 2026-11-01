@@ -21,7 +21,7 @@ const timeline: Milestone[] = [
     when: "out/2024 até hoje",
     title: "Wicomm",
     roles: ["Desenvolvedor Web", "Desenvolvedor Web Pleno"],
-    text: "Remoto. Atuo como referência técnica em VTEX nos projetos da empresa, não só nos de FastStore.",
+    text: "Remoto. Atuo como referência técnica em VTEX nos projetos da empresa.",
     achievement:
       "Segundo lugar no primeiro Wackathon, em dupla: uma loja completa feita só com prompts.",
   },
@@ -62,16 +62,26 @@ export function Experience() {
                 <div>
                   <h3 className="text-[1.26rem] font-extrabold leading-tight">{item.title}</h3>
                   {item.roles && (
-                    <p className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-0.5 font-display font-extrabold text-gold-ink">
+                    <ol className="mt-1.5 font-display font-extrabold text-gold-ink">
                       {item.roles.map((role, index) => (
-                        <span key={role} className="inline-flex items-center gap-2">
-                          {index > 0 && (
-                            <i aria-hidden="true" className="w-8 border-t-[3px] border-gold" />
+                        <li
+                          key={role}
+                          className={`relative pl-5 leading-snug ${index < item.roles!.length - 1 ? "pb-2" : ""}`}
+                        >
+                          <span
+                            aria-hidden="true"
+                            className="absolute left-0 top-[0.5em] size-2.5 rounded-full bg-gold"
+                          />
+                          {index < item.roles!.length - 1 && (
+                            <span
+                              aria-hidden="true"
+                              className="absolute left-[4px] top-[0.9em] h-full w-[2px] bg-gold"
+                            />
                           )}
                           {role}
-                        </span>
+                        </li>
                       ))}
-                    </p>
+                    </ol>
                   )}
                   <p className="mt-[3px] text-mute">{item.text}</p>
                   {item.achievement && (

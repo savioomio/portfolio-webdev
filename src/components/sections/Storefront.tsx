@@ -53,10 +53,13 @@ export function Storefront() {
       <Platform id="lojas" brandClass="brand-vtex">
         <BrandLogo brand="vtex" className="mb-[18px] h-[46px] w-auto text-vtex md:h-16" />
         <h2 className={headingClass}>{stores.vtex} participações em lojas VTEX</h2>
-        <p className="mt-3">Meu forte: participei de lojas do começo ao fim.</p>
+        <p className="mt-3">
+          Meu forte: participei de lojas do começo ao fim e atuo como referência técnica em VTEX nos
+          projetos da empresa.
+        </p>
         <ul className="mt-[18px] border-t-2 border-dashed border-[var(--c)]">
           <StoreRow count={stores.faststore} title="FastStore">
-            Atuo como referência técnica em VTEX nos projetos da empresa, não só nos de FastStore.
+            Desenvolvimento de lojas em VTEX FastStore.
           </StoreRow>
           <StoreRow count={stores.storeFramework} title="Store Framework">
             Desenvolvimento e manutenção de lojas em VTEX IO.

@@ -66,6 +66,6 @@ O ciclo completo de uma tarefa, do backlog ao deploy conferido, está na skill `
 | `.claude/skills/` | `tarefa`, `decisao`, `conferir-no-navegador`, `impeccable` (design, instalada em `.agents/`) |
 | `PRODUCT.md` e `DESIGN.md` | Público, conteúdo real e identidade visual, lidos pela skill `impeccable` |
 | `.claude/agents/` | `revisor` (diff contra estas regras), `pesquisador` (research com fontes oficiais) |
-| `.mcp.json` | Documentação da Cloudflare |
+| `.mcp.json` | Documentação da Cloudflare e banco Supabase, só leitura |
 
 No PC do lab, o navegador é controlado pelo MCP do Chrome (`chrome-devtools`), no escopo de usuário (passo 4 do setup). No Mac, que usa o Comet, é pelo CLI `dev-browser` ([ADR 0007](docs/adr/0007-navegador-no-mac-com-dev-browser.md)).

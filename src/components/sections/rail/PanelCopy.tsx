@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
+import { ProjectLogo } from "@/components/projects/ProjectLogo";
 import type { Project } from "@/content/projects";
 import { cn } from "@/lib/utils";
 
@@ -17,6 +18,7 @@ interface PanelCopyProps {
 export function PanelCopy({ project, className, top, lead, hideFacts, children }: PanelCopyProps) {
   return (
     <div className={cn("min-w-0", className)}>
+      <ProjectLogo logo={project.logo} className="panel-logo" />
       {top}
       <h3 className="panel-title">{project.headline ?? project.name}</h3>
       <p className="panel-period">{project.period}</p>

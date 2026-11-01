@@ -1,6 +1,6 @@
 # Sávio Pessôa
 
-> Desenvolvedor front-end especialista em e-commerce: 22 lojas em VTEX (FastStore e Store Framework), 11 em Wake como apoio, 2 projetos reais em WordPress e 3 anos de experiência, 1 deles de estágio.
+> Desenvolvedor front-end especialista em e-commerce: 22 participações em lojas VTEX (FastStore e Store Framework), 11 em Wake como apoio, 2 projetos em WordPress para blogs de e-commerce e 2 anos de experiência no mercado.
 
 ## Páginas
 
@@ -9,4 +9,4 @@
 - [Platão](https://webdev.savioomiodev.com.br/projetos/platao): app de ajuda em call para quem atende VTEX e Wake
 - [Synesthesia](https://webdev.savioomiodev.com.br/projetos/synesthesia): app Android que transforma a cena em filtro e trilha sonora
 - [GasMaster](https://webdev.savioomiodev.com.br/projetos/gasmaster): sistema usado por 2 postos de gasolina
-- [De Guanambi a Bristol](https://webdev.savioomiodev.com.br/projetos/drones-guanambi): drones na competição nacional e na IMAV 2024
+- [Drones Guanambi](https://webdev.savioomiodev.com.br/projetos/drones-guanambi): drones na competição nacional e na IMAV 2024

@@ -3,11 +3,11 @@ import { hydrate } from "@tanstack/react-query";
 import { PersistQueryClientProvider } from "@tanstack/react-query-persist-client";
 import { StrictMode } from "react";
 import { createRoot, hydrateRoot } from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
 import { AppRoutes } from "@/app/AppRoutes";
 import { lazyPages, pagesForHydration, type Pages } from "@/app/pages";
 import { CACHE_KEY, CACHE_MAX_AGE, createQueryClient, shouldPersistQuery } from "@/app/queryClient";
 import { ThemeProvider } from "@/app/ThemeProvider";
+import { ViewTransitionRouter } from "@/app/ViewTransitionRouter";
 import "./index.css";
 
 const root = document.getElementById("root") as HTMLElement;
@@ -40,9 +40,9 @@ const renderApp = (pages: Pages) => (
       }}
     >
       <ThemeProvider>
-        <BrowserRouter>
+        <ViewTransitionRouter>
           <AppRoutes pages={pages} />
-        </BrowserRouter>
+        </ViewTransitionRouter>
       </ThemeProvider>
     </PersistQueryClientProvider>
   </StrictMode>

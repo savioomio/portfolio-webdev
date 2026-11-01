@@ -58,7 +58,24 @@ export function DronesPanel({ project }: { project: Project }) {
         loading="lazy"
       />
       <div className="panel-inner">
-        <PanelCopy project={project} className="panel-glass" />
+        <PanelCopy
+          project={project}
+          className="panel-glass"
+          top={
+            project.logo && (
+              <span className="mb-3 inline-block rounded-xl bg-white p-1.5">
+                <img
+                  src={project.logo.src}
+                  alt={project.logo.alt}
+                  width={project.logo.width}
+                  height={project.logo.height}
+                  loading="lazy"
+                  className="h-14 w-auto"
+                />
+              </span>
+            )
+          }
+        />
         <div className="media-drones">
           <figure className="winch">
             <canvas ref={canvasRef} aria-label="Guincho do drone em 3D" />

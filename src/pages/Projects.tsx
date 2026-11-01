@@ -20,7 +20,7 @@ export default function Projects() {
   );
 
   return (
-    <main className="relative mx-auto w-full max-w-wrap px-[var(--gl)] pb-20 pt-28 md:pt-32">
+    <main className="relative mx-auto w-full max-w-page-box px-[var(--gl)] pb-20 pt-28 md:pt-32">
       <Seo data={seoForProjects()} />
       <h1 className="text-[clamp(2.6rem,6vw,4.8rem)] font-black leading-[1.06] tracking-[-0.025em]">
         Projetos

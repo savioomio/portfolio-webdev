@@ -1092,6 +1092,27 @@
   }
 }
 
+::view-transition-old(root) {
+  animation: page-out 0.16s ease-in both;
+}
+::view-transition-new(root) {
+  animation: page-in 0.34s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@keyframes page-out {
+  to {
+    opacity: 0;
+    transform: scale(0.985);
+  }
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}
+
 @keyframes zoom-in {
   from {
     opacity: 0;

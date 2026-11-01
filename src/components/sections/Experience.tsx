@@ -39,7 +39,7 @@ export function Experience() {
       <div className="mx-auto grid w-full max-w-wrap items-start gap-[clamp(24px,5vw,72px)] md:grid-cols-[minmax(0,1.5fr)_minmax(0,0.7fr)]">
         <div>
           <h2 className="text-[clamp(2.2rem,4.4vw,4rem)] font-black leading-[1.04] tracking-[-0.022em]">
-            3 anos de experiência, 2 deles em e-commerce
+            2 anos de experiência no mercado, mais 1 de estágio
           </h2>
           <ul className="mt-[26px] border-t-2 border-dashed border-gold">
             {timeline.map((item) => (

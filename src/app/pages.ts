@@ -42,6 +42,9 @@ export function pageNameFor(pathname: string): keyof Pages {
   return "NotFound";
 }
 
+/** Baixa a página antes de trocar de rota. */
+export const preloadPage = (pathname: string) => loaders[pageNameFor(pathname)]();
+
 /**
  * A página da URL precisa estar pronta antes de hidratar. Com ela ainda baixando,
  * o React descartaria o HTML gerado no build e mostraria o spinner no lugar.

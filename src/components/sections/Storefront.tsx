@@ -52,7 +52,7 @@ export function Storefront() {
     <>
       <Platform id="lojas" brandClass="brand-vtex">
         <BrandLogo brand="vtex" className="mb-[18px] h-[46px] w-auto text-vtex md:h-16" />
-        <h2 className={headingClass}>{stores.vtex} lojas em VTEX</h2>
+        <h2 className={headingClass}>{stores.vtex} participações em lojas VTEX</h2>
         <p className="mt-3">Meu forte: participei de lojas do começo ao fim.</p>
         <ul className="mt-[18px] border-t-2 border-dashed border-[var(--c)]">
           <StoreRow count={stores.faststore} title="FastStore">
@@ -88,10 +88,10 @@ export function Storefront() {
           brand="wordpress"
           className="mb-[18px] h-[46px] w-auto text-wp dark:text-wp-ink md:h-16"
         />
-        <h2 className={headingClass}>{stores.wordpress} projetos reais em WordPress</h2>
+        <h2 className={headingClass}>{stores.wordpress} projetos em WordPress</h2>
         <p className="mt-3">
-          Fora das plataformas de loja, também entrego em WordPress e PHP. O site da mão robótica,
-          lá embaixo, também saiu em WordPress.
+          Blogs para e-commerce, em WordPress e PHP. O site da mão robótica, lá embaixo, também saiu
+          em WordPress.
         </p>
       </Platform>
     </>

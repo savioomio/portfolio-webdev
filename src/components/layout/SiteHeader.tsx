@@ -12,7 +12,7 @@ const links = [
 
 export function SiteHeader() {
   return (
-    <header className="glass fixed left-[var(--gl)] right-[var(--gr)] top-[max(12px,env(safe-area-inset-top,0px))] z-20 flex items-center gap-2 !rounded-[14px] py-1.5 pl-[18px] pr-1.5">
+    <header className="glass fixed [view-transition-name:site-header] left-[var(--gl)] right-[var(--gr)] top-[max(12px,env(safe-area-inset-top,0px))] z-20 flex items-center gap-2 !rounded-[14px] py-1.5 pl-[18px] pr-1.5">
       <Link
         to="/"
         className="mr-auto inline-flex items-center gap-2 whitespace-nowrap font-display text-[19px] font-black leading-none tracking-[-0.01em] no-underline"

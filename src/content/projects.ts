@@ -129,10 +129,10 @@ export const projects: Project[] = [
     tech: ["Modelagem 3D", "Mecânica", "Drones"],
     links: [],
     logo: {
-      src: "/media/drones-guanambi-logo.webp",
+      src: "/media/drones-guanambi-marca.webp",
       alt: "Logo da equipe Drones Guanambi",
-      width: 236,
-      height: 244,
+      width: 480,
+      height: 521,
     },
     cover: {
       src: "/media/voo-bristol.webp",
@@ -148,6 +148,18 @@ export const projects: Project[] = [
       height: 640,
     },
     gallery: [
+      {
+        src: "/media/drones-equipe-bandeiras.webp",
+        alt: "Equipe Drones Guanambi com as bandeiras do Brasil, do IF Baiano e da equipe",
+        width: 900,
+        height: 1200,
+      },
+      {
+        src: "/media/drone-ajuste-campo.webp",
+        alt: "Ajustes no drone no campo, durante a Competição Nacional de Drones",
+        width: 872,
+        height: 872,
+      },
       {
         src: "/media/imav-equipe.webp",
         alt: "Equipe Drones Guanambi com o drone na prova externa da IMAV 2024",
@@ -238,6 +250,12 @@ export const projects: Project[] = [
     },
     gallery: [
       {
+        src: "/media/medalhista-tenda.webp",
+        alt: "Sávio com a medalha da Tenda da Ciência",
+        width: 670,
+        height: 670,
+      },
+      {
         src: "/media/tenda.webp",
         alt: "Sávio apresentando o projeto na Tenda da Ciência",
         width: 400,
@@ -293,6 +311,18 @@ export const projects: Project[] = [
       height: 360,
     },
     gallery: [
+      {
+        src: "/media/medalhista-tenda.webp",
+        alt: "Sávio com a medalha da Tenda da Ciência",
+        width: 670,
+        height: 670,
+      },
+      {
+        src: "/media/mao-modelo.webp",
+        alt: "Modelo 3D da mão impressa",
+        width: 900,
+        height: 900,
+      },
       {
         src: "/media/medalhas-tenda.webp",
         alt: "As 2 medalhas de honra ao mérito científico da Tenda da Ciência, na minha mão",

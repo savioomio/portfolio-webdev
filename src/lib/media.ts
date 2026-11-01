@@ -18,6 +18,7 @@ const HD_MEDIA = new Set([
   "/media/synesthesia-app-hd.mp4",
   "/media/synesthesia-app-poster-hd.webp",
   "/media/voo-bristol-hd.webp",
+  "/media/drones-equipe-bandeiras-hd.webp",
   "/media/imav-equipe-hd.webp",
   "/media/imav-apresentacao-hd.webp",
   "/media/imav-cracha-hd.webp",

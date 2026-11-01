@@ -130,7 +130,7 @@ O desenvolvimento foi conduzido com Claude Code. O harness está versionado no r
 | [`.claude/hooks/`](./.claude/hooks) | Bloqueiam pular os hooks do Git, config global e deploy no Worker errado |
 | [`.claude/skills/`](./.claude/skills) | `tarefa`, `decisao`, `conferir-no-navegador` e `impeccable` |
 | [`.claude/agents/`](./.claude/agents) | `revisor` e `pesquisador` |
-| [`.mcp.json`](./.mcp.json) | Documentação da Cloudflare |
+| [`.mcp.json`](./.mcp.json) | Documentação da Cloudflare e banco Supabase, só leitura |
 
 ## Documentação
 

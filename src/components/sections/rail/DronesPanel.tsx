@@ -11,7 +11,7 @@ import { RailVideo } from "./RailVideo";
 
 const trophy = {
   src: "/media/trofeu.webp",
-  alt: "Troféu de primeiro lugar da Competição Nacional de Drones, em Florianópolis",
+  alt: "Troféu de primeiro lugar da DronesIFSC 2023, em Florianópolis",
 };
 
 export function DronesPanel({ project }: { project: Project }) {
